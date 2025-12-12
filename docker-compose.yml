@@ -1,0 +1,249 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - microservices-network
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_INTERNAL://kafka:29092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_INTERNAL://0.0.0.0:29092
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT_INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    healthcheck:
+      test: nc -z kafka 9092 || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - microservices-network
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh mongo:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - microservices-network
+
+  config-server:
+    build: ./configServer
+    container_name: config-server
+    ports:
+      - "8888:8888"
+    environment:
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/himanshu0ic7/flightConfigServer
+      JAVA_TOOL_OPTIONS: >
+        -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+        -Deureka.client.register-with-eureka=true
+        -Deureka.client.fetch-registry=true
+        -Deureka.instance.prefer-ip-address=true
+        -Deureka.instance.lease-renewal-interval-in-seconds=5
+        -Deureka.instance.lease-expiration-duration-in-seconds=10
+    healthcheck:
+      test: curl --fail http://config-server:8888/actuator/health || exit 1
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    networks:
+      - microservices-network
+
+  eureka-server:
+    build: ./eurekaServer
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    depends_on:
+      config-server:
+        condition: service_healthy
+    environment:
+      JAVA_TOOL_OPTIONS: >
+        -Deureka.server.enable-self-preservation=false
+        -Deureka.server.eviction-interval-timer-in-ms=5000
+        -Deureka.instance.lease-renewal-interval-in-seconds=5
+        -Deureka.instance.lease-expiration-duration-in-seconds=10
+    healthcheck:
+      test: curl --fail http://eureka-server:8761/actuator/health || exit 1
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+    networks:
+      - microservices-network
+
+  flight-service:
+    build: ./flightService
+    container_name: flight-service
+    ports:
+      - "7070:7070"
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      mongo:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "true"
+      JAVA_TOOL_OPTIONS: >
+        -Dspring.config.import=optional:config-server:http://config-server:8888/
+        -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+        -Deureka.client.register-with-eureka=true
+        -Deureka.client.fetch-registry=true
+        -Deureka.instance.prefer-ip-address=true
+        -Deureka.instance.lease-renewal-interval-in-seconds=5
+        -Deureka.instance.lease-expiration-duration-in-seconds=10
+        -Dspring.data.mongodb.uri=mongodb://mongo:27017/flightDB
+    restart: on-failure
+    networks:
+      - microservices-network
+
+  booking-service:
+    build: ./bookingService
+    container_name: booking-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      mongo:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "true"
+      JAVA_TOOL_OPTIONS: >
+        -Dspring.config.import=optional:config-server:http://config-server:8888/
+        -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+        -Deureka.client.register-with-eureka=true
+        -Deureka.client.fetch-registry=true
+        -Deureka.instance.prefer-ip-address=true
+        -Deureka.instance.lease-renewal-interval-in-seconds=5
+        -Deureka.instance.lease-expiration-duration-in-seconds=10
+        -Dspring.data.mongodb.uri=mongodb://mongo:27017/flightDB
+        -Dspring.kafka.bootstrap-servers=kafka:29092
+    restart: on-failure
+    networks:
+      - microservices-network
+
+  notification-service:
+    build: ./notificationService
+    container_name: notification-service
+    ports:
+      - "9090:9090"
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    environment:
+      DEBUG: true
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      TWILIO_ACCOUNT_SID: ACd47be7437e8d9e5e21cb24aa672dccfa
+      TWILIO_AUTH_TOKEN: d7659b142f8d078014196c58cbe5153b
+      TWILIO_PHONE_NUMBER: +17754028829
+      SPRING_PROFILES_ACTIVE: docker
+      spring.kafka.consumer.value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      spring.kafka.consumer.properties.spring.json.trusted.packages: "*"
+      spring.kafka.consumer.properties.spring.json.value.default.type: com.flightApp.dto.BookingEvent
+
+      JAVA_TOOL_OPTIONS: >
+        -Dspring.profiles.active=docker
+        -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+    restart: on-failure
+    networks:
+      - microservices-network
+
+  api-gateway:
+    build: ./applicationGateway
+    container_name: api-gateway
+    ports:
+      - "6060:6060"
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      flight-service:
+        condition: service_started
+      booking-service:
+        condition: service_started
+
+    environment:
+      SPRING_CLOUD_CONFIG_ENABLED: "false"
+      SPRING_PROFILES_ACTIVE: docker
+      JAVA_TOOL_OPTIONS: >
+        -Dspring.profiles.active=docker
+        -Dserver.port=6060
+        -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+        -Deureka.instance.prefer-ip-address=true
+      SPRING_CLOUD_GATEWAY_DISCOVERY_LOCATOR_ENABLED: "false"
+
+      SPRING_CLOUD_GATEWAY_ROUTES_0_ID: flight-service
+      SPRING_CLOUD_GATEWAY_ROUTES_0_URI: lb://FLIGHTSERVICE
+      SPRING_CLOUD_GATEWAY_ROUTES_0_PREDICATES_0: Path=/flight/**
+      SPRING_CLOUD_GATEWAY_ROUTES_0_FILTERS_0: AuthenticationFilter
+
+      SPRING_CLOUD_GATEWAY_ROUTES_1_ID: booking-service
+      SPRING_CLOUD_GATEWAY_ROUTES_1_URI: lb://BOOKINGSERVICE
+      SPRING_CLOUD_GATEWAY_ROUTES_1_PREDICATES_0: Path=/booking/**
+      SPRING_CLOUD_GATEWAY_ROUTES_1_FILTERS_0: AuthenticationFilter
+
+      SPRING_CLOUD_GATEWAY_ROUTES_2_ID: security-service
+      SPRING_CLOUD_GATEWAY_ROUTES_2_URI: lb://SECURITYSERVICE 
+      SPRING_CLOUD_GATEWAY_ROUTES_2_PREDICATES_0: Path=/auth/**
+
+    restart: on-failure
+    networks:
+      - microservices-network
+
+  security-service:
+    build: ./securityService
+    container_name: security-service
+    ports:
+      - "9898:9898"
+    depends_on:
+      eureka-server:
+        condition: service_healthy
+      mongo: 
+        condition: service_started
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/flightDB
+      FLIGHT_APP_ADMIN_SECRET: FlightAdminKey123!
+      
+      JAVA_TOOL_OPTIONS: >
+        -Dspring.profiles.active=docker
+        -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+        -Deureka.instance.prefer-ip-address=true
+    restart: on-failure
+    networks:
+      - microservices-network
+networks:
+  microservices-network:
+    driver: bridge

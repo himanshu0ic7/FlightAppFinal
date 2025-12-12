@@ -1,0 +1,282 @@
+2025-12-09 01:21:53.769 | Picked up JAVA_TOOL_OPTIONS: -Dspring.config.import=optional:config-server:http://config-server:8888/ -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/ -Deureka.client.register-with-eureka=true -Deureka.client.fetch-registry=true -Deureka.instance.prefer-ip-address=true -Deureka.instance.lease-renewal-interval-in-seconds=5 -Deureka.instance.lease-expiration-duration-in-seconds=10 -Dspring.data.mongodb.uri=mongodb://mongo:27017/flightDB -Dspring.kafka.bootstrap-servers=kafka:29092
+2025-12-09 01:21:53.769 | 
+2025-12-09 01:22:03.985 | 
+2025-12-09 01:22:03.985 |   .   ____          _            __ _ _
+2025-12-09 01:22:03.985 |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-12-09 01:22:03.985 | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-12-09 01:22:03.985 |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-12-09 01:22:03.985 |   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-12-09 01:22:03.985 |  =========|_|==============|___/=/_/_/_/
+2025-12-09 01:22:03.985 | 
+2025-12-09 01:22:03.985 |  :: Spring Boot ::                (v4.0.0)
+2025-12-09 01:22:03.985 | 
+2025-12-09 01:22:04.966 | 2025-12-08T19:52:04.954Z  INFO 1 --- [bookingService] [           main] c.flightApp.BookingServiceApplication    : Starting BookingServiceApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-09 01:22:04.972 | 2025-12-08T19:52:04.971Z  INFO 1 --- [bookingService] [           main] c.flightApp.BookingServiceApplication    : The following 1 profile is active: "docker"
+2025-12-09 01:22:05.417 | 2025-12-08T19:52:05.417Z  INFO 1 --- [bookingService] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://config-server:8888/
+2025-12-09 01:22:05.423 | 2025-12-08T19:52:05.417Z  INFO 1 --- [bookingService] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=bookingService, profiles=[default], label=null, version=4c0ac5814baf5c747f7bdc75825db4b0f252dea5, state=
+2025-12-09 01:22:05.428 | 2025-12-08T19:52:05.428Z  INFO 1 --- [bookingService] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://config-server:8888/
+2025-12-09 01:22:05.428 | 2025-12-08T19:52:05.428Z  INFO 1 --- [bookingService] [           main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=bookingService, profiles=[docker], label=null, version=4c0ac5814baf5c747f7bdc75825db4b0f252dea5, state=
+2025-12-09 01:22:16.659 | 2025-12-08T19:52:16.656Z  INFO 1 --- [bookingService] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2025-12-09 01:22:17.198 | 2025-12-08T19:52:17.198Z  INFO 1 --- [bookingService] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 488 ms. Found 2 MongoDB repository interfaces.
+2025-12-09 01:22:19.442 | 2025-12-08T19:52:19.435Z  INFO 1 --- [bookingService] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=4f45d576-88ff-3aa7-8758-6090584abe69
+2025-12-09 01:22:21.024 | 2025-12-08T19:52:21.022Z  INFO 1 --- [bookingService] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-09 01:22:21.047 | 2025-12-08T19:52:21.047Z  INFO 1 --- [bookingService] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09 01:22:21.047 | 2025-12-08T19:52:21.047Z  INFO 1 --- [bookingService] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-09 01:22:21.199 | 2025-12-08T19:52:21.198Z  INFO 1 --- [bookingService] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 15748 ms
+2025-12-09 01:22:22.443 | 2025-12-08T19:52:22.441Z  INFO 1 --- [bookingService] [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "aarch64", "version": "6.12.54-linuxkit"}, "platform": "Java/Amazon.com Inc./17.0.17+10-LTS", "env": {"container": {"runtime": "docker"}}} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@62faf77, com.mongodb.Jep395RecordCodecProvider@1f39269d, com.mongodb.KotlinCodecProvider@6e321d9d, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[mongo:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2025-12-09 01:22:22.533 | 2025-12-08T19:52:22.533Z  INFO 1 --- [bookingService] [l'}-mongo:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=mongo:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=27, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=132301542, minRoundTripTimeNanos=0}
+2025-12-09 01:22:25.392 | 2025-12-08T19:52:25.391Z  INFO 1 --- [bookingService] [           main] o.s.c.openfeign.FeignClientFactoryBean   : For 'flightService' URL not provided. Will try picking an instance via load-balancing.
+2025-12-09 01:22:26.913 | 2025-12-08T19:52:26.910Z  INFO 1 --- [bookingService] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2025-12-09 01:22:27.077 | 2025-12-08T19:52:27.072Z  WARN 1 --- [bookingService] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-09 01:22:27.205 | 2025-12-08T19:52:27.204Z  INFO 1 --- [bookingService] [           main] o.a.kafka.common.config.AbstractConfig   : AdminClientConfig values: 
+2025-12-09 01:22:27.205 | 	bootstrap.controllers = []
+2025-12-09 01:22:27.205 | 	bootstrap.servers = [kafka:29092]
+2025-12-09 01:22:27.205 | 	client.dns.lookup = use_all_dns_ips
+2025-12-09 01:22:27.205 | 	client.id = bookingService-admin-0
+2025-12-09 01:22:27.205 | 	connections.max.idle.ms = 300000
+2025-12-09 01:22:27.205 | 	default.api.timeout.ms = 60000
+2025-12-09 01:22:27.205 | 	enable.metrics.push = false
+2025-12-09 01:22:27.205 | 	metadata.max.age.ms = 300000
+2025-12-09 01:22:27.205 | 	metadata.recovery.rebootstrap.trigger.ms = 300000
+2025-12-09 01:22:27.205 | 	metadata.recovery.strategy = rebootstrap
+2025-12-09 01:22:27.205 | 	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+2025-12-09 01:22:27.205 | 	metrics.num.samples = 2
+2025-12-09 01:22:27.205 | 	metrics.recording.level = INFO
+2025-12-09 01:22:27.205 | 	metrics.sample.window.ms = 30000
+2025-12-09 01:22:27.205 | 	receive.buffer.bytes = 65536
+2025-12-09 01:22:27.205 | 	reconnect.backoff.max.ms = 1000
+2025-12-09 01:22:27.205 | 	reconnect.backoff.ms = 50
+2025-12-09 01:22:27.205 | 	request.timeout.ms = 30000
+2025-12-09 01:22:27.205 | 	retries = 2147483647
+2025-12-09 01:22:27.205 | 	retry.backoff.max.ms = 1000
+2025-12-09 01:22:27.205 | 	retry.backoff.ms = 100
+2025-12-09 01:22:27.205 | 	sasl.client.callback.handler.class = null
+2025-12-09 01:22:27.205 | 	sasl.jaas.config = null
+2025-12-09 01:22:27.205 | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+2025-12-09 01:22:27.205 | 	sasl.kerberos.min.time.before.relogin = 60000
+2025-12-09 01:22:27.205 | 	sasl.kerberos.service.name = null
+2025-12-09 01:22:27.205 | 	sasl.kerberos.ticket.renew.jitter = 0.05
+2025-12-09 01:22:27.205 | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+2025-12-09 01:22:27.205 | 	sasl.login.callback.handler.class = null
+2025-12-09 01:22:27.205 | 	sasl.login.class = null
+2025-12-09 01:22:27.205 | 	sasl.login.connect.timeout.ms = null
+2025-12-09 01:22:27.205 | 	sasl.login.read.timeout.ms = null
+2025-12-09 01:22:27.205 | 	sasl.login.refresh.buffer.seconds = 300
+2025-12-09 01:22:27.205 | 	sasl.login.refresh.min.period.seconds = 60
+2025-12-09 01:22:27.205 | 	sasl.login.refresh.window.factor = 0.8
+2025-12-09 01:22:27.205 | 	sasl.login.refresh.window.jitter = 0.05
+2025-12-09 01:22:27.205 | 	sasl.login.retry.backoff.max.ms = 10000
+2025-12-09 01:22:27.205 | 	sasl.login.retry.backoff.ms = 100
+2025-12-09 01:22:27.205 | 	sasl.mechanism = GSSAPI
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.algorithm = RS256
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.claim.aud = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.claim.iss = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.claim.jti.include = false
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.claim.sub = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.file = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.private.key.file = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.private.key.passphrase = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.assertion.template.file = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.client.credentials.client.id = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.client.credentials.client.secret = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.clock.skew.seconds = 30
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.expected.audience = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.expected.issuer = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.header.urlencode = false
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.jwks.endpoint.url = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.scope = null
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.scope.claim.name = scope
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.sub.claim.name = sub
+2025-12-09 01:22:27.205 | 	sasl.oauthbearer.token.endpoint.url = null
+2025-12-09 01:22:27.205 | 	security.protocol = PLAINTEXT
+2025-12-09 01:22:27.205 | 	security.providers = null
+2025-12-09 01:22:27.205 | 	send.buffer.bytes = 131072
+2025-12-09 01:22:27.205 | 	socket.connection.setup.timeout.max.ms = 30000
+2025-12-09 01:22:27.205 | 	socket.connection.setup.timeout.ms = 10000
+2025-12-09 01:22:27.205 | 	ssl.cipher.suites = null
+2025-12-09 01:22:27.205 | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+2025-12-09 01:22:27.205 | 	ssl.endpoint.identification.algorithm = https
+2025-12-09 01:22:27.205 | 	ssl.engine.factory.class = null
+2025-12-09 01:22:27.205 | 	ssl.key.password = null
+2025-12-09 01:22:27.205 | 	ssl.keymanager.algorithm = SunX509
+2025-12-09 01:22:27.205 | 	ssl.keystore.certificate.chain = null
+2025-12-09 01:22:27.205 | 	ssl.keystore.key = null
+2025-12-09 01:22:27.205 | 	ssl.keystore.location = null
+2025-12-09 01:22:27.205 | 	ssl.keystore.password = null
+2025-12-09 01:22:27.205 | 	ssl.keystore.type = JKS
+2025-12-09 01:22:27.205 | 	ssl.protocol = TLSv1.3
+2025-12-09 01:22:27.205 | 	ssl.provider = null
+2025-12-09 01:22:27.205 | 	ssl.secure.random.implementation = null
+2025-12-09 01:22:27.205 | 	ssl.trustmanager.algorithm = PKIX
+2025-12-09 01:22:27.205 | 	ssl.truststore.certificates = null
+2025-12-09 01:22:27.205 | 	ssl.truststore.location = null
+2025-12-09 01:22:27.205 | 	ssl.truststore.password = null
+2025-12-09 01:22:27.205 | 	ssl.truststore.type = JKS
+2025-12-09 01:22:27.205 | 
+2025-12-09 01:22:28.050 | 2025-12-08T19:52:28.019Z  INFO 1 --- [bookingService] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2025-12-09 01:22:28.052 | 2025-12-08T19:52:28.035Z  INFO 1 --- [bookingService] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2025-12-09 01:22:28.052 | 2025-12-08T19:52:28.043Z  INFO 1 --- [bookingService] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1765223548005
+2025-12-09 01:22:34.090 | 2025-12-08T19:52:34.082Z  INFO 1 --- [bookingService] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-12-09 01:22:34.090 | 2025-12-08T19:52:34.086Z  INFO 1 --- [bookingService] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-09 01:22:34.090 | 2025-12-08T19:52:34.086Z  INFO 1 --- [bookingService] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-12-09 01:22:34.096 | 2025-12-08T19:52:34.090Z  INFO 1 --- [bookingService] [Service-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for bookingService-admin-0 unregistered
+2025-12-09 01:22:34.117 | 2025-12-08T19:52:34.112Z  INFO 1 --- [bookingService] [Service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-12-09 01:22:34.117 | 2025-12-08T19:52:34.112Z  INFO 1 --- [bookingService] [Service-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-09 01:22:34.117 | 2025-12-08T19:52:34.112Z  INFO 1 --- [bookingService] [Service-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-12-09 01:22:34.366 | 2025-12-08T19:52:34.364Z  INFO 1 --- [bookingService] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-12-09 01:22:34.571 | 2025-12-08T19:52:34.563Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-12-09 01:22:34.601 | 2025-12-08T19:52:34.601Z  INFO 1 --- [bookingService] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:22:34.660 | 2025-12-08T19:52:34.659Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-12-09 01:22:34.660 | 2025-12-08T19:52:34.660Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-12-09 01:22:34.660 | 2025-12-08T19:52:34.660Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-12-09 01:22:34.660 | 2025-12-08T19:52:34.660Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-12-09 01:22:34.660 | 2025-12-08T19:52:34.660Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-12-09 01:22:34.661 | 2025-12-08T19:52:34.660Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-12-09 01:22:34.663 | 2025-12-08T19:52:34.662Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-12-09 01:22:35.698 | 2025-12-08T19:52:35.697Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-12-09 01:22:35.700 | 2025-12-08T19:52:35.700Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2025-12-09 01:22:35.704 | 2025-12-08T19:52:35.703Z  INFO 1 --- [bookingService] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-09 01:22:35.707 | 2025-12-08T19:52:35.707Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1765223555706 with initial instances count: 4
+2025-12-09 01:22:35.712 | 2025-12-08T19:52:35.712Z  INFO 1 --- [bookingService] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BOOKINGSERVICE with eureka with status UP
+2025-12-09 01:22:35.713 | 2025-12-08T19:52:35.713Z  INFO 1 --- [bookingService] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1765223555713, current=UP, previous=STARTING]
+2025-12-09 01:22:35.715 | 2025-12-08T19:52:35.714Z  INFO 1 --- [bookingService] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKINGSERVICE/db96c3486579:bookingService:8080: registering service...
+2025-12-09 01:22:35.748 | 2025-12-08T19:52:35.747Z  INFO 1 --- [bookingService] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-09 01:22:35.749 | 2025-12-08T19:52:35.749Z  INFO 1 --- [bookingService] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2025-12-09 01:22:35.767 | 2025-12-08T19:52:35.766Z  INFO 1 --- [bookingService] [           main] c.flightApp.BookingServiceApplication    : Started BookingServiceApplication in 38.326 seconds (process running for 42.006)
+2025-12-09 01:22:35.809 | 2025-12-08T19:52:35.809Z  INFO 1 --- [bookingService] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BOOKINGSERVICE/db96c3486579:bookingService:8080 - registration status: 204
+2025-12-09 01:27:34.674 | 2025-12-08T19:57:34.635Z  INFO 1 --- [bookingService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:31:20.706 | 2025-12-08T20:01:20.704Z  INFO 1 --- [bookingService] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09 01:31:20.707 | 2025-12-08T20:01:20.707Z  INFO 1 --- [bookingService] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09 01:31:20.787 | 2025-12-08T20:01:20.787Z  INFO 1 --- [bookingService] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 79 ms
+2025-12-09 01:32:16.958 | 2025-12-08T20:02:16.955Z  INFO 1 --- [bookingService] [nio-8080-exec-3] o.a.kafka.common.config.AbstractConfig   : ProducerConfig values: 
+2025-12-09 01:32:16.958 | 	acks = -1
+2025-12-09 01:32:16.958 | 	batch.size = 16384
+2025-12-09 01:32:16.958 | 	bootstrap.servers = [kafka:29092]
+2025-12-09 01:32:16.958 | 	buffer.memory = 33554432
+2025-12-09 01:32:16.958 | 	client.dns.lookup = use_all_dns_ips
+2025-12-09 01:32:16.959 | 	client.id = bookingService-producer-1
+2025-12-09 01:32:16.959 | 	compression.gzip.level = -1
+2025-12-09 01:32:16.959 | 	compression.lz4.level = 9
+2025-12-09 01:32:16.959 | 	compression.type = none
+2025-12-09 01:32:16.959 | 	compression.zstd.level = 3
+2025-12-09 01:32:16.959 | 	connections.max.idle.ms = 540000
+2025-12-09 01:32:16.959 | 	delivery.timeout.ms = 120000
+2025-12-09 01:32:16.959 | 	enable.idempotence = true
+2025-12-09 01:32:16.959 | 	enable.metrics.push = true
+2025-12-09 01:32:16.959 | 	interceptor.classes = []
+2025-12-09 01:32:16.959 | 	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+2025-12-09 01:32:16.959 | 	linger.ms = 5
+2025-12-09 01:32:16.959 | 	max.block.ms = 2000
+2025-12-09 01:32:16.959 | 	max.in.flight.requests.per.connection = 5
+2025-12-09 01:32:16.959 | 	max.request.size = 1048576
+2025-12-09 01:32:16.959 | 	metadata.max.age.ms = 300000
+2025-12-09 01:32:16.959 | 	metadata.max.idle.ms = 300000
+2025-12-09 01:32:16.959 | 	metadata.recovery.rebootstrap.trigger.ms = 300000
+2025-12-09 01:32:16.959 | 	metadata.recovery.strategy = rebootstrap
+2025-12-09 01:32:16.959 | 	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+2025-12-09 01:32:16.959 | 	metrics.num.samples = 2
+2025-12-09 01:32:16.959 | 	metrics.recording.level = INFO
+2025-12-09 01:32:16.959 | 	metrics.sample.window.ms = 30000
+2025-12-09 01:32:16.959 | 	partitioner.adaptive.partitioning.enable = true
+2025-12-09 01:32:16.959 | 	partitioner.availability.timeout.ms = 0
+2025-12-09 01:32:16.959 | 	partitioner.class = null
+2025-12-09 01:32:16.959 | 	partitioner.ignore.keys = false
+2025-12-09 01:32:16.959 | 	receive.buffer.bytes = 32768
+2025-12-09 01:32:16.959 | 	reconnect.backoff.max.ms = 1000
+2025-12-09 01:32:16.959 | 	reconnect.backoff.ms = 50
+2025-12-09 01:32:16.959 | 	request.timeout.ms = 30000
+2025-12-09 01:32:16.959 | 	retries = 2147483647
+2025-12-09 01:32:16.959 | 	retry.backoff.max.ms = 1000
+2025-12-09 01:32:16.959 | 	retry.backoff.ms = 100
+2025-12-09 01:32:16.959 | 	sasl.client.callback.handler.class = null
+2025-12-09 01:32:16.959 | 	sasl.jaas.config = null
+2025-12-09 01:32:16.959 | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+2025-12-09 01:32:16.959 | 	sasl.kerberos.min.time.before.relogin = 60000
+2025-12-09 01:32:16.959 | 	sasl.kerberos.service.name = null
+2025-12-09 01:32:16.959 | 	sasl.kerberos.ticket.renew.jitter = 0.05
+2025-12-09 01:32:16.959 | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+2025-12-09 01:32:16.959 | 	sasl.login.callback.handler.class = null
+2025-12-09 01:32:16.959 | 	sasl.login.class = null
+2025-12-09 01:32:16.959 | 	sasl.login.connect.timeout.ms = null
+2025-12-09 01:32:16.959 | 	sasl.login.read.timeout.ms = null
+2025-12-09 01:32:16.959 | 	sasl.login.refresh.buffer.seconds = 300
+2025-12-09 01:32:16.959 | 	sasl.login.refresh.min.period.seconds = 60
+2025-12-09 01:32:16.959 | 	sasl.login.refresh.window.factor = 0.8
+2025-12-09 01:32:16.959 | 	sasl.login.refresh.window.jitter = 0.05
+2025-12-09 01:32:16.959 | 	sasl.login.retry.backoff.max.ms = 10000
+2025-12-09 01:32:16.959 | 	sasl.login.retry.backoff.ms = 100
+2025-12-09 01:32:16.959 | 	sasl.mechanism = GSSAPI
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.algorithm = RS256
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.claim.aud = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.claim.iss = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.claim.jti.include = false
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.claim.sub = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.file = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.private.key.file = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.private.key.passphrase = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.assertion.template.file = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.client.credentials.client.id = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.client.credentials.client.secret = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.clock.skew.seconds = 30
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.expected.audience = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.expected.issuer = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.header.urlencode = false
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.jwks.endpoint.url = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.scope = null
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.scope.claim.name = scope
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.sub.claim.name = sub
+2025-12-09 01:32:16.959 | 	sasl.oauthbearer.token.endpoint.url = null
+2025-12-09 01:32:16.959 | 	security.protocol = PLAINTEXT
+2025-12-09 01:32:16.959 | 	security.providers = null
+2025-12-09 01:32:16.959 | 	send.buffer.bytes = 131072
+2025-12-09 01:32:16.959 | 	socket.connection.setup.timeout.max.ms = 30000
+2025-12-09 01:32:16.959 | 	socket.connection.setup.timeout.ms = 10000
+2025-12-09 01:32:16.959 | 	ssl.cipher.suites = null
+2025-12-09 01:32:16.959 | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+2025-12-09 01:32:16.959 | 	ssl.endpoint.identification.algorithm = https
+2025-12-09 01:32:16.959 | 	ssl.engine.factory.class = null
+2025-12-09 01:32:16.959 | 	ssl.key.password = null
+2025-12-09 01:32:16.959 | 	ssl.keymanager.algorithm = SunX509
+2025-12-09 01:32:16.959 | 	ssl.keystore.certificate.chain = null
+2025-12-09 01:32:16.959 | 	ssl.keystore.key = null
+2025-12-09 01:32:16.959 | 	ssl.keystore.location = null
+2025-12-09 01:32:16.959 | 	ssl.keystore.password = null
+2025-12-09 01:32:16.959 | 	ssl.keystore.type = JKS
+2025-12-09 01:32:16.959 | 	ssl.protocol = TLSv1.3
+2025-12-09 01:32:16.959 | 	ssl.provider = null
+2025-12-09 01:32:16.959 | 	ssl.secure.random.implementation = null
+2025-12-09 01:32:16.959 | 	ssl.trustmanager.algorithm = PKIX
+2025-12-09 01:32:16.959 | 	ssl.truststore.certificates = null
+2025-12-09 01:32:16.959 | 	ssl.truststore.location = null
+2025-12-09 01:32:16.959 | 	ssl.truststore.password = null
+2025-12-09 01:32:16.959 | 	ssl.truststore.type = JKS
+2025-12-09 01:32:16.959 | 	transaction.timeout.ms = 60000
+2025-12-09 01:32:16.959 | 	transaction.two.phase.commit.enable = false
+2025-12-09 01:32:16.959 | 	transactional.id = null
+2025-12-09 01:32:16.959 | 	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+2025-12-09 01:32:16.959 | 
+2025-12-09 01:32:16.992 | 2025-12-08T20:02:16.992Z  INFO 1 --- [bookingService] [nio-8080-exec-3] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-12-09 01:32:17.027 | 2025-12-08T20:02:17.026Z  INFO 1 --- [bookingService] [nio-8080-exec-3] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=bookingService-producer-1] Instantiated an idempotent producer.
+2025-12-09 01:32:17.052 | 2025-12-08T20:02:17.051Z  INFO 1 --- [bookingService] [nio-8080-exec-3] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2025-12-09 01:32:17.052 | 2025-12-08T20:02:17.051Z  INFO 1 --- [bookingService] [nio-8080-exec-3] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2025-12-09 01:32:17.052 | 2025-12-08T20:02:17.051Z  INFO 1 --- [bookingService] [nio-8080-exec-3] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1765224137051
+2025-12-09 01:32:17.105 | 2025-12-08T20:02:17.105Z  INFO 1 --- [bookingService] [vice-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=bookingService-producer-1] Cluster ID: RdJ7Cj9yTYmL6Q4oyLH8pg
+2025-12-09 01:32:17.323 | 2025-12-08T20:02:17.322Z  INFO 1 --- [bookingService] [vice-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=bookingService-producer-1] ProducerId set to 0 with epoch 0
+2025-12-09 01:32:34.715 | 2025-12-08T20:02:34.711Z  INFO 1 --- [bookingService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:37:34.730 | 2025-12-08T20:07:34.718Z  INFO 1 --- [bookingService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:42:34.735 | 2025-12-08T20:12:34.715Z  INFO 1 --- [bookingService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:47:34.764 | 2025-12-08T20:17:34.745Z  INFO 1 --- [bookingService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

@@ -1,0 +1,106 @@
+2025-12-09 01:21:54.667 | Picked up JAVA_TOOL_OPTIONS: -Dspring.profiles.active=docker -Dserver.port=6060 -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/ -Deureka.instance.prefer-ip-address=true
+2025-12-09 01:21:54.667 | 
+2025-12-09 01:21:59.778 | 
+2025-12-09 01:21:59.778 |   .   ____          _            __ _ _
+2025-12-09 01:21:59.778 |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-12-09 01:21:59.778 | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-12-09 01:21:59.778 |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-12-09 01:21:59.778 |   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-12-09 01:21:59.778 |  =========|_|==============|___/=/_/_/_/
+2025-12-09 01:21:59.778 | 
+2025-12-09 01:21:59.789 |  :: Spring Boot ::                (v3.4.0)
+2025-12-09 01:21:59.789 | 
+2025-12-09 01:22:00.411 | 2025-12-08T19:52:00.390Z  INFO 1 --- [applicationGateway] [           main] c.f.ApplicationGatewayApplication        : Starting ApplicationGatewayApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-09 01:22:00.415 | 2025-12-08T19:52:00.415Z  INFO 1 --- [applicationGateway] [           main] c.f.ApplicationGatewayApplication        : The following 1 profile is active: "docker"
+2025-12-09 01:22:06.416 | 2025-12-08T19:52:06.400Z  INFO 1 --- [applicationGateway] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=83f04c9f-5cda-3ecb-a5c2-a2b882966818
+2025-12-09 01:22:16.838 | 2025-12-08T19:52:16.837Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.838Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.838Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.838Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.838Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.838Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.838Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.838Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.838Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.839Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.839Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.839Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.839Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2025-12-09 01:22:16.839 | 2025-12-08T19:52:16.839Z  INFO 1 --- [applicationGateway] [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-12-09 01:22:18.291 | 2025-12-08T19:52:18.290Z  INFO 1 --- [applicationGateway] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-12-09 01:22:18.658 | 2025-12-08T19:52:18.657Z  WARN 1 --- [applicationGateway] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-09 01:22:18.994 | 2025-12-08T19:52:18.993Z  INFO 1 --- [applicationGateway] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-12-09 01:22:19.306 | 2025-12-08T19:52:19.281Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-12-09 01:22:19.348 | 2025-12-08T19:52:19.348Z  INFO 1 --- [applicationGateway] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:22:19.469 | 2025-12-08T19:52:19.468Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-12-09 01:22:19.469 | 2025-12-08T19:52:19.469Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-12-09 01:22:19.469 | 2025-12-08T19:52:19.469Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-12-09 01:22:19.469 | 2025-12-08T19:52:19.469Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-12-09 01:22:19.473 | 2025-12-08T19:52:19.472Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-12-09 01:22:19.473 | 2025-12-08T19:52:19.473Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-12-09 01:22:19.473 | 2025-12-08T19:52:19.473Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-12-09 01:22:22.513 | 2025-12-08T19:52:22.503Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-12-09 01:22:22.523 | 2025-12-08T19:52:22.522Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2025-12-09 01:22:22.537 | 2025-12-08T19:52:22.537Z  INFO 1 --- [applicationGateway] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-09 01:22:22.546 | 2025-12-08T19:52:22.545Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1765223542541 with initial instances count: 0
+2025-12-09 01:22:22.586 | 2025-12-08T19:52:22.586Z  INFO 1 --- [applicationGateway] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application APPLICATIONGATEWAY with eureka with status UP
+2025-12-09 01:22:22.591 | 2025-12-08T19:52:22.587Z  INFO 1 --- [applicationGateway] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1765223542587, current=UP, previous=STARTING]
+2025-12-09 01:22:22.597 | 2025-12-08T19:52:22.596Z  INFO 1 --- [applicationGateway] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPLICATIONGATEWAY/61780109d969:applicationGateway:6060: registering service...
+2025-12-09 01:22:23.236 | 2025-12-08T19:52:23.235Z  INFO 1 --- [applicationGateway] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_APPLICATIONGATEWAY/61780109d969:applicationGateway:6060 - registration status: 204
+2025-12-09 01:22:23.453 | 2025-12-08T19:52:23.448Z  INFO 1 --- [applicationGateway] [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 6060 (http)
+2025-12-09 01:22:23.482 | 2025-12-08T19:52:23.481Z  INFO 1 --- [applicationGateway] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 6060
+2025-12-09 01:22:23.640 | 2025-12-08T19:52:23.640Z  INFO 1 --- [applicationGateway] [           main] c.f.ApplicationGatewayApplication        : Started ApplicationGatewayApplication in 25.19 seconds (process running for 28.972)
+2025-12-09 01:22:40.962 | GATEWAY HIT: /flight/search
+2025-12-09 01:22:41.157 | 2025-12-08T19:52:41.156Z  WARN 1 --- [applicationGateway] [ctor-http-nio-2] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: FLIGHTSERVICE
+2025-12-09 01:22:52.517 | 2025-12-08T19:52:52.515Z  INFO 1 --- [applicationGateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-12-09 01:22:52.517 | 2025-12-08T19:52:52.517Z  INFO 1 --- [applicationGateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-12-09 01:22:52.517 | 2025-12-08T19:52:52.517Z  INFO 1 --- [applicationGateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-12-09 01:22:52.517 | 2025-12-08T19:52:52.517Z  INFO 1 --- [applicationGateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-12-09 01:22:52.517 | 2025-12-08T19:52:52.517Z  INFO 1 --- [applicationGateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-12-09 01:22:52.517 | 2025-12-08T19:52:52.517Z  INFO 1 --- [applicationGateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2025-12-09 01:22:52.517 | 2025-12-08T19:52:52.517Z  INFO 1 --- [applicationGateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-12-09 01:22:52.591 | 2025-12-08T19:52:52.591Z  INFO 1 --- [applicationGateway] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-12-09 01:23:03.205 | GATEWAY HIT: /flight/search
+2025-12-09 01:23:17.416 | GATEWAY HIT: /flight/692d9091d708551bd5d85e75
+2025-12-09 01:23:22.412 | GATEWAY HIT: /flight/all
+2025-12-09 01:23:27.321 | GATEWAY HIT: /flight/all
+2025-12-09 01:24:26.147 | GATEWAY HIT: /flight/airline/inventory
+2025-12-09 01:24:26.536 | DEBUG: Path requested: /flight/airline/inventory
+2025-12-09 01:24:26.536 | DEBUG: User Role found: ROLE_USER
+2025-12-09 01:27:01.213 | GATEWAY HIT: /flight/airline/inventory
+2025-12-09 01:27:01.277 | DEBUG: Path requested: /flight/airline/inventory
+2025-12-09 01:27:01.277 | DEBUG: User Role found: ROLE_ADMIN
+2025-12-09 01:27:19.476 | 2025-12-08T19:57:19.464Z  INFO 1 --- [applicationGateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:28:37.647 | GATEWAY HIT: /flight/search
+2025-12-09 01:28:57.101 | GATEWAY HIT: /flight/search
+2025-12-09 01:29:56.001 | GATEWAY HIT: /flight/69372d8dd9462a8614b37518
+2025-12-09 01:30:30.404 | GATEWAY HIT: /flight/all
+2025-12-09 01:31:19.736 | GATEWAY HIT: /booking
+2025-12-09 01:31:19.756 | DEBUG: Path requested: /booking
+2025-12-09 01:31:19.757 | DEBUG: User Role found: ROLE_USER
+2025-12-09 01:31:36.041 | GATEWAY HIT: /booking
+2025-12-09 01:31:36.060 | DEBUG: Path requested: /booking
+2025-12-09 01:31:36.060 | DEBUG: User Role found: ROLE_USER
+2025-12-09 01:32:16.609 | GATEWAY HIT: /booking
+2025-12-09 01:32:16.630 | DEBUG: Path requested: /booking
+2025-12-09 01:32:16.630 | DEBUG: User Role found: ROLE_USER
+2025-12-09 01:32:19.495 | 2025-12-08T20:02:19.483Z  INFO 1 --- [applicationGateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:34:39.922 | GATEWAY HIT: /booking/ticket/PNR7396D7
+2025-12-09 01:34:40.045 | 2025-12-08T20:04:39.982Z ERROR 1 --- [applicationGateway] [ctor-http-nio-4] a.w.r.e.AbstractErrorWebExceptionHandler : [850aff89-23]  500 Server Error for HTTP GET "/booking/ticket/PNR7396D7"
+2025-12-09 01:34:40.045 | 
+2025-12-09 01:34:40.045 | 
+2025-12-09 01:35:24.822 | GATEWAY HIT: /booking/ticket/PNR7396D7
+2025-12-09 01:35:24.849 | DEBUG: Path requested: /booking/ticket/PNR7396D7
+2025-12-09 01:35:24.849 | DEBUG: User Role found: ROLE_ADMIN
+2025-12-09 01:36:21.138 | GATEWAY HIT: /booking/history/himanshu@gmail.com
+2025-12-09 01:36:21.154 | DEBUG: Path requested: /booking/history/himanshu@gmail.com
+2025-12-09 01:36:21.154 | DEBUG: User Role found: ROLE_ADMIN
+2025-12-09 01:37:19.507 | 2025-12-08T20:07:19.502Z  INFO 1 --- [applicationGateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:37:57.088 | GATEWAY HIT: /booking/history/himanshu@gmail.com
+2025-12-09 01:37:57.105 | DEBUG: Path requested: /booking/history/himanshu@gmail.com
+2025-12-09 01:37:57.105 | DEBUG: User Role found: ROLE_ADMIN
+2025-12-09 01:38:12.379 | GATEWAY HIT: /booking/cancel/PNR7396D7
+2025-12-09 01:38:22.830 | GATEWAY HIT: /booking/cancel/PNR7396D7
+2025-12-09 01:38:22.848 | DEBUG: Path requested: /booking/cancel/PNR7396D7
+2025-12-09 01:38:22.848 | DEBUG: User Role found: ROLE_ADMIN
+2025-12-09 01:42:19.532 | 2025-12-08T20:12:19.507Z  INFO 1 --- [applicationGateway] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

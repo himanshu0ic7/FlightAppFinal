@@ -1,0 +1,606 @@
+{
+	"info": {
+		"_postman_id": "4e9f3d8b-25a0-4f95-b160-0fc38edb9a33",
+		"name": "FlightMicroService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33106661",
+		"_collection_link": "https://guvilearning.postman.co/workspace/ChubbGuvi~c18d836d-ce45-470b-a996-7ab888751c31/collection/33106661-4e9f3d8b-25a0-4f95-b160-0fc38edb9a33?action=share&source=collection_link&creator=33106661"
+	},
+	"item": [
+		{
+			"name": "FlightService",
+			"item": [
+				{
+					"name": "addFlight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"airlineName\": \"Emirates\",\n    \"fromPlace\": \"DEL\",\n    \"toPlace\": \"HYD\",\n    \"flightDateTime\": \"2025-12-23T10:30:00\",\n    \"price\": 2300.00,\n    \"totalSeats\": 60\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flightbaseURL}}/flight/airline/inventory",
+							"host": [
+								"{{flightbaseURL}}"
+							],
+							"path": [
+								"flight",
+								"airline",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFlightById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"airlineName\": \"Emirates\",\n    \"fromPlace\": \"DEL\",\n    \"toPlace\": \"HYD\",\n    \"flightDateTime\": \"2025-12-25T10:30:00\",\n    \"price\": 2300.00,\n    \"totalSeats\": 60\n}"
+						},
+						"url": {
+							"raw": "{{flightbaseURL}}/flight/692d9091d708551bd5d85e75",
+							"host": [
+								"{{flightbaseURL}}"
+							],
+							"path": [
+								"flight",
+								"692d9091d708551bd5d85e75"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllFlight",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"airlineName\": \"Emirates\",\n    \"fromPlace\": \"DEL\",\n    \"toPlace\": \"HYD\",\n    \"flightDateTime\": \"2025-12-25T10:30:00\",\n    \"price\": 2300.00,\n    \"totalSeats\": 60\n}"
+						},
+						"url": {
+							"raw": "{{flightbaseURL}}/flight/all",
+							"host": [
+								"{{flightbaseURL}}"
+							],
+							"path": [
+								"flight",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchFlight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fromPlace\": \"DEL\",\n  \"toPlace\": \"HYD\",\n  \"journeyDate\": \"2025-12-22\",\n  \"tripType\": \"ONE_WAY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flightbaseURL}}/flight/search",
+							"host": [
+								"{{flightbaseURL}}"
+							],
+							"path": [
+								"flight",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookingService",
+			"item": [
+				{
+					"name": "bookTicket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Himanshu\",\n  \"emailId\": \"himanshu825406@gmail.com\",\n  \"numberOfSeats\": 2,\n  \"flightId\": \"693678d8b494eb46fb29867f\",\n  \"mobileNumber\": \"6206869451\",\n  \"passengers\": [\n    {\n      \"name\": \"Aadi Jain\",\n      \"gender\": \"MALE\",\n      \"age\": 22,\n      \"passengerId\": \"3\"\n    },\n    {\n      \"name\": \"Nikhil\",\n      \"gender\": \"MALE\",\n      \"age\": 21,\n      \"passengerId\": \"4\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bookingBaseURL}}/booking",
+							"host": [
+								"{{bookingBaseURL}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTicketByPNR",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Himanshu\",\n  \"emailId\": \"himanshu825406@gmail.com\",\n  \"numberOfSeats\": 2,\n  \"flightId\": \"692cdcd050b028c3a80bd3d3\",\n  \"mobileNumber\": \"+916206869451\",\n  \"passengers\": [\n    {\n      \"name\": \"Vasu Gupta\",\n      \"gender\": \"MALE\",\n      \"age\": 22\n    },\n    {\n      \"name\": \"Aadi Jain\",\n      \"gender\": \"MALE\",\n      \"age\": 21\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{bookingBaseURL}}/booking/ticket/PNR48D3E5",
+							"host": [
+								"{{bookingBaseURL}}"
+							],
+							"path": [
+								"booking",
+								"ticket",
+								"PNR48D3E5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookingHistory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Himanshu\",\n  \"emailId\": \"himanshu825406@gmail.com\",\n  \"numberOfSeats\": 2,\n  \"flightId\": \"692cdcd050b028c3a80bd3d3\",\n  \"mobileNumber\": \"+916206869451\",\n  \"passengers\": [\n    {\n      \"name\": \"Vasu Gupta\",\n      \"gender\": \"MALE\",\n      \"age\": 22\n    },\n    {\n      \"name\": \"Aadi Jain\",\n      \"gender\": \"MALE\",\n      \"age\": 21\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{bookingBaseURL}}/booking/history/himanshu825406@gmail.com",
+							"host": [
+								"{{bookingBaseURL}}"
+							],
+							"path": [
+								"booking",
+								"history",
+								"himanshu825406@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelTicket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{bookingBaseURL}}/booking/cancel/PNR48D3E5",
+							"host": [
+								"{{bookingBaseURL}}"
+							],
+							"path": [
+								"booking",
+								"cancel",
+								"PNR48D3E5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ApplicationGateway",
+			"item": [
+				{
+					"name": "searchFlight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fromPlace\": \"DEL\",\n  \"toPlace\": \"HYD\",\n  \"journeyDate\": \"2025-12-22\",\n  \"tripType\": \"ONE_WAY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gatewayBaseURL}}/flight/search",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"flight",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFlightById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{gatewayBaseURL}}/flight/692d9091d708551bd5d85e75",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"flight",
+								"692d9091d708551bd5d85e75"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllFlight",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{gatewayBaseURL}}/flight/all",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"flight",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addFlight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"airlineName\": \"Emirates\",\n    \"fromPlace\": \"DEL\",\n    \"toPlace\": \"HYD\",\n    \"flightDateTime\": \"2026-01-25T10:30:00\",\n    \"price\": 2300.00,\n    \"totalSeats\": 60\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gatewayBaseURL}}/flight/airline/inventory",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"flight",
+								"airline",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookTicket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Himanshu\",\n  \"emailId\": \"himanshu825406@gmail.com\",\n  \"numberOfSeats\": 2,\n  \"flightId\": \"6936bd75af42c3e36a4913c3\",\n  \"mobileNumber\": \"6206869451\",\n  \"passengers\": [\n    {\n      \"name\": \"Any Gupta\",\n      \"gender\": \"MALE\",\n    //   \"passengerId\": \"3\",\n      \"age\": 22\n    },\n    {\n      \"name\": \"Test Jain\",\n      \"gender\": \"MALE\",\n    //   \"passengerId\": \"4\",\n      \"age\": 21\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gatewayBaseURL}}/booking",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTicketByPNR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{gatewayBaseURL}}/booking/ticket/PNR52B387",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"booking",
+								"ticket",
+								"PNR52B387"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookingHistory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{gatewayBaseURL}}/booking/history/himanshu825406@gmail.com",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"booking",
+								"history",
+								"himanshu825406@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelTicket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{gatewayBaseURL}}/booking/cancel/PNR52B387",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"booking",
+								"cancel",
+								"PNR52B387"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Himanshu\",\n    \"email\": \"himanshu825406@gmail.com\",\n    \"password\": \"Password@123\",\n    \"role\": \"ROLE_ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gatewayBaseURL}}/auth/register",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "validate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{gatewayBaseURL}}/auth/validate?token",
+							"host": [
+								"{{gatewayBaseURL}}"
+							],
+							"path": [
+								"auth",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "securityService",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Admin-Secret",
+								"value": "FlightAdminKey123!",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Himanshu\",\n    \"email\": \"himanshu825406@gmail.com\",\n    \"password\": \"password\",\n    \"role\": \"ROLE_USER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{securityBaseURL}}/auth/register",
+							"host": [
+								"{{securityBaseURL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Himanshu\",\n    \"password\": \"Password@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{securityBaseURL}}/auth/token",
+							"host": [
+								"{{securityBaseURL}}"
+							],
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{securityBaseURL}}/auth/validate?token=eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwic3ViIjoiSGltYW5zaHUiLCJpYXQiOjE3NjUyMDYzNTYsImV4cCI6MTc2NTIwODE1Nn0.-J-dGM41lqTx2cOyHf-5U1XemZSP3vncXga4_C970pM",
+							"host": [
+								"{{securityBaseURL}}"
+							],
+							"path": [
+								"auth",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwic3ViIjoiSGltYW5zaHUiLCJpYXQiOjE3NjUyMDYzNTYsImV4cCI6MTc2NTIwODE1Nn0.-J-dGM41lqTx2cOyHf-5U1XemZSP3vncXga4_C970pM"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "flightbaseURL",
+			"value": ""
+		},
+		{
+			"key": "bookingBaseURL",
+			"value": ""
+		},
+		{
+			"key": "gatewayBaseURL",
+			"value": ""
+		},
+		{
+			"key": "securityBaseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,413 @@
+2025-12-09 01:21:48.019 | Picked up JAVA_TOOL_OPTIONS: -Deureka.server.enable-self-preservation=false -Deureka.server.eviction-interval-timer-in-ms=5000 -Deureka.instance.lease-renewal-interval-in-seconds=5 -Deureka.instance.lease-expiration-duration-in-seconds=10
+2025-12-09 01:21:48.020 | 
+2025-12-09 01:21:49.011 | 
+2025-12-09 01:21:49.011 |   .   ____          _            __ _ _
+2025-12-09 01:21:49.011 |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-12-09 01:21:49.011 | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-12-09 01:21:49.011 |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-12-09 01:21:49.011 |   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-12-09 01:21:49.011 |  =========|_|==============|___/=/_/_/_/
+2025-12-09 01:21:49.011 | 
+2025-12-09 01:21:49.011 |  :: Spring Boot ::                (v4.0.0)
+2025-12-09 01:21:49.011 | 
+2025-12-09 01:21:49.122 | 2025-12-08T19:51:49.117Z  INFO 1 --- [eurekaServer] [           main] com.flightApp.EurekaServerApplication    : Starting EurekaServerApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-09 01:21:49.122 | 2025-12-08T19:51:49.121Z  INFO 1 --- [eurekaServer] [           main] com.flightApp.EurekaServerApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-12-09 01:21:49.887 | 2025-12-08T19:51:49.887Z  INFO 1 --- [eurekaServer] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=cf11047e-6adc-3d88-a41c-fb77e34074b4
+2025-12-09 01:21:50.166 | 2025-12-08T19:51:50.166Z  INFO 1 --- [eurekaServer] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8761 (http)
+2025-12-09 01:21:50.174 | 2025-12-08T19:51:50.173Z  INFO 1 --- [eurekaServer] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09 01:21:50.174 | 2025-12-08T19:51:50.174Z  INFO 1 --- [eurekaServer] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-09 01:21:50.192 | 2025-12-08T19:51:50.191Z  INFO 1 --- [eurekaServer] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1020 ms
+2025-12-09 01:21:51.056 | 2025-12-08T19:51:51.055Z  INFO 1 --- [eurekaServer] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2025-12-09 01:21:51.056 | 2025-12-08T19:51:51.056Z  INFO 1 --- [eurekaServer] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2025-12-09 01:21:51.363 | 2025-12-08T19:51:51.362Z  INFO 1 --- [eurekaServer] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2025-12-09 01:21:51.363 | 2025-12-08T19:51:51.362Z  INFO 1 --- [eurekaServer] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2025-12-09 01:21:51.639 | 2025-12-08T19:51:51.638Z  INFO 1 --- [eurekaServer] [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-09 01:21:52.401 | 2025-12-08T19:51:52.400Z  WARN 1 --- [eurekaServer] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-09 01:21:52.428 | 2025-12-08T19:51:52.428Z  INFO 1 --- [eurekaServer] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-12-09 01:21:52.449 | 2025-12-08T19:51:52.449Z  INFO 1 --- [eurekaServer] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-12-09 01:21:52.449 | 2025-12-08T19:51:52.449Z  INFO 1 --- [eurekaServer] [           main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2025-12-09 01:21:52.450 | 2025-12-08T19:51:52.450Z  INFO 1 --- [eurekaServer] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1765223512449 with initial instances count: 0
+2025-12-09 01:21:52.492 | 2025-12-08T19:51:52.492Z  INFO 1 --- [eurekaServer] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2025-12-09 01:21:52.494 | 2025-12-08T19:51:52.494Z  INFO 1 --- [eurekaServer] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2025-12-09 01:21:52.683 | 2025-12-08T19:51:52.683Z  INFO 1 --- [eurekaServer] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2025-12-09 01:21:52.683 | 2025-12-08T19:51:52.683Z  INFO 1 --- [eurekaServer] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2025-12-09 01:21:52.683 | 2025-12-08T19:51:52.683Z  INFO 1 --- [eurekaServer] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2025-12-09 01:21:52.683 | 2025-12-08T19:51:52.683Z  INFO 1 --- [eurekaServer] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2025-12-09 01:21:52.741 | 2025-12-08T19:51:52.740Z  INFO 1 --- [eurekaServer] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2025-12-09 01:21:52.764 | 2025-12-08T19:51:52.764Z  INFO 1 --- [eurekaServer] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2025-12-09 01:21:52.764 | 2025-12-08T19:51:52.764Z  INFO 1 --- [eurekaServer] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2025-12-09 01:21:52.770 | 2025-12-08T19:51:52.770Z  INFO 1 --- [eurekaServer] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-09 01:21:52.823 | 2025-12-08T19:51:52.822Z  INFO 1 --- [eurekaServer] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKASERVER with eureka with status UP
+2025-12-09 01:21:52.840 | 2025-12-08T19:51:52.839Z  INFO 1 --- [eurekaServer] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2025-12-09 01:21:52.840 | 2025-12-08T19:51:52.839Z  INFO 1 --- [eurekaServer] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2025-12-09 01:21:52.840 | 2025-12-08T19:51:52.839Z  INFO 1 --- [eurekaServer] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2025-12-09 01:21:52.840 | 2025-12-08T19:51:52.839Z  INFO 1 --- [eurekaServer] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2025-12-09 01:21:52.840 | 2025-12-08T19:51:52.840Z  INFO 1 --- [eurekaServer] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2025-12-09 01:21:52.841 | 2025-12-08T19:51:52.841Z  INFO 1 --- [eurekaServer] [       Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2025-12-09 01:21:52.872 | 2025-12-08T19:51:52.872Z  INFO 1 --- [eurekaServer] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8761 (http) with context path '/'
+2025-12-09 01:21:52.873 | 2025-12-08T19:51:52.873Z  INFO 1 --- [eurekaServer] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2025-12-09 01:21:52.883 | 2025-12-08T19:51:52.883Z  INFO 1 --- [eurekaServer] [           main] com.flightApp.EurekaServerApplication    : Started EurekaServerApplication in 4.141 seconds (process running for 4.864)
+2025-12-09 01:21:53.214 | 2025-12-08T19:51:53.214Z  INFO 1 --- [eurekaServer] [nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09 01:21:53.215 | 2025-12-08T19:51:53.214Z  INFO 1 --- [eurekaServer] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09 01:21:53.216 | 2025-12-08T19:51:53.215Z  INFO 1 --- [eurekaServer] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-09 01:21:57.856 | 2025-12-08T19:51:57.848Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:22:02.871 | 2025-12-08T19:52:02.845Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:22:08.136 | 2025-12-08T19:52:07.983Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-12-09 01:22:12.858 | 2025-12-08T19:52:12.848Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:22:17.869 | 2025-12-08T19:52:17.850Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:22:22.852 | 2025-12-08T19:52:22.850Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:22:23.191 | 2025-12-08T19:52:23.191Z  INFO 1 --- [eurekaServer] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLICATIONGATEWAY/61780109d969:applicationGateway:6060 with status UP (replication=false)
+2025-12-09 01:22:23.609 | 2025-12-08T19:52:23.607Z  INFO 1 --- [eurekaServer] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATIONSERVICE/c76c8af7b355:notificationService:9090 with status UP (replication=false)
+2025-12-09 01:22:24.527 | 2025-12-08T19:52:24.526Z  INFO 1 --- [eurekaServer] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLICATIONGATEWAY/61780109d969:applicationGateway:6060 with status UP (replication=true)
+2025-12-09 01:22:24.530 | 2025-12-08T19:52:24.529Z  INFO 1 --- [eurekaServer] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance NOTIFICATIONSERVICE/c76c8af7b355:notificationService:9090 with status UP (replication=true)
+2025-12-09 01:22:25.367 | 2025-12-08T19:52:25.366Z  INFO 1 --- [eurekaServer] [io-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SECURITYSERVICE/32fd53fc824d:securityService:9898 with status UP (replication=false)
+2025-12-09 01:22:25.917 | 2025-12-08T19:52:25.911Z  INFO 1 --- [eurekaServer] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SECURITYSERVICE/32fd53fc824d:securityService:9898 with status UP (replication=true)
+2025-12-09 01:22:27.858 | 2025-12-08T19:52:27.853Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:22:28.752 | 2025-12-08T19:52:28.684Z ERROR 1 --- [eurekaServer] [get_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+2025-12-09 01:22:28.753 | 
+2025-12-09 01:22:28.753 | jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:535) ~[jersey-apache-connector-3.0.5.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300) ~[jersey-client-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:671) ~[jersey-client-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:706) ~[jersey-client-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:700) ~[jersey-client-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.internal.Errors.process(Errors.java:292) ~[jersey-common-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.internal.Errors.process(Errors.java:274) ~[jersey-common-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.internal.Errors.process(Errors.java:205) ~[jersey-common-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:391) ~[jersey-common-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:700) ~[jersey-client-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:670) ~[jersey-client-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:436) ~[jersey-client-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:342) ~[jersey-client-4.0.0.jar!/:na]
+2025-12-09 01:22:28.753 | 	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116) ~[eureka-core-jersey3-2.0.5.jar!/:2.0.5]
+2025-12-09 01:22:28.753 | 	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80) ~[eureka-core-2.0.5.jar!/:2.0.5]
+2025-12-09 01:22:28.753 | 	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:178) ~[eureka-core-2.0.5.jar!/:2.0.5]
+2025-12-09 01:22:28.753 | 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+2025-12-09 01:22:28.753 | Caused by: java.net.SocketTimeoutException: Read timed out
+2025-12-09 01:22:28.753 | 	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288) ~[na:na]
+2025-12-09 01:22:28.753 | 	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314) ~[na:na]
+2025-12-09 01:22:28.753 | 	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355) ~[na:na]
+2025-12-09 01:22:28.753 | 	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808) ~[na:na]
+2025-12-09 01:22:28.753 | 	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137) ~[httpcore-4.4.16.jar!/:4.4.16]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153) ~[httpcore-4.4.16.jar!/:4.4.16]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280) ~[httpcore-4.4.16.jar!/:4.4.16]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.3.jar!/:4.5.3]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.3.jar!/:4.5.3]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.16.jar!/:4.4.16]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163) ~[httpcore-4.4.16.jar!/:4.4.16]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:165) ~[httpclient-4.5.3.jar!/:4.5.3]
+2025-12-09 01:22:28.753 | 	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.16.jar!/:4.4.16]
+2025-12-09 01:22:28.753 | 	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.16.jar!/:4.4.16]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.3.jar!/:4.5.3]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185) ~[httpclient-4.5.3.jar!/:4.5.3]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.3.jar!/:4.5.3]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111) ~[httpclient-4.5.3.jar!/:4.5.3]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.3.jar!/:4.5.3]
+2025-12-09 01:22:28.753 | 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.3.jar!/:4.5.3]
+2025-12-09 01:22:28.753 | 	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:487) ~[jersey-apache-connector-3.0.5.jar!/:na]
+2025-12-09 01:22:28.753 | 	... 16 common frames omitted
+2025-12-09 01:22:28.753 | 
+2025-12-09 01:22:28.756 | 2025-12-08T19:52:28.755Z  INFO 1 --- [eurekaServer] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance FLIGHTSERVICE/d25017c67697:flightService:7070 with status UP (replication=false)
+2025-12-09 01:22:29.954 | 2025-12-08T19:52:29.942Z  INFO 1 --- [eurekaServer] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance FLIGHTSERVICE/d25017c67697:flightService:7070 with status UP (replication=true)
+2025-12-09 01:22:32.863 | 2025-12-08T19:52:32.854Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
+2025-12-09 01:22:35.796 | 2025-12-08T19:52:35.794Z  INFO 1 --- [eurekaServer] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BOOKINGSERVICE/db96c3486579:bookingService:8080 with status UP (replication=false)
+2025-12-09 01:22:36.328 | 2025-12-08T19:52:36.328Z  INFO 1 --- [eurekaServer] [nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BOOKINGSERVICE/db96c3486579:bookingService:8080 with status UP (replication=true)
+2025-12-09 01:22:37.871 | 2025-12-08T19:52:37.860Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:22:42.860 | 2025-12-08T19:52:42.859Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:22:47.865 | 2025-12-08T19:52:47.861Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:22:52.864 | 2025-12-08T19:52:52.863Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:22:57.869 | 2025-12-08T19:52:57.865Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:23:02.874 | 2025-12-08T19:53:02.872Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:23:07.880 | 2025-12-08T19:53:07.874Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:23:12.882 | 2025-12-08T19:53:12.875Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:23:17.927 | 2025-12-08T19:53:17.892Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-12-09 01:23:22.881 | 2025-12-08T19:53:22.879Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:23:27.885 | 2025-12-08T19:53:27.882Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:23:32.889 | 2025-12-08T19:53:32.882Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:23:37.886 | 2025-12-08T19:53:37.882Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:23:42.887 | 2025-12-08T19:53:42.883Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:23:47.888 | 2025-12-08T19:53:47.885Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:23:52.889 | 2025-12-08T19:53:52.887Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:23:57.891 | 2025-12-08T19:53:57.889Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:24:02.894 | 2025-12-08T19:54:02.890Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:24:07.901 | 2025-12-08T19:54:07.891Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:24:12.899 | 2025-12-08T19:54:12.893Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:24:17.921 | 2025-12-08T19:54:17.900Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:24:22.902 | 2025-12-08T19:54:22.895Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:24:27.899 | 2025-12-08T19:54:27.895Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:24:32.905 | 2025-12-08T19:54:32.900Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:24:37.899 | 2025-12-08T19:54:37.899Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:24:42.906 | 2025-12-08T19:54:42.902Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:24:47.903 | 2025-12-08T19:54:47.903Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:24:52.906 | 2025-12-08T19:54:52.905Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:24:57.908 | 2025-12-08T19:54:57.907Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:25:02.910 | 2025-12-08T19:55:02.907Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:25:07.916 | 2025-12-08T19:55:07.910Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:25:12.910 | 2025-12-08T19:55:12.909Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:25:17.919 | 2025-12-08T19:55:17.912Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:25:22.915 | 2025-12-08T19:55:22.913Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:25:27.927 | 2025-12-08T19:55:27.915Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:25:32.921 | 2025-12-08T19:55:32.917Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:25:37.930 | 2025-12-08T19:55:37.920Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:25:42.924 | 2025-12-08T19:55:42.920Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:25:47.925 | 2025-12-08T19:55:47.922Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:25:52.925 | 2025-12-08T19:55:52.923Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:25:57.928 | 2025-12-08T19:55:57.926Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:26:02.929 | 2025-12-08T19:56:02.927Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 28ms
+2025-12-09 01:26:07.945 | 2025-12-08T19:56:07.931Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:26:12.942 | 2025-12-08T19:56:12.929Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:26:17.940 | 2025-12-08T19:56:17.932Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:26:22.936 | 2025-12-08T19:56:22.932Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:26:27.937 | 2025-12-08T19:56:27.934Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:26:32.946 | 2025-12-08T19:56:32.939Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 16ms
+2025-12-09 01:26:37.943 | 2025-12-08T19:56:37.939Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:26:42.941 | 2025-12-08T19:56:42.939Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:26:47.946 | 2025-12-08T19:56:47.942Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:26:52.949 | 2025-12-08T19:56:52.946Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-12-09 01:26:57.953 | 2025-12-08T19:56:57.949Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:27:02.968 | 2025-12-08T19:57:02.956Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-12-09 01:27:07.958 | 2025-12-08T19:57:07.952Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:27:12.957 | 2025-12-08T19:57:12.953Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:27:17.980 | 2025-12-08T19:57:17.968Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
+2025-12-09 01:27:22.968 | 2025-12-08T19:57:22.965Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:27:27.966 | 2025-12-08T19:57:27.966Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:27:32.971 | 2025-12-08T19:57:32.967Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 21ms
+2025-12-09 01:27:37.968 | 2025-12-08T19:57:37.968Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:27:42.973 | 2025-12-08T19:57:42.971Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:27:47.970 | 2025-12-08T19:57:47.970Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:27:52.975 | 2025-12-08T19:57:52.972Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:27:57.975 | 2025-12-08T19:57:57.974Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:28:03.005 | 2025-12-08T19:58:02.999Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:28:08.001 | 2025-12-08T19:58:07.999Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:28:13.002 | 2025-12-08T19:58:12.999Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:28:18.019 | 2025-12-08T19:58:18.006Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:28:23.011 | 2025-12-08T19:58:23.005Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-12-09 01:28:28.008 | 2025-12-08T19:58:28.006Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:28:33.013 | 2025-12-08T19:58:33.008Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:28:38.013 | 2025-12-08T19:58:38.007Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:28:43.015 | 2025-12-08T19:58:43.010Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:28:48.010 | 2025-12-08T19:58:48.009Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:28:53.012 | 2025-12-08T19:58:53.010Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:28:58.015 | 2025-12-08T19:58:58.012Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:29:03.017 | 2025-12-08T19:59:03.015Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:29:08.014 | 2025-12-08T19:59:08.012Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:29:13.018 | 2025-12-08T19:59:13.014Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:29:18.093 | 2025-12-08T19:59:18.037Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 18ms
+2025-12-09 01:29:23.037 | 2025-12-08T19:59:23.034Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:29:28.036 | 2025-12-08T19:59:28.034Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:29:33.038 | 2025-12-08T19:59:33.034Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:29:38.037 | 2025-12-08T19:59:38.035Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:29:43.041 | 2025-12-08T19:59:43.037Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:29:48.039 | 2025-12-08T19:59:48.038Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:29:53.039 | 2025-12-08T19:59:53.037Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:29:58.040 | 2025-12-08T19:59:58.039Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:30:03.042 | 2025-12-08T20:00:03.041Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:30:08.046 | 2025-12-08T20:00:08.044Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:30:13.046 | 2025-12-08T20:00:13.044Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:30:18.052 | 2025-12-08T20:00:18.046Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:30:23.048 | 2025-12-08T20:00:23.046Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:30:28.049 | 2025-12-08T20:00:28.047Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:30:33.053 | 2025-12-08T20:00:33.048Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:30:38.050 | 2025-12-08T20:00:38.048Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:30:43.055 | 2025-12-08T20:00:43.051Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:30:48.056 | 2025-12-08T20:00:48.053Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:30:53.055 | 2025-12-08T20:00:53.053Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:30:58.059 | 2025-12-08T20:00:58.056Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:31:03.059 | 2025-12-08T20:01:03.057Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:31:08.065 | 2025-12-08T20:01:08.059Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:31:13.073 | 2025-12-08T20:01:13.062Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:31:18.129 | 2025-12-08T20:01:18.127Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 65ms
+2025-12-09 01:31:23.128 | 2025-12-08T20:01:23.127Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:31:28.129 | 2025-12-08T20:01:28.128Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:31:33.133 | 2025-12-08T20:01:33.131Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:31:38.135 | 2025-12-08T20:01:38.134Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:31:43.140 | 2025-12-08T20:01:43.136Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:31:48.140 | 2025-12-08T20:01:48.137Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:31:53.139 | 2025-12-08T20:01:53.139Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:31:58.142 | 2025-12-08T20:01:58.140Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:32:03.147 | 2025-12-08T20:02:03.142Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:32:08.149 | 2025-12-08T20:02:08.144Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:32:13.148 | 2025-12-08T20:02:13.145Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:32:18.152 | 2025-12-08T20:02:18.149Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:32:23.151 | 2025-12-08T20:02:23.148Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:32:28.152 | 2025-12-08T20:02:28.149Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:32:33.152 | 2025-12-08T20:02:33.149Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:32:38.152 | 2025-12-08T20:02:38.150Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:32:43.158 | 2025-12-08T20:02:43.153Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:32:48.153 | 2025-12-08T20:02:48.151Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:32:53.160 | 2025-12-08T20:02:53.155Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:32:58.157 | 2025-12-08T20:02:58.155Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:33:03.160 | 2025-12-08T20:03:03.156Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:33:08.161 | 2025-12-08T20:03:08.159Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:33:13.166 | 2025-12-08T20:03:13.161Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:33:18.165 | 2025-12-08T20:03:18.162Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:33:23.168 | 2025-12-08T20:03:23.163Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:33:28.172 | 2025-12-08T20:03:28.166Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:33:33.169 | 2025-12-08T20:03:33.166Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:33:38.169 | 2025-12-08T20:03:38.167Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:33:43.172 | 2025-12-08T20:03:43.168Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:33:48.173 | 2025-12-08T20:03:48.171Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:33:53.172 | 2025-12-08T20:03:53.170Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:33:58.173 | 2025-12-08T20:03:58.171Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:34:03.174 | 2025-12-08T20:04:03.172Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:34:08.176 | 2025-12-08T20:04:08.174Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:34:13.193 | 2025-12-08T20:04:13.182Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:34:18.180 | 2025-12-08T20:04:18.179Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:34:23.186 | 2025-12-08T20:04:23.181Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:34:28.185 | 2025-12-08T20:04:28.182Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:34:33.187 | 2025-12-08T20:04:33.183Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:34:38.186 | 2025-12-08T20:04:38.184Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:34:43.191 | 2025-12-08T20:04:43.186Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:34:48.188 | 2025-12-08T20:04:48.187Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:34:53.193 | 2025-12-08T20:04:53.190Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:34:58.191 | 2025-12-08T20:04:58.190Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:35:03.193 | 2025-12-08T20:05:03.193Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:35:08.197 | 2025-12-08T20:05:08.195Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:35:13.202 | 2025-12-08T20:05:13.196Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:35:18.198 | 2025-12-08T20:05:18.198Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:35:23.203 | 2025-12-08T20:05:23.200Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:35:28.203 | 2025-12-08T20:05:28.201Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:35:33.205 | 2025-12-08T20:05:33.202Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:35:38.207 | 2025-12-08T20:05:38.205Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-12-09 01:35:43.210 | 2025-12-08T20:05:43.207Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:35:48.211 | 2025-12-08T20:05:48.209Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:35:53.214 | 2025-12-08T20:05:53.211Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:35:58.214 | 2025-12-08T20:05:58.211Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:36:03.218 | 2025-12-08T20:06:03.213Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:36:08.224 | 2025-12-08T20:06:08.213Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:36:13.225 | 2025-12-08T20:06:13.217Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:36:18.224 | 2025-12-08T20:06:18.220Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:36:23.225 | 2025-12-08T20:06:23.221Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:36:28.226 | 2025-12-08T20:06:28.223Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:36:33.230 | 2025-12-08T20:06:33.226Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:36:38.230 | 2025-12-08T20:06:38.228Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:36:43.232 | 2025-12-08T20:06:43.229Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:36:48.234 | 2025-12-08T20:06:48.229Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:36:52.774 | 2025-12-08T20:06:52.773Z  INFO 1 --- [eurekaServer] [hresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 0
+2025-12-09 01:36:53.229 | 2025-12-08T20:06:53.229Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:36:58.233 | 2025-12-08T20:06:58.231Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:37:03.236 | 2025-12-08T20:07:03.231Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:37:08.234 | 2025-12-08T20:07:08.232Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:37:13.237 | 2025-12-08T20:07:13.233Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:37:18.239 | 2025-12-08T20:07:18.235Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:37:23.242 | 2025-12-08T20:07:23.236Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:37:28.244 | 2025-12-08T20:07:28.237Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:37:33.246 | 2025-12-08T20:07:33.243Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:37:38.245 | 2025-12-08T20:07:38.243Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:37:43.249 | 2025-12-08T20:07:43.245Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:37:48.247 | 2025-12-08T20:07:48.246Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:37:53.250 | 2025-12-08T20:07:53.247Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:37:58.258 | 2025-12-08T20:07:58.250Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:38:03.255 | 2025-12-08T20:08:03.250Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:38:08.254 | 2025-12-08T20:08:08.251Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:38:13.256 | 2025-12-08T20:08:13.253Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:38:18.265 | 2025-12-08T20:08:18.258Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:38:23.260 | 2025-12-08T20:08:23.257Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:38:28.263 | 2025-12-08T20:08:28.257Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:38:33.324 | 2025-12-08T20:08:33.262Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:38:38.266 | 2025-12-08T20:08:38.262Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:38:43.266 | 2025-12-08T20:08:43.264Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:38:48.265 | 2025-12-08T20:08:48.264Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:38:53.272 | 2025-12-08T20:08:53.267Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:38:58.278 | 2025-12-08T20:08:58.268Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:39:03.283 | 2025-12-08T20:09:03.270Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:39:08.273 | 2025-12-08T20:09:08.271Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:39:13.273 | 2025-12-08T20:09:13.272Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:39:18.275 | 2025-12-08T20:09:18.274Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:39:23.275 | 2025-12-08T20:09:23.273Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:39:28.276 | 2025-12-08T20:09:28.274Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:39:33.278 | 2025-12-08T20:09:33.277Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:39:38.279 | 2025-12-08T20:09:38.278Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:39:43.283 | 2025-12-08T20:09:43.279Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:39:48.287 | 2025-12-08T20:09:48.282Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:39:53.287 | 2025-12-08T20:09:53.282Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:39:58.287 | 2025-12-08T20:09:58.284Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:40:03.290 | 2025-12-08T20:10:03.284Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:40:08.294 | 2025-12-08T20:10:08.286Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:40:13.293 | 2025-12-08T20:10:13.287Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:40:18.292 | 2025-12-08T20:10:18.289Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:40:23.304 | 2025-12-08T20:10:23.295Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:40:28.293 | 2025-12-08T20:10:28.291Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:40:33.298 | 2025-12-08T20:10:33.294Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:40:38.297 | 2025-12-08T20:10:38.295Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:40:43.300 | 2025-12-08T20:10:43.298Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:40:48.308 | 2025-12-08T20:10:48.300Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:40:53.314 | 2025-12-08T20:10:53.302Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:40:58.303 | 2025-12-08T20:10:58.300Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:41:03.307 | 2025-12-08T20:11:03.302Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:41:08.312 | 2025-12-08T20:11:08.304Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:41:13.315 | 2025-12-08T20:11:13.309Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-12-09 01:41:18.310 | 2025-12-08T20:11:18.308Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:41:23.342 | 2025-12-08T20:11:23.318Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:41:28.312 | 2025-12-08T20:11:28.309Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:41:33.317 | 2025-12-08T20:11:33.311Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:41:38.324 | 2025-12-08T20:11:38.317Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-12-09 01:41:43.331 | 2025-12-08T20:11:43.316Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:41:48.320 | 2025-12-08T20:11:48.316Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:41:53.319 | 2025-12-08T20:11:53.316Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:41:58.317 | 2025-12-08T20:11:58.316Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:42:03.320 | 2025-12-08T20:12:03.317Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
+2025-12-09 01:42:08.317 | 2025-12-08T20:12:08.316Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:42:13.318 | 2025-12-08T20:12:13.317Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:42:18.320 | 2025-12-08T20:12:18.318Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:42:23.319 | 2025-12-08T20:12:23.318Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:42:28.322 | 2025-12-08T20:12:28.320Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:42:33.328 | 2025-12-08T20:12:33.322Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
+2025-12-09 01:42:38.324 | 2025-12-08T20:12:38.323Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:42:43.328 | 2025-12-08T20:12:43.324Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:42:48.329 | 2025-12-08T20:12:48.327Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:42:53.335 | 2025-12-08T20:12:53.330Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:42:58.331 | 2025-12-08T20:12:58.329Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:43:03.336 | 2025-12-08T20:13:03.331Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:43:08.332 | 2025-12-08T20:13:08.331Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:43:13.342 | 2025-12-08T20:13:13.332Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:43:18.341 | 2025-12-08T20:13:18.338Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-12-09 01:43:23.340 | 2025-12-08T20:13:23.338Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:43:28.340 | 2025-12-08T20:13:28.338Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:43:33.344 | 2025-12-08T20:13:33.339Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:43:38.339 | 2025-12-08T20:13:38.339Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:43:43.345 | 2025-12-08T20:13:43.341Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:43:48.343 | 2025-12-08T20:13:48.342Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:43:53.347 | 2025-12-08T20:13:53.343Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:43:58.347 | 2025-12-08T20:13:58.344Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:44:03.345 | 2025-12-08T20:14:03.344Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:44:08.346 | 2025-12-08T20:14:08.346Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:44:13.366 | 2025-12-08T20:14:13.351Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:44:18.352 | 2025-12-08T20:14:18.351Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:44:23.353 | 2025-12-08T20:14:23.351Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:44:28.353 | 2025-12-08T20:14:28.351Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:44:33.357 | 2025-12-08T20:14:33.354Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:44:38.355 | 2025-12-08T20:14:38.354Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:44:43.355 | 2025-12-08T20:14:43.354Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:44:48.358 | 2025-12-08T20:14:48.356Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:44:53.358 | 2025-12-08T20:14:53.356Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:44:58.359 | 2025-12-08T20:14:58.357Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:45:03.359 | 2025-12-08T20:15:03.357Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:45:08.359 | 2025-12-08T20:15:08.357Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:45:13.361 | 2025-12-08T20:15:13.359Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:45:18.367 | 2025-12-08T20:15:18.362Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:45:23.363 | 2025-12-08T20:15:23.361Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:45:28.373 | 2025-12-08T20:15:28.362Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:45:33.364 | 2025-12-08T20:15:33.362Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:45:38.367 | 2025-12-08T20:15:38.363Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:45:43.375 | 2025-12-08T20:15:43.368Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2025-12-09 01:45:48.396 | 2025-12-08T20:15:48.380Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 10ms
+2025-12-09 01:45:53.385 | 2025-12-08T20:15:53.378Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:45:58.403 | 2025-12-08T20:15:58.393Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
+2025-12-09 01:46:03.395 | 2025-12-08T20:16:03.394Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:46:08.397 | 2025-12-08T20:16:08.394Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:46:13.398 | 2025-12-08T20:16:13.394Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:46:18.397 | 2025-12-08T20:16:18.395Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:46:23.428 | 2025-12-08T20:16:23.403Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2025-12-09 01:46:28.401 | 2025-12-08T20:16:28.400Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:46:33.403 | 2025-12-08T20:16:33.400Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:46:38.404 | 2025-12-08T20:16:38.402Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2025-12-09 01:46:43.521 | 2025-12-08T20:16:43.424Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
+2025-12-09 01:46:48.411 | 2025-12-08T20:16:48.409Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:46:53.414 | 2025-12-08T20:16:53.410Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:46:58.413 | 2025-12-08T20:16:58.412Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:47:03.418 | 2025-12-08T20:17:03.415Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:47:08.416 | 2025-12-08T20:17:08.416Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-12-09 01:47:13.418 | 2025-12-08T20:17:13.417Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-12-09 01:47:18.422 | 2025-12-08T20:17:18.419Z  INFO 1 --- [eurekaServer] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms

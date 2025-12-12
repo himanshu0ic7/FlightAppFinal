@@ -1,0 +1,1131 @@
+2025-12-09 01:21:53.788 | Picked up JAVA_TOOL_OPTIONS: -Dspring.profiles.active=docker -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+2025-12-09 01:21:53.789 | 
+2025-12-09 01:21:59.614 | 
+2025-12-09 01:21:59.614 |   .   ____          _            __ _ _
+2025-12-09 01:21:59.614 |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-12-09 01:21:59.614 | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-12-09 01:21:59.615 |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-12-09 01:21:59.615 |   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-12-09 01:21:59.615 |  =========|_|==============|___/=/_/_/_/
+2025-12-09 01:21:59.615 | 
+2025-12-09 01:21:59.619 |  :: Spring Boot ::                (v4.0.0)
+2025-12-09 01:21:59.619 | 
+2025-12-09 01:22:00.173 | 2025-12-08T19:52:00.169Z  INFO 1 --- [notificationService] [           main] c.f.NotificationServiceApplication       : Starting NotificationServiceApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-09 01:22:00.173 | 2025-12-08T19:52:00.173Z  INFO 1 --- [notificationService] [           main] c.f.NotificationServiceApplication       : The following 1 profile is active: "docker"
+2025-12-09 01:22:00.174 | 2025-12-08T19:52:00.173Z DEBUG 1 --- [notificationService] [           main] o.s.boot.SpringApplication               : Loading source class com.flightApp.NotificationServiceApplication
+2025-12-09 01:22:00.887 | 2025-12-08T19:52:00.886Z DEBUG 1 --- [notificationService] [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@386f0da3
+2025-12-09 01:22:05.841 | 2025-12-08T19:52:05.795Z  INFO 1 --- [notificationService] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=126ad2f6-8e91-3ab8-9416-1f449b9e7181
+2025-12-09 01:22:11.490 | 2025-12-08T19:52:11.488Z DEBUG 1 --- [notificationService] [           main] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: /app/app.jar
+2025-12-09 01:22:11.492 | 2025-12-08T19:52:11.491Z DEBUG 1 --- [notificationService] [           main] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: /app/app.jar
+2025-12-09 01:22:11.496 | 2025-12-08T19:52:11.496Z DEBUG 1 --- [notificationService] [           main] o.s.b.t.s.TomcatServletWebServerFactory  : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2025-12-09 01:22:11.608 | 2025-12-08T19:52:11.608Z  INFO 1 --- [notificationService] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
+2025-12-09 01:22:11.674 | 2025-12-08T19:52:11.673Z  INFO 1 --- [notificationService] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09 01:22:11.675 | 2025-12-08T19:52:11.674Z  INFO 1 --- [notificationService] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-09 01:22:11.783 | 2025-12-08T19:52:11.782Z DEBUG 1 --- [notificationService] [           main] b.w.c.s.WebApplicationContextInitializer : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2025-12-09 01:22:11.789 | 2025-12-08T19:52:11.788Z  INFO 1 --- [notificationService] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 10898 ms
+2025-12-09 01:22:12.305 | 2025-12-08T19:52:12.302Z DEBUG 1 --- [notificationService] [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2025-12-09 01:22:12.309 | 2025-12-08T19:52:12.308Z DEBUG 1 --- [notificationService] [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2025-12-09 01:22:12.383 | 2025-12-08T19:52:12.382Z DEBUG 1 --- [notificationService] [           main] o.s.b.s.f.OrderedRequestContextFilter    : Filter 'requestContextFilter' configured for use
+2025-12-09 01:22:12.394 | 2025-12-08T19:52:12.394Z DEBUG 1 --- [notificationService] [           main] o.s.b.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured for use
+2025-12-09 01:22:12.402 | 2025-12-08T19:52:12.397Z DEBUG 1 --- [notificationService] [           main] o.s.b.s.filter.OrderedFormContentFilter  : Filter 'formContentFilter' configured for use
+2025-12-09 01:22:12.663 | 2025-12-08T19:52:12.662Z DEBUG 1 --- [notificationService] [           main] iginAwareSystemEnvironmentPropertySource : PropertySource 'systemEnvironment' does not contain property 'twilio.account_sid', but found equivalent 'TWILIO_ACCOUNT_SID'
+2025-12-09 01:22:12.675 | 2025-12-08T19:52:12.675Z DEBUG 1 --- [notificationService] [           main] iginAwareSystemEnvironmentPropertySource : PropertySource 'systemEnvironment' does not contain property 'twilio.auth_token', but found equivalent 'TWILIO_AUTH_TOKEN'
+2025-12-09 01:22:12.683 | 2025-12-08T19:52:12.682Z DEBUG 1 --- [notificationService] [           main] iginAwareSystemEnvironmentPropertySource : PropertySource 'systemEnvironment' does not contain property 'twilio.phone_number', but found equivalent 'TWILIO_PHONE_NUMBER'
+2025-12-09 01:22:12.688 | 2025-12-08T19:52:12.688Z  INFO 1 --- [notificationService] [           main] com.flightApp.service.SmsService         : Twilio initialized successfully.
+2025-12-09 01:22:14.094 | 2025-12-08T19:52:14.074Z DEBUG 1 --- [notificationService] [           main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.flightApp'. Automatic @Repository and @Entity scanning is enabled.
+2025-12-09 01:22:16.387 | 2025-12-08T19:52:16.381Z DEBUG 1 --- [notificationService] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2025-12-09 01:22:16.453 | 2025-12-08T19:52:16.452Z DEBUG 1 --- [notificationService] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-09 01:22:17.223 | 2025-12-08T19:52:17.217Z DEBUG 1 --- [notificationService] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-09 01:22:17.381 | 2025-12-08T19:52:17.381Z DEBUG 1 --- [notificationService] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-09 01:22:18.809 | 2025-12-08T19:52:18.803Z  INFO 1 --- [notificationService] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2025-12-09 01:22:19.330 | 2025-12-08T19:52:19.329Z  WARN 1 --- [notificationService] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-09 01:22:19.722 | 2025-12-08T19:52:19.720Z  INFO 1 --- [notificationService] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-12-09 01:22:19.791 | 2025-12-08T19:52:19.790Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-12-09 01:22:19.806 | 2025-12-08T19:52:19.805Z  INFO 1 --- [notificationService] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:22:19.911 | 2025-12-08T19:52:19.910Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-12-09 01:22:19.911 | 2025-12-08T19:52:19.911Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-12-09 01:22:19.913 | 2025-12-08T19:52:19.911Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-12-09 01:22:19.913 | 2025-12-08T19:52:19.911Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-12-09 01:22:19.913 | 2025-12-08T19:52:19.911Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-12-09 01:22:19.913 | 2025-12-08T19:52:19.911Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-12-09 01:22:19.913 | 2025-12-08T19:52:19.912Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-12-09 01:22:23.090 | 2025-12-08T19:52:23.086Z DEBUG 1 --- [notificationService] [           main] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:22:23.171 | 2025-12-08T19:52:23.169Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-12-09 01:22:23.176 | 2025-12-08T19:52:23.175Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2025-12-09 01:22:23.195 | 2025-12-08T19:52:23.194Z  INFO 1 --- [notificationService] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-09 01:22:23.212 | 2025-12-08T19:52:23.209Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1765223543202 with initial instances count: 0
+2025-12-09 01:22:23.226 | 2025-12-08T19:52:23.224Z  INFO 1 --- [notificationService] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application NOTIFICATIONSERVICE with eureka with status UP
+2025-12-09 01:22:23.231 | 2025-12-08T19:52:23.230Z  INFO 1 --- [notificationService] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1765223543230, current=UP, previous=STARTING]
+2025-12-09 01:22:23.246 | 2025-12-08T19:52:23.245Z  INFO 1 --- [notificationService] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATIONSERVICE/c76c8af7b355:notificationService:9090: registering service...
+2025-12-09 01:22:23.379 | 2025-12-08T19:52:23.378Z  INFO 1 --- [notificationService] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
+2025-12-09 01:22:23.384 | 2025-12-08T19:52:23.383Z  INFO 1 --- [notificationService] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9090
+2025-12-09 01:22:23.384 | 2025-12-08T19:52:23.382Z DEBUG 1 --- [notificationService] [foReplicator-%d] o.s.web.client.DefaultRestClient         : Writing [InstanceInfo [instanceId = c76c8af7b355:notificationService:9090, appName = NOTIFICATIONSERVICE, hostName = 172.18.0.9, status = UP, ipAddr = 172.18.0.9, port = 9090, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@159b5718] as "application/json" with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2025-12-09 01:22:23.621 | 2025-12-08T19:52:23.615Z  INFO 1 --- [notificationService] [foReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_NOTIFICATIONSERVICE/c76c8af7b355:notificationService:9090 - registration status: 204
+2025-12-09 01:22:23.677 | 2025-12-08T19:52:23.676Z  INFO 1 --- [notificationService] [           main] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+2025-12-09 01:22:23.677 | 	allow.auto.create.topics = true
+2025-12-09 01:22:23.677 | 	auto.commit.interval.ms = 5000
+2025-12-09 01:22:23.677 | 	auto.offset.reset = earliest
+2025-12-09 01:22:23.677 | 	bootstrap.servers = [kafka:9092]
+2025-12-09 01:22:23.677 | 	check.crcs = true
+2025-12-09 01:22:23.677 | 	client.dns.lookup = use_all_dns_ips
+2025-12-09 01:22:23.677 | 	client.id = consumer-notification-group-1
+2025-12-09 01:22:23.677 | 	client.rack = 
+2025-12-09 01:22:23.677 | 	connections.max.idle.ms = 540000
+2025-12-09 01:22:23.677 | 	default.api.timeout.ms = 60000
+2025-12-09 01:22:23.677 | 	enable.auto.commit = false
+2025-12-09 01:22:23.677 | 	enable.metrics.push = true
+2025-12-09 01:22:23.677 | 	exclude.internal.topics = true
+2025-12-09 01:22:23.677 | 	fetch.max.bytes = 52428800
+2025-12-09 01:22:23.677 | 	fetch.max.wait.ms = 500
+2025-12-09 01:22:23.677 | 	fetch.min.bytes = 1
+2025-12-09 01:22:23.677 | 	group.id = notification-group
+2025-12-09 01:22:23.677 | 	group.instance.id = null
+2025-12-09 01:22:23.677 | 	group.protocol = classic
+2025-12-09 01:22:23.677 | 	group.remote.assignor = null
+2025-12-09 01:22:23.677 | 	heartbeat.interval.ms = 3000
+2025-12-09 01:22:23.677 | 	interceptor.classes = []
+2025-12-09 01:22:23.677 | 	internal.leave.group.on.close = true
+2025-12-09 01:22:23.677 | 	internal.throw.on.fetch.stable.offset.unsupported = false
+2025-12-09 01:22:23.677 | 	isolation.level = read_uncommitted
+2025-12-09 01:22:23.677 | 	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+2025-12-09 01:22:23.677 | 	max.partition.fetch.bytes = 1048576
+2025-12-09 01:22:23.677 | 	max.poll.interval.ms = 300000
+2025-12-09 01:22:23.677 | 	max.poll.records = 500
+2025-12-09 01:22:23.677 | 	metadata.max.age.ms = 300000
+2025-12-09 01:22:23.677 | 	metadata.recovery.rebootstrap.trigger.ms = 300000
+2025-12-09 01:22:23.677 | 	metadata.recovery.strategy = rebootstrap
+2025-12-09 01:22:23.677 | 	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+2025-12-09 01:22:23.677 | 	metrics.num.samples = 2
+2025-12-09 01:22:23.677 | 	metrics.recording.level = INFO
+2025-12-09 01:22:23.677 | 	metrics.sample.window.ms = 30000
+2025-12-09 01:22:23.677 | 	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+2025-12-09 01:22:23.677 | 	receive.buffer.bytes = 65536
+2025-12-09 01:22:23.677 | 	reconnect.backoff.max.ms = 1000
+2025-12-09 01:22:23.677 | 	reconnect.backoff.ms = 50
+2025-12-09 01:22:23.677 | 	request.timeout.ms = 30000
+2025-12-09 01:22:23.677 | 	retry.backoff.max.ms = 1000
+2025-12-09 01:22:23.677 | 	retry.backoff.ms = 100
+2025-12-09 01:22:23.677 | 	sasl.client.callback.handler.class = null
+2025-12-09 01:22:23.677 | 	sasl.jaas.config = null
+2025-12-09 01:22:23.677 | 	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+2025-12-09 01:22:23.677 | 	sasl.kerberos.min.time.before.relogin = 60000
+2025-12-09 01:22:23.677 | 	sasl.kerberos.service.name = null
+2025-12-09 01:22:23.677 | 	sasl.kerberos.ticket.renew.jitter = 0.05
+2025-12-09 01:22:23.677 | 	sasl.kerberos.ticket.renew.window.factor = 0.8
+2025-12-09 01:22:23.677 | 	sasl.login.callback.handler.class = null
+2025-12-09 01:22:23.677 | 	sasl.login.class = null
+2025-12-09 01:22:23.677 | 	sasl.login.connect.timeout.ms = null
+2025-12-09 01:22:23.677 | 	sasl.login.read.timeout.ms = null
+2025-12-09 01:22:23.677 | 	sasl.login.refresh.buffer.seconds = 300
+2025-12-09 01:22:23.677 | 	sasl.login.refresh.min.period.seconds = 60
+2025-12-09 01:22:23.677 | 	sasl.login.refresh.window.factor = 0.8
+2025-12-09 01:22:23.677 | 	sasl.login.refresh.window.jitter = 0.05
+2025-12-09 01:22:23.677 | 	sasl.login.retry.backoff.max.ms = 10000
+2025-12-09 01:22:23.677 | 	sasl.login.retry.backoff.ms = 100
+2025-12-09 01:22:23.677 | 	sasl.mechanism = GSSAPI
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.algorithm = RS256
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.claim.aud = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.claim.iss = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.claim.jti.include = false
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.claim.sub = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.file = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.private.key.file = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.private.key.passphrase = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.assertion.template.file = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.client.credentials.client.id = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.client.credentials.client.secret = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.clock.skew.seconds = 30
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.expected.audience = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.expected.issuer = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.header.urlencode = false
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.jwks.endpoint.url = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.scope = null
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.scope.claim.name = scope
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.sub.claim.name = sub
+2025-12-09 01:22:23.677 | 	sasl.oauthbearer.token.endpoint.url = null
+2025-12-09 01:22:23.677 | 	security.protocol = PLAINTEXT
+2025-12-09 01:22:23.677 | 	security.providers = null
+2025-12-09 01:22:23.677 | 	send.buffer.bytes = 131072
+2025-12-09 01:22:23.677 | 	session.timeout.ms = 45000
+2025-12-09 01:22:23.677 | 	share.acknowledgement.mode = implicit
+2025-12-09 01:22:23.677 | 	socket.connection.setup.timeout.max.ms = 30000
+2025-12-09 01:22:23.677 | 	socket.connection.setup.timeout.ms = 10000
+2025-12-09 01:22:23.677 | 	ssl.cipher.suites = null
+2025-12-09 01:22:23.677 | 	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+2025-12-09 01:22:23.677 | 	ssl.endpoint.identification.algorithm = https
+2025-12-09 01:22:23.677 | 	ssl.engine.factory.class = null
+2025-12-09 01:22:23.677 | 	ssl.key.password = null
+2025-12-09 01:22:23.677 | 	ssl.keymanager.algorithm = SunX509
+2025-12-09 01:22:23.677 | 	ssl.keystore.certificate.chain = null
+2025-12-09 01:22:23.677 | 	ssl.keystore.key = null
+2025-12-09 01:22:23.677 | 	ssl.keystore.location = null
+2025-12-09 01:22:23.677 | 	ssl.keystore.password = null
+2025-12-09 01:22:23.677 | 	ssl.keystore.type = JKS
+2025-12-09 01:22:23.677 | 	ssl.protocol = TLSv1.3
+2025-12-09 01:22:23.677 | 	ssl.provider = null
+2025-12-09 01:22:23.677 | 	ssl.secure.random.implementation = null
+2025-12-09 01:22:23.677 | 	ssl.trustmanager.algorithm = PKIX
+2025-12-09 01:22:23.677 | 	ssl.truststore.certificates = null
+2025-12-09 01:22:23.677 | 	ssl.truststore.location = null
+2025-12-09 01:22:23.677 | 	ssl.truststore.password = null
+2025-12-09 01:22:23.677 | 	ssl.truststore.type = JKS
+2025-12-09 01:22:23.677 | 	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+2025-12-09 01:22:23.677 | 
+2025-12-09 01:22:23.828 | 2025-12-08T19:52:23.827Z  INFO 1 --- [notificationService] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-12-09 01:22:24.382 | 2025-12-08T19:52:24.381Z  INFO 1 --- [notificationService] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2025-12-09 01:22:24.382 | 2025-12-08T19:52:24.381Z  INFO 1 --- [notificationService] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2025-12-09 01:22:24.382 | 2025-12-08T19:52:24.381Z  INFO 1 --- [notificationService] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1765223544377
+2025-12-09 01:22:24.386 | 2025-12-08T19:52:24.386Z  INFO 1 --- [notificationService] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Subscribed to topic(s): flight_confirmation
+2025-12-09 01:22:24.492 | 2025-12-08T19:52:24.485Z DEBUG 1 --- [notificationService] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 | ============================
+2025-12-09 01:22:24.492 | CONDITIONS EVALUATION REPORT
+2025-12-09 01:22:24.492 | ============================
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 | Positive matches:
+2025-12-09 01:22:24.492 | -----------------
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    AopAutoConfiguration matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnBooleanProperty (spring.aop.auto=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    AopAutoConfiguration.ClassProxyingConfiguration matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnMissingClass did not find unwanted class 'org.aspectj.weaver.Advice' (OnClassCondition)
+2025-12-09 01:22:24.492 |       - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    ApplicationAvailabilityAutoConfiguration#applicationAvailability matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnMissingBean (types: org.springframework.boot.availability.ApplicationAvailability; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    AutoServiceRegistrationAutoConfiguration matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnProperty (spring.cloud.service-registry.auto-registration.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    AutoServiceRegistrationConfiguration matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnProperty (spring.cloud.service-registry.auto-registration.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    BlockingLoadBalancerClientAutoConfiguration matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnProperty (spring.cloud.loadbalancer.enabled=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.492 |       - AnyNestedCondition 2 matched 0 did not; NestedCondition on BlockingRestClassesPresentCondition.RestClientPresent @ConditionalOnClass found required class 'org.springframework.web.client.RestClient'; NestedCondition on BlockingRestClassesPresentCondition.RestTemplatePresent @ConditionalOnClass found required class 'org.springframework.web.client.RestTemplate' (BlockingRestClassesPresentCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    BlockingLoadBalancerClientAutoConfiguration#blockingLoadBalancerClient matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnBean (types: org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory; SearchStrategy: all) found bean 'loadBalancerClientFactory'; @ConditionalOnMissingBean (types: org.springframework.cloud.client.loadbalancer.LoadBalancerClient; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    BlockingLoadBalancerClientAutoConfiguration#loadBalancerServiceInstanceCookieTransformer matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnBean (types: org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory; SearchStrategy: all) found bean 'loadBalancerClientFactory'; @ConditionalOnMissingBean (types: org.springframework.cloud.loadbalancer.core.LoadBalancerServiceInstanceCookieTransformer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    BlockingLoadBalancerClientAutoConfiguration#xForwarderHeadersTransformer matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnBean (types: org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory; SearchStrategy: all) found bean 'loadBalancerClientFactory'; @ConditionalOnMissingBean (types: org.springframework.cloud.loadbalancer.blocking.XForwardedHeadersTransformer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    CompatibilityVerifierAutoConfiguration matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnProperty (spring.cloud.compatibility-verifier.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    ConfigurationPropertiesRebinderAutoConfiguration matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnBean (types: org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor; SearchStrategy: all) found bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor' (OnBeanCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.492 |    ConfigurationPropertiesRebinderAutoConfiguration#configurationPropertiesBeans matched:
+2025-12-09 01:22:24.492 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.context.properties.ConfigurationPropertiesBeans; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.492 | 
+2025-12-09 01:22:24.493 |    ConfigurationPropertiesRebinderAutoConfiguration#configurationPropertiesRebinder matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.context.properties.ConfigurationPropertiesRebinder; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    DiscoveryClientOptionalArgsConfiguration.RestClientConfiguration matched:
+2025-12-09 01:22:24.493 |       - AllNestedConditions 3 matched 0 did not; NestedCondition on DiscoveryClientOptionalArgsConfiguration.OnRestClientPresentAndEnabledCondition.OnWebClientDisabled @ConditionalOnProperty (eureka.client.webclient.enabled=false) matched; NestedCondition on DiscoveryClientOptionalArgsConfiguration.OnRestClientPresentAndEnabledCondition.OnJerseyClientNotPresentOrNotEnabled AnyNestedCondition 1 matched 1 did not; NestedCondition on DiscoveryClientOptionalArgsConfiguration.OnJerseyClientNotPresentOrNotEnabledCondition.OnJerseyClientDisabled @ConditionalOnProperty (eureka.client.jersey.enabled=false) did not find property 'eureka.client.jersey.enabled'; NestedCondition on DiscoveryClientOptionalArgsConfiguration.OnJerseyClientNotPresentOrNotEnabledCondition.OnJerseyClientMissing @ConditionalOnMissingClass did not find unwanted class 'org.glassfish.jersey.client.JerseyClient'; NestedCondition on DiscoveryClientOptionalArgsConfiguration.OnRestClientPresentAndEnabledCondition.OnRestClientPresent @ConditionalOnClass found required class 'org.springframework.web.client.RestClient' (DiscoveryClientOptionalArgsConfiguration.OnRestClientPresentAndEnabledCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    DiscoveryClientOptionalArgsConfiguration.RestClientConfiguration#defaultEurekaClientHttpRequestFactorySupplier matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.netflix.eureka.http.EurekaClientHttpRequestFactorySupplier; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    DiscoveryClientOptionalArgsConfiguration.RestClientConfiguration#restClientDiscoveryClientOptionalArgs matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: com.netflix.discovery.AbstractDiscoveryClientOptionalArgs; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    DiscoveryClientOptionalArgsConfiguration.RestClientConfiguration#restClientTransportClientFactories matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: com.netflix.discovery.shared.transport.jersey.TransportClientFactories; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    DispatcherServletAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - found 'session' scope (OnWebApplicationCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    DispatcherServletAutoConfiguration.DispatcherServletConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'jakarta.servlet.ServletRegistration' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - Default DispatcherServlet did not find dispatcher servlet beans (DispatcherServletAutoConfiguration.DefaultDispatcherServletCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'jakarta.servlet.ServletRegistration' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - DispatcherServlet Registration did not find servlet registration bean (DispatcherServletAutoConfiguration.DispatcherServletRegistrationCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration#dispatcherServletRegistration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnBean (names: dispatcherServlet types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet' (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    ErrorMvcAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - found 'session' scope (OnWebApplicationCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    ErrorMvcAutoConfiguration#basicErrorController matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    ErrorMvcAutoConfiguration#errorAttributes matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet'; @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.autoconfigure.error.ErrorViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnBooleanProperty (spring.web.error.whitelabel.enabled=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 |       - ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (names: error; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaClientAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'com.netflix.discovery.EurekaClientConfig' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (eureka.client.enabled) matched; @ConditionalOnProperty (spring.cloud.discovery.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaClientAutoConfiguration#eurekaAutoServiceRegistration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (spring.cloud.service-registry.auto-registration.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnBean (types: org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties; SearchStrategy: all) found bean 'spring.cloud.service-registry.auto-registration-org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties' (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaClientAutoConfiguration#eurekaClientConfigBean matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: com.netflix.discovery.EurekaClientConfig; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaClientAutoConfiguration#eurekaInstanceConfigBean matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: com.netflix.appinfo.EurekaInstanceConfig; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaClientAutoConfiguration#serviceManagementMetadataProvider matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.netflix.eureka.metadata.ManagementMetadataProvider; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaClientAutoConfiguration.RefreshableEurekaClientConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.cloud.context.scope.refresh.RefreshScope' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (eureka.client.refresh.enable=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnBean (types: org.springframework.cloud.autoconfigure.RefreshAutoConfiguration; SearchStrategy: all) found bean 'org.springframework.cloud.autoconfigure.RefreshAutoConfiguration' (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaClientAutoConfiguration.RefreshableEurekaClientConfiguration#eurekaApplicationInfoManager matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: com.netflix.appinfo.ApplicationInfoManager; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaClientAutoConfiguration.RefreshableEurekaClientConfiguration#eurekaClient matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: com.netflix.discovery.EurekaClient; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaClientAutoConfiguration.RefreshableEurekaClientConfiguration#eurekaRegistration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (spring.cloud.service-registry.auto-registration.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnBean (types: org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties; SearchStrategy: all) found bean 'spring.cloud.service-registry.auto-registration-org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties' (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaDiscoveryClientConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'com.netflix.discovery.EurekaClientConfig' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (eureka.client.enabled) matched; @ConditionalOnProperty (spring.cloud.discovery.enabled) matched; @ConditionalOnProperty (spring.cloud.discovery.blocking.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaDiscoveryClientConfiguration#discoveryClient matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    EurekaDiscoveryClientConfiguration.EurekaClientConfigurationRefresher matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.cloud.context.scope.refresh.RefreshScopeRefreshedEvent' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    GenericCacheConfiguration matched:
+2025-12-09 01:22:24.493 |       - Cache org.springframework.boot.cache.autoconfigure.GenericCacheConfiguration automatic cache type (CacheCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    GsonHttpMessageConvertersConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'com.google.gson.Gson' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    HttpEncodingAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.web.filter.CharacterEncodingFilter' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - found 'session' scope (OnWebApplicationCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnBooleanProperty (spring.servlet.encoding.enabled=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    HttpEncodingAutoConfiguration#characterEncodingFilter matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.web.filter.CharacterEncodingFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    HttpMessageConvertersAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - NoneNestedConditions 0 matched 1 did not; NestedCondition on HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication did not find reactive web application classes (HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.http.converter.StringHttpMessageConverter' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConverter matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    Jackson2AutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    Jackson2AutoConfiguration.Jackson2ObjectMapperBuilderCustomizerConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    Jackson2AutoConfiguration.JacksonObjectMapperBuilderConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    Jackson2AutoConfiguration.JacksonObjectMapperBuilderConfiguration#jackson2ObjectMapperBuilder matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.Jackson2ObjectMapperBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    Jackson2AutoConfiguration.JacksonObjectMapperConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    Jackson2AutoConfiguration.JacksonObjectMapperConfiguration#jackson2ObjectMapper matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    Jackson2AutoConfiguration.ParameterNamesModuleConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'com.fasterxml.jackson.module.paramnames.ParameterNamesModule' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    Jackson2AutoConfiguration.ParameterNamesModuleConfiguration#jackson2ParameterNamesModule matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: com.fasterxml.jackson.module.paramnames.ParameterNamesModule; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    JacksonAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'tools.jackson.databind.json.JsonMapper' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    JacksonAutoConfiguration#jacksonJsonMapper matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: tools.jackson.databind.json.JsonMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    JacksonAutoConfiguration#jsonMapperBuilder matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: tools.jackson.databind.json.JsonMapper$Builder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    JacksonAutoConfiguration.JsonProblemDetailsConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.http.ProblemDetail' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    JacksonHttpMessageConvertersConfiguration.JacksonJsonHttpMessageConverterConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'tools.jackson.databind.json.JsonMapper' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnBean (types: tools.jackson.databind.json.JsonMapper; SearchStrategy: all) found bean 'jacksonJsonMapper' (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    JacksonHttpMessageConvertersConfiguration.JacksonJsonHttpMessageConverterConfiguration#jacksonJsonHttpMessageConverter matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.JacksonJsonHttpMessageConverter ignored: ?; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAnnotationDrivenConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.kafka.annotation.EnableKafka' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAnnotationDrivenConfiguration#kafkaListenerContainerFactory matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (names: kafkaListenerContainerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAnnotationDrivenConfiguration#kafkaListenerContainerFactoryConfigurer matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.kafka.autoconfigure.ConcurrentKafkaListenerContainerFactoryConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAnnotationDrivenConfiguration.EnableKafkaConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (names: org.springframework.kafka.config.internalKafkaListenerAnnotationProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.kafka.core.KafkaTemplate' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAutoConfiguration#kafkaAdmin matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.kafka.core.KafkaAdmin; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAutoConfiguration#kafkaConnectionDetails matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.kafka.autoconfigure.KafkaConnectionDetails; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAutoConfiguration#kafkaConsumerFactory matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.kafka.core.ConsumerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAutoConfiguration#kafkaProducerFactory matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.kafka.core.ProducerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAutoConfiguration#kafkaProducerListener matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.kafka.support.ProducerListener; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    KafkaAutoConfiguration#kafkaTemplate matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.kafka.core.KafkaTemplate; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LifecycleAutoConfiguration#defaultLifecycleProcessor matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (names: lifecycleProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LifecycleMvcEndpointAutoConfiguration#environmentManager matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.context.environment.EnvironmentManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - AnyNestedCondition 2 matched 0 did not; NestedCondition on BlockingRestClassesPresentCondition.RestClientPresent @ConditionalOnClass found required class 'org.springframework.web.client.RestClient'; NestedCondition on BlockingRestClassesPresentCondition.RestTemplatePresent @ConditionalOnClass found required class 'org.springframework.web.client.RestTemplate' (BlockingRestClassesPresentCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnBean (types: org.springframework.cloud.client.loadbalancer.LoadBalancerClient; SearchStrategy: all) found bean 'blockingLoadBalancerClient' (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (spring.cloud.loadbalancer.enabled=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerAutoConfiguration#loadBalancerClientFactory matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerAutoConfiguration#loadBalancerRequestFactory matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.client.loadbalancer.LoadBalancerRequestFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerAutoConfiguration#zoneConfig matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.loadbalancer.config.LoadBalancerZoneConfig; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerAutoConfiguration.DeferringLoadBalancerInterceptorConfig#deferringLoadBalancerInterceptor matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerAutoConfiguration.DeferringLoadBalancerInterceptorConfig#lbRestClientPostProcessor matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnBean (types: org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor; SearchStrategy: all) found bean 'deferringLoadBalancerInterceptor'; @ConditionalOnMissingBean (types: org.springframework.cloud.client.loadbalancer.LoadBalancerRestClientBuilderBeanPostProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerAutoConfiguration.LoadBalancerInterceptorConfig matched:
+2025-12-09 01:22:24.493 |       - AnyNestedCondition 1 matched 1 did not; NestedCondition on LoadBalancerAutoConfiguration.RetryMissingOrDisabledCondition.RetryDisabled @ConditionalOnProperty (spring.cloud.loadbalancer.retry.enabled=false) did not find property 'spring.cloud.loadbalancer.retry.enabled'; NestedCondition on LoadBalancerAutoConfiguration.RetryMissingOrDisabledCondition.RetryTemplateMissing @ConditionalOnMissingClass did not find unwanted class 'org.springframework.retry.support.RetryTemplate' (LoadBalancerAutoConfiguration.RetryMissingOrDisabledCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerAutoConfiguration.LoadBalancerInterceptorConfig#restTemplateCustomizer matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.client.loadbalancer.RestTemplateCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerCacheAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required classes 'org.springframework.cache.CacheManager', 'org.springframework.boot.cache.autoconfigure.CacheAutoConfiguration' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - AllNestedConditions 2 matched 0 did not; NestedCondition on LoadBalancerCacheAutoConfiguration.OnLoadBalancerCachingEnabledCondition.LoadBalancerCacheEnabled @ConditionalOnProperty (spring.cloud.loadbalancer.cache.enabled) matched; NestedCondition on LoadBalancerCacheAutoConfiguration.OnLoadBalancerCachingEnabledCondition.LoadBalancerEnabled @ConditionalOnProperty (spring.cloud.loadbalancer.enabled=true) matched (LoadBalancerCacheAutoConfiguration.OnLoadBalancerCachingEnabledCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerCacheAutoConfiguration.DefaultLoadBalancerCacheManagerConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'com.stoyanr.evictor.ConcurrentMapWithTimedEviction' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - AnyNestedCondition 1 matched 1 did not; NestedCondition on LoadBalancerCacheAutoConfiguration.OnCaffeineCacheMissingCondition.CaffeineCacheManagerClassMissing @ConditionalOnMissingClass found unwanted class 'org.springframework.cache.caffeine.CaffeineCacheManager'; NestedCondition on LoadBalancerCacheAutoConfiguration.OnCaffeineCacheMissingCondition.CaffeineClassMissing @ConditionalOnMissingClass did not find unwanted class 'com.github.benmanes.caffeine.cache.Caffeine' (LoadBalancerCacheAutoConfiguration.OnCaffeineCacheMissingCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerCacheAutoConfiguration.DefaultLoadBalancerCacheManagerConfiguration#defaultLoadBalancerCacheManager matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.loadbalancer.cache.LoadBalancerCacheManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerCacheAutoConfiguration.LoadBalancerCacheManagerWarnConfiguration matched:
+2025-12-09 01:22:24.493 |       - AnyNestedCondition 1 matched 1 did not; NestedCondition on LoadBalancerCacheAutoConfiguration.OnCaffeineCacheMissingCondition.CaffeineCacheManagerClassMissing @ConditionalOnMissingClass found unwanted class 'org.springframework.cache.caffeine.CaffeineCacheManager'; NestedCondition on LoadBalancerCacheAutoConfiguration.OnCaffeineCacheMissingCondition.CaffeineClassMissing @ConditionalOnMissingClass did not find unwanted class 'com.github.benmanes.caffeine.cache.Caffeine' (LoadBalancerCacheAutoConfiguration.OnCaffeineCacheMissingCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerEurekaAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientConfigurationRegistrar' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (eureka.client.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    LoadBalancerEurekaAutoConfiguration#eurekaLoadBalancerProperties matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.netflix.eureka.loadbalancer.EurekaLoadBalancerProperties; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    MultipartAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.multipart.support.StandardServletMultipartResolver', 'jakarta.servlet.MultipartConfigElement' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - found 'session' scope (OnWebApplicationCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnBooleanProperty (spring.servlet.multipart.enabled=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    MultipartAutoConfiguration#multipartConfigElement matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: jakarta.servlet.MultipartConfigElement; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    MultipartAutoConfiguration#multipartResolver matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    NoOpCacheConfiguration matched:
+2025-12-09 01:22:24.493 |       - Cache org.springframework.boot.cache.autoconfigure.NoOpCacheConfiguration automatic cache type (CacheCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    RefreshAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.cloud.context.scope.refresh.RefreshScope' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (spring.cloud.refresh.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    RefreshAutoConfiguration#configDataContextRefresher matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.context.refresh.ConfigDataContextRefresher; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 |       - NoneNestedConditions 0 matched 3 did not; NestedCondition on ConditionalOnBootstrapDisabled.OnBootstrapDisabledCondition.OnBootstrapEnabled @ConditionalOnProperty (spring.cloud.bootstrap.enabled) did not find property 'spring.cloud.bootstrap.enabled'; NestedCondition on ConditionalOnBootstrapDisabled.OnBootstrapDisabledCondition.OnUseLegacyProcessingEnabled @ConditionalOnProperty (spring.config.use-legacy-processing) did not find property 'spring.config.use-legacy-processing'; NestedCondition on ConditionalOnBootstrapDisabled.OnBootstrapDisabledCondition.OnBootstrapMarkerClassPresent @ConditionalOnClass did not find required class 'org.springframework.cloud.bootstrap.marker.Marker' (ConditionalOnBootstrapDisabled.OnBootstrapDisabledCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    RefreshAutoConfiguration#loggingRebinder matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.logging.LoggingRebinder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    RefreshAutoConfiguration#refreshScope matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.context.scope.refresh.RefreshScope; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    RefreshAutoConfiguration#refreshScopeLifecycle matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (spring.cloud.refresh.on-restart.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    ResourceServerTokenRelayAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - found 'session' scope (OnWebApplicationCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnProperty (spring.cloud.mvc.token-relay.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    SimpleCacheConfiguration matched:
+2025-12-09 01:22:24.493 |       - Cache org.springframework.boot.cache.autoconfigure.SimpleCacheConfiguration automatic cache type (CacheCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    SimpleDiscoveryClientConfigurations.SimpleDiscoveryClientConfiguration#simpleDiscoveryProperties matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.client.discovery.simple.SimpleDiscoveryProperties; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    SimpleDiscoveryClientConfigurations.WebApplicationSimpleDiscoveryClientConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.boot.web.server.context.WebServerInitializedEvent' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    SslAutoConfiguration#sslBundleRegistry matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.ssl.SslBundleRegistry,org.springframework.boot.ssl.SslBundles; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TaskExecutionAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TaskExecutorConfigurations.AsyncConfigurerConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilder matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TaskExecutorConfigurations.TaskExecutorConfiguration matched:
+2025-12-09 01:22:24.493 |       - AnyNestedCondition 1 matched 1 did not; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ModelCondition @ConditionalOnProperty (spring.task.execution.mode=force) did not find property 'spring.task.execution.mode'; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ExecutorBeanCondition @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) did not find any beans (TaskExecutorConfigurations.OnExecutorCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutor matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TaskExecutorConfigurations.ThreadPoolTaskExecutorBuilderConfiguration#threadPoolTaskExecutorBuilder matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TaskSchedulingAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler' (OnClassCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilder matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 |       - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TaskSchedulingConfigurations.ThreadPoolTaskSchedulerBuilderConfiguration#threadPoolTaskSchedulerBuilder matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TomcatServletWebServerAutoConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnClass found required classes 'jakarta.servlet.ServletRequest', 'org.apache.catalina.startup.Tomcat', 'org.apache.coyote.UpgradeProtocol', 'org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory' (OnClassCondition)
+2025-12-09 01:22:24.493 |       - found 'session' scope (OnWebApplicationCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TomcatServletWebServerAutoConfiguration#tomcatServletWebServerFactory matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnMissingBean (types: org.springframework.boot.web.server.servlet.ServletWebServerFactory; SearchStrategy: current) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TomcatWebServerConfiguration matched:
+2025-12-09 01:22:24.493 |       - @ConditionalOnWarDeployment the application is not deployed as a WAR file. (OnWarDeploymentCondition)
+2025-12-09 01:22:24.493 | 
+2025-12-09 01:22:24.493 |    TomcatWebServerConfiguration.TomcatWebSocketConfiguration matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnClass found required class 'org.apache.tomcat.websocket.server.WsSci' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    UtilAutoConfiguration matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnProperty (spring.cloud.util.enabled) matched (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    UtilAutoConfiguration#inetUtils matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnMissingBean (types: org.springframework.cloud.commons.util.InetUtils; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+2025-12-09 01:22:24.494 |       - found 'session' scope (OnWebApplicationCondition)
+2025-12-09 01:22:24.494 |       - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration#formContentFilter matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnBooleanProperty (spring.mvc.formcontent.filter.enabled=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.494 |       - @ConditionalOnMissingBean (types: org.springframework.web.filter.FormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration.EnableWebMvcConfiguration#flashMapManager matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnMissingBean (names: flashMapManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration.EnableWebMvcConfiguration#localeResolver matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnMissingBean (names: localeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration.EnableWebMvcConfiguration#viewNameTranslator matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnMissingBean (names: viewNameTranslator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+2025-12-09 01:22:24.494 |       - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans 'defaultViewResolver', 'beanNameViewResolver', 'mvcViewResolver'; @ConditionalOnMissingBean (names: viewResolver types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 | Negative matches:
+2025-12-09 01:22:24.494 | -----------------
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    AopAutoConfiguration.AspectJAutoProxyingConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.aspectj.weaver.Advice' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    BlockingLoadBalancerClientAutoConfiguration.BlockingLoadBalancerRetryConfig:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.retry.support.RetryTemplate' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    Cache2kCacheConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.cache2k.Cache2kBuilder' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CacheAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+2025-12-09 01:22:24.494 |       Matched:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass found required class 'org.springframework.cache.CacheManager' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CacheAutoConfiguration.CacheManagerEntityManagerFactoryDependsOnConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required classes 'org.springframework.boot.jpa.autoconfigure.EntityManagerFactoryDependsOnPostProcessor', 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' (OnClassCondition)
+2025-12-09 01:22:24.494 |          - Ancestor org.springframework.boot.cache.autoconfigure.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CacheMetricsAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CachesEndpointAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CaffeineCacheConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'com.github.benmanes.caffeine.cache.Caffeine' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CloudHypermediaAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.hateoas.Link' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CommonsClientAutoConfiguration.ActuatorConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.endpoint.annotation.Endpoint' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CommonsClientAutoConfiguration.CircuitBreakerInterfaceClientsAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBean (types: org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory; SearchStrategy: all) did not find any beans of type org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory (OnBeanCondition)
+2025-12-09 01:22:24.494 |       Matched:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass found required classes 'org.springframework.cloud.client.circuitbreaker.CircuitBreaker', 'org.springframework.web.client.support.RestClientHttpServiceGroupConfigurer' (OnClassCondition)
+2025-12-09 01:22:24.494 |          - @ConditionalOnProperty (spring.cloud.circuitbreaker.http-services.enabled=true) matched (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CommonsClientAutoConfiguration.DiscoveryLoadBalancerConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.health.contributor.HealthIndicator' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CommonsClientAutoConfiguration.ReactiveCircuitBreakerInterfaceClientsAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.support.WebClientHttpServiceGroupConfigurer' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    CouchbaseCacheConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'com.couchbase.client.java.Cluster' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    DiscoveryClientOptionalArgsConfiguration.DiscoveryClientOptionalArgsTlsConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - AllNestedConditions 1 matched 1 did not; NestedCondition on DiscoveryClientOptionalArgsConfiguration.OnJerseyClientPresentAndEnabledCondition.OnJerseyClientEnabled @ConditionalOnProperty (eureka.client.jersey.enabled) matched; NestedCondition on DiscoveryClientOptionalArgsConfiguration.OnJerseyClientPresentAndEnabledCondition.OnJerseyClientPresent @ConditionalOnClass did not find required class 'org.glassfish.jersey.client.JerseyClient' (DiscoveryClientOptionalArgsConfiguration.OnJerseyClientPresentAndEnabledCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    DiscoveryClientOptionalArgsConfiguration.WebClientConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    DiscoveryClientOptionalArgsConfiguration.WebClientNotFoundConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnProperty (eureka.client.webclient.enabled=true) did not find property 'webclient.enabled' (OnPropertyCondition)
+2025-12-09 01:22:24.494 |       Matched:
+2025-12-09 01:22:24.494 |          - @ConditionalOnMissingClass did not find unwanted class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    DispatcherServletAutoConfiguration.DispatcherServletConfiguration#multipartResolver:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans of type org.springframework.web.multipart.MultipartResolver (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    EurekaClientAutoConfiguration.EurekaClientConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - AnyNestedCondition 0 matched 3 did not; NestedCondition on EurekaClientAutoConfiguration.OnMissingRefreshScopeCondition.OnPropertyDisabled @ConditionalOnProperty (eureka.client.refresh.enable=false) did not find property 'eureka.client.refresh.enable'; NestedCondition on EurekaClientAutoConfiguration.OnMissingRefreshScopeCondition.MissingScope @ConditionalOnMissingBean (types: org.springframework.cloud.autoconfigure.RefreshAutoConfiguration; SearchStrategy: all) found beans of type 'org.springframework.cloud.autoconfigure.RefreshAutoConfiguration' org.springframework.cloud.autoconfigure.RefreshAutoConfiguration; NestedCondition on EurekaClientAutoConfiguration.OnMissingRefreshScopeCondition.MissingClass @ConditionalOnMissingClass found unwanted class 'org.springframework.cloud.context.scope.refresh.RefreshScope' (EurekaClientAutoConfiguration.OnMissingRefreshScopeCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    EurekaClientAutoConfiguration.EurekaHealthIndicatorConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.health.contributor.Health' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    EurekaClientConfigServerAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.cloud.config.server.config.ConfigServerProperties' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    EurekaDiscoveryClientConfiguration.EurekaHealthCheckHandlerConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnProperty (eureka.client.healthcheck.enabled) did not find property 'eureka.client.healthcheck.enabled' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    EurekaReactiveDiscoveryClientConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    GsonHttpMessageConvertersConfiguration.GsonHttpMessageConverterConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - AnyNestedCondition 0 matched 2 did not; NestedCondition on GsonHttpMessageConvertersConfiguration.PreferGsonOrJacksonAndJsonbUnavailableCondition.JacksonJsonbUnavailable NoneNestedConditions 1 matched 2 did not; NestedCondition on GsonHttpMessageConvertersConfiguration.JacksonAndJsonbUnavailableCondition.JsonbPreferred @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jsonb) did not find property 'spring.http.converters.preferred-json-mapper'; NestedCondition on GsonHttpMessageConvertersConfiguration.JacksonAndJsonbUnavailableCondition.Jackson2Available @ConditionalOnBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; SearchStrategy: all) did not find any beans of type org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; NestedCondition on GsonHttpMessageConvertersConfiguration.JacksonAndJsonbUnavailableCondition.JacksonAvailable @ConditionalOnBean (types: org.springframework.http.converter.json.JacksonJsonHttpMessageConverter; SearchStrategy: all) found bean 'jacksonJsonHttpMessageConverter'; NestedCondition on GsonHttpMessageConvertersConfiguration.PreferGsonOrJacksonAndJsonbUnavailableCondition.GsonPreferred @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=gson) did not find property 'spring.http.converters.preferred-json-mapper' (GsonHttpMessageConvertersConfiguration.PreferGsonOrJacksonAndJsonbUnavailableCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    HazelcastCacheConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'com.hazelcast.core.HazelcastInstance' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    InfinispanCacheConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.infinispan.spring.embedded.provider.SpringEmbeddedCacheManager' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    JCacheCacheConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'javax.cache.Caching' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    Jackson2HttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - AnyNestedCondition 0 matched 2 did not; NestedCondition on Jackson2HttpMessageConvertersConfiguration.PreferJackson2OrJacksonUnavailableCondition.JacksonUnavailable @ConditionalOnMissingBean (types: org.springframework.http.converter.json.JacksonJsonHttpMessageConverter; SearchStrategy: all) found beans of type 'org.springframework.http.converter.json.JacksonJsonHttpMessageConverter' jacksonJsonHttpMessageConverter; NestedCondition on Jackson2HttpMessageConvertersConfiguration.PreferJackson2OrJacksonUnavailableCondition.Jackson2Preferred @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jackson2) did not find property 'spring.http.converters.preferred-json-mapper' (Jackson2HttpMessageConvertersConfiguration.PreferJackson2OrJacksonUnavailableCondition)
+2025-12-09 01:22:24.494 |       Matched:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    Jackson2HttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    JacksonAutoConfiguration.CborConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.cbor.CBORMapper' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    JacksonAutoConfiguration.XmlConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    JacksonHttpMessageConvertersConfiguration.JacksonXmlHttpMessageConverterConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    JmxAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBooleanProperty (spring.jmx.enabled=true) did not find property 'spring.jmx.enabled' (OnPropertyCondition)
+2025-12-09 01:22:24.494 |       Matched:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass found required class 'org.springframework.jmx.export.MBeanExporter' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    JsonbHttpMessageConvertersConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'jakarta.json.bind.Jsonb' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    KafkaAnnotationDrivenConfiguration#kafkaListenerContainerFactoryConfigurerVirtualThreads:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnMissingBean (types: org.springframework.boot.kafka.autoconfigure.ConcurrentKafkaListenerContainerFactoryConfigurer; SearchStrategy: all) found beans of type 'org.springframework.boot.kafka.autoconfigure.ConcurrentKafkaListenerContainerFactoryConfigurer' kafkaListenerContainerFactoryConfigurer (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    KafkaAutoConfiguration#kafkaJaasInitializer:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBooleanProperty (spring.kafka.jaas.enabled=true) did not find property 'spring.kafka.jaas.enabled' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    KafkaAutoConfiguration#kafkaRetryTopicConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBooleanProperty (spring.kafka.retry.topic.enabled=true) did not find property 'spring.kafka.retry.topic.enabled' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    KafkaAutoConfiguration#kafkaTransactionManager:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnProperty (spring.kafka.producer.transaction-id-prefix) did not find property 'spring.kafka.producer.transaction-id-prefix' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    KafkaMetricsAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.binder.kafka.KafkaClientMetrics' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    KafkaStreamsAnnotationDrivenConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.apache.kafka.streams.StreamsBuilder' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    KotlinSerializationHttpMessageConvertersConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required classes 'kotlinx.serialization.Serializable', 'kotlinx.serialization.json.Json' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    LoadBalancerAutoConfiguration.DeferringLoadBalancerInterceptorHttpClientConfig:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.http.client.autoconfigure.service.HttpServiceClientProperties' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    LoadBalancerAutoConfiguration.DeferringLoadBalancerInterceptorRestTemplateBuilderConfig:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.restclient.RestTemplateBuilder' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    LoadBalancerAutoConfiguration.RetryAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.retry.support.RetryTemplate' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    LoadBalancerAutoConfiguration.RetryInterceptorAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.retry.support.RetryTemplate' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    LoadBalancerBeanPostProcessorAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    LoadBalancerCacheAutoConfiguration.CaffeineLoadBalancerCacheManagerConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'com.github.benmanes.caffeine.cache.Caffeine' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    LoadBalancerEurekaAutoConfiguration#zoneConfig:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnMissingBean (types: org.springframework.cloud.loadbalancer.config.LoadBalancerZoneConfig; SearchStrategy: all) found beans of type 'org.springframework.cloud.loadbalancer.config.LoadBalancerZoneConfig' zoneConfig (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    LoadBalancerStatsAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    MessageSourceAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - ResourceBundle did not find bundle with basename messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    OAuth2LoadBalancerClientAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnProperty (spring.cloud.oauth2.load-balanced.enabled) did not find property 'spring.cloud.oauth2.load-balanced.enabled' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ProjectInfoAutoConfiguration#buildProperties:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnResource did not find resource '${spring.info.build.location:classpath:META-INF/build-info.properties}' (OnResourceCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ProjectInfoAutoConfiguration#gitProperties:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - GitResource did not find git info at classpath:git.properties (ProjectInfoAutoConfiguration.GitResourceAvailableCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ReactiveCommonsClientAutoConfiguration.ReactiveDiscoveryLoadBalancerConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required classes 'org.springframework.boot.health.contributor.ReactiveHealthIndicator', 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ReactiveCompositeDiscoveryClientAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ReactorLoadBalancerClientAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    RedisCacheConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.RedisConnectionFactory' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    RefreshAutoConfiguration#legacyContextRefresher:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - AnyNestedCondition 0 matched 3 did not; NestedCondition on ConditionalOnBootstrapEnabled.OnBootstrapEnabledCondition.OnBootstrapEnabled @ConditionalOnProperty (spring.cloud.bootstrap.enabled) did not find property 'spring.cloud.bootstrap.enabled'; NestedCondition on ConditionalOnBootstrapEnabled.OnBootstrapEnabledCondition.OnUseLegacyProcessingEnabled @ConditionalOnProperty (spring.config.use-legacy-processing) did not find property 'spring.config.use-legacy-processing'; NestedCondition on ConditionalOnBootstrapEnabled.OnBootstrapEnabledCondition.OnBootstrapMarkerClassPresent @ConditionalOnClass did not find required class 'org.springframework.cloud.bootstrap.marker.Marker' (ConditionalOnBootstrapEnabled.OnBootstrapEnabledCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    RefreshEndpointAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfiguration' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ServiceRegistryAutoConfiguration.ServiceRegistryEndpointConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.endpoint.annotation.Endpoint' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ServletHttpExchangesAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBean did not find required type 'org.springframework.boot.actuate.web.exchanges.HttpExchangeRepository' (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ServletManagementContextAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ServletMappingsAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    ServletWebServerConfiguration#forwardedHeaderFilter:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnProperty (server.forward-headers-strategy=framework) did not find property 'server.forward-headers-strategy' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    SimpleDiscoveryClientConfigurations.StandardSimpleDiscoveryClientConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnMissingClass found unwanted class 'org.springframework.boot.web.server.context.WebServerInitializedEvent' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    SimpleReactiveDiscoveryClientAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.web.reactive.function.client.WebClient' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    SpringApplicationAdminJmxAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBooleanProperty (spring.application.admin.enabled=true) did not find property 'spring.application.admin.enabled' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TaskExecutorConfigurations.AsyncConfigurerWrapperConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans of type org.springframework.scheduling.annotation.AsyncConfigurer (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilderVirtualThreads:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) found beans of type 'org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder' simpleAsyncTaskExecutorBuilder (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutorVirtualThreads:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBean (names: org.springframework.scheduling.config.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.scheduling.config.internalScheduledAnnotationProcessor (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilderVirtualThreads:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) found beans of type 'org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder' simpleAsyncTaskSchedulerBuilder (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TaskSchedulingConfigurations.TaskSchedulerConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBean (names: org.springframework.scheduling.config.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.scheduling.config.internalScheduledAnnotationProcessor (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TomcatMetricsAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.binder.tomcat.TomcatMetrics' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TomcatReactiveManagementContextAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TomcatReactiveWebServerAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnWebApplication did not find reactive web application classes (OnWebApplicationCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TomcatServletManagementContextAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TomcatServletWebServerAutoConfiguration#tomcatForwardedHeaderFilterCustomizer:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnProperty (server.forward-headers-strategy=framework) did not find property 'server.forward-headers-strategy' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    TomcatWebServerConfiguration#tomcatVirtualThreadsProtocolHandlerCustomizer:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration#hiddenHttpMethodFilter:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBooleanProperty (spring.mvc.hiddenmethod.filter.enabled=true) did not find property 'spring.mvc.hiddenmethod.filter.enabled' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration.ProblemDetailsErrorHandlingConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBooleanProperty (spring.mvc.problemdetails.enabled=true) did not find property 'spring.mvc.problemdetails.enabled' (OnPropertyCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration.ResourceChainCustomizerConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarVersionLocator (OnEnabledResourceChainCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.view.BeanNameViewResolver' beanNameViewResolver (OnBeanCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcHealthEndpointExtensionAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.health.actuate.endpoint.HealthEndpoint' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcMappingsAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcObservationAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnBean (types: io.micrometer.observation.ObservationRegistry; SearchStrategy: all) did not find any beans of type io.micrometer.observation.ObservationRegistry (OnBeanCondition)
+2025-12-09 01:22:24.494 |       Matched:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass found required classes 'org.springframework.web.servlet.DispatcherServlet', 'io.micrometer.observation.Observation' (OnClassCondition)
+2025-12-09 01:22:24.494 |          - found 'session' scope (OnWebApplicationCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WebMvcObservationAutoConfiguration.MeterFilterConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
+2025-12-09 01:22:24.494 |          - Ancestor org.springframework.boot.webmvc.autoconfigure.WebMvcObservationAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |    WritableEnvironmentEndpointAutoConfiguration:
+2025-12-09 01:22:24.494 |       Did not match:
+2025-12-09 01:22:24.494 |          - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.env.EnvironmentEndpointProperties' (OnClassCondition)
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 | Exclusions:
+2025-12-09 01:22:24.494 | -----------
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     None
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 | Unconditional classes:
+2025-12-09 01:22:24.494 | ----------------------
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.cloud.client.ReactiveCommonsClientAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.boot.autoconfigure.ssl.SslAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.cloud.client.discovery.simple.SimpleDiscoveryClientAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.cloud.client.CommonsClientAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClientAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.cloud.client.serviceregistry.ServiceRegistryAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.cloud.autoconfigure.LifecycleMvcEndpointAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 |     org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.494 | 
+2025-12-09 01:22:24.519 | 2025-12-08T19:52:24.515Z  INFO 1 --- [notificationService] [           main] c.f.NotificationServiceApplication       : Started NotificationServiceApplication in 27.003 seconds (process running for 30.726)
+2025-12-09 01:22:24.527 | 2025-12-08T19:52:24.526Z DEBUG 1 --- [notificationService] [           main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2025-12-09 01:22:24.558 | 2025-12-08T19:52:24.556Z DEBUG 1 --- [notificationService] [           main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2025-12-09 01:22:26.628 | 2025-12-08T19:52:26.624Z  WARN 1 --- [notificationService] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] The metadata response from the cluster reported a recoverable issue with correlation id 3 : {flight_confirmation=LEADER_NOT_AVAILABLE}
+2025-12-09 01:22:26.631 | 2025-12-08T19:52:26.631Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Cluster ID: RdJ7Cj9yTYmL6Q4oyLH8pg
+2025-12-09 01:22:26.872 | 2025-12-08T19:52:26.871Z  WARN 1 --- [notificationService] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] The metadata response from the cluster reported a recoverable issue with correlation id 7 : {flight_confirmation=LEADER_NOT_AVAILABLE}
+2025-12-09 01:22:27.371 | 2025-12-08T19:52:27.370Z  WARN 1 --- [notificationService] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] The metadata response from the cluster reported a recoverable issue with correlation id 9 : {flight_confirmation=LEADER_NOT_AVAILABLE}
+2025-12-09 01:22:28.016 | 2025-12-08T19:52:27.995Z  WARN 1 --- [notificationService] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] The metadata response from the cluster reported a recoverable issue with correlation id 11 : {flight_confirmation=LEADER_NOT_AVAILABLE}
+2025-12-09 01:22:28.938 | 2025-12-08T19:52:28.935Z  WARN 1 --- [notificationService] [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] The metadata response from the cluster reported a recoverable issue with correlation id 13 : {flight_confirmation=LEADER_NOT_AVAILABLE}
+2025-12-09 01:22:35.203 | 2025-12-08T19:52:35.199Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null isFenced: false)
+2025-12-09 01:22:35.225 | 2025-12-08T19:52:35.224Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2025-12-09 01:22:35.349 | 2025-12-08T19:52:35.349Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-1-67a807c0-dad5-4779-baf0-ac58124fd22e
+2025-12-09 01:22:35.350 | 2025-12-08T19:52:35.350Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2025-12-09 01:22:38.435 | 2025-12-08T19:52:38.433Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-notification-group-1-67a807c0-dad5-4779-baf0-ac58124fd22e', protocol='range'}
+2025-12-09 01:22:38.477 | 2025-12-08T19:52:38.476Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Finished assignment for group at generation 1: {consumer-notification-group-1-67a807c0-dad5-4779-baf0-ac58124fd22e=Assignment(partitions=[flight_confirmation-0])}
+2025-12-09 01:22:38.612 | 2025-12-08T19:52:38.611Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-notification-group-1-67a807c0-dad5-4779-baf0-ac58124fd22e', protocol='range'}
+2025-12-09 01:22:38.612 | 2025-12-08T19:52:38.612Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Notifying assignor about the new Assignment(partitions=[flight_confirmation-0])
+2025-12-09 01:22:38.616 | 2025-12-08T19:52:38.616Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Adding newly assigned partitions: [flight_confirmation-0]
+2025-12-09 01:22:38.662 | 2025-12-08T19:52:38.662Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Found no committed offset for partition flight_confirmation-0
+2025-12-09 01:22:38.689 | 2025-12-08T19:52:38.689Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Resetting offset for partition flight_confirmation-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2025-12-09 01:22:38.692 | 2025-12-08T19:52:38.692Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: partitions assigned: [flight_confirmation-0]
+2025-12-09 01:22:53.176 | 2025-12-08T19:52:53.174Z  INFO 1 --- [notificationService] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-12-09 01:22:53.177 | 2025-12-08T19:52:53.176Z  INFO 1 --- [notificationService] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-12-09 01:22:53.177 | 2025-12-08T19:52:53.176Z  INFO 1 --- [notificationService] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-12-09 01:22:53.177 | 2025-12-08T19:52:53.176Z  INFO 1 --- [notificationService] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-12-09 01:22:53.177 | 2025-12-08T19:52:53.176Z  INFO 1 --- [notificationService] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-12-09 01:22:53.177 | 2025-12-08T19:52:53.176Z  INFO 1 --- [notificationService] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2025-12-09 01:22:53.177 | 2025-12-08T19:52:53.176Z  INFO 1 --- [notificationService] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-12-09 01:22:53.191 | 2025-12-08T19:52:53.190Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:22:53.271 | 2025-12-08T19:52:53.271Z  INFO 1 --- [notificationService] [reshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-12-09 01:23:23.364 | 2025-12-08T19:53:23.356Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:23:53.464 | 2025-12-08T19:53:53.457Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:24:23.546 | 2025-12-08T19:54:23.537Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:24:53.617 | 2025-12-08T19:54:53.606Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:25:23.654 | 2025-12-08T19:55:23.653Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:25:53.696 | 2025-12-08T19:55:53.692Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:26:23.709 | 2025-12-08T19:56:23.707Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:26:53.719 | 2025-12-08T19:56:53.718Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:27:19.888 | 2025-12-08T19:57:19.885Z  INFO 1 --- [notificationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:27:23.755 | 2025-12-08T19:57:23.752Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:27:53.758 | 2025-12-08T19:57:53.757Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:28:23.798 | 2025-12-08T19:58:23.795Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:28:53.834 | 2025-12-08T19:58:53.831Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:29:23.859 | 2025-12-08T19:59:23.857Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:29:53.881 | 2025-12-08T19:59:53.874Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:30:24.124 | 2025-12-08T20:00:24.113Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:30:54.158 | 2025-12-08T20:00:54.155Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:31:24.185 | 2025-12-08T20:01:24.183Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:31:54.210 | 2025-12-08T20:01:54.208Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:32:17.641 | 2025-12-08T20:02:17.639Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] c.flightApp.kafka.NotificationListener   : Received Notification Event for PNR: PNR7396D7
+2025-12-09 01:32:17.641 | 2025-12-08T20:02:17.640Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] c.flightApp.kafka.NotificationListener   : Triggering SMS to: 6206869451
+2025-12-09 01:32:17.643 | 2025-12-08T20:02:17.643Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : ------------------------------------------------
+2025-12-09 01:32:17.644 | 2025-12-08T20:02:17.643Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : SENDING SMS TO: 6206869451
+2025-12-09 01:32:17.644 | 2025-12-08T20:02:17.644Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : BODY: Booking Confirmed! PNR: PNR7396D7
+2025-12-09 01:32:17.644 | 2025-12-08T20:02:17.644Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : ------------------------------------------------
+2025-12-09 01:32:17.644 | 2025-12-08T20:02:17.644Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : Added default country code. New number: +916206869451
+2025-12-09 01:32:19.632 | 2025-12-08T20:02:19.631Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : SMS sent via Twilio! SID: SM436e72cdb0ca9b807cacf19ca289e7f9
+2025-12-09 01:32:19.632 | 2025-12-08T20:02:19.632Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] c.flightApp.kafka.NotificationListener   : Skipping Email to: himanshu825406@gmail.com (Email service not yet enabled)
+2025-12-09 01:32:19.896 | 2025-12-08T20:02:19.895Z  INFO 1 --- [notificationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:32:24.244 | 2025-12-08T20:02:24.241Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:32:54.259 | 2025-12-08T20:02:54.258Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:33:24.287 | 2025-12-08T20:03:24.284Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:33:54.313 | 2025-12-08T20:03:54.303Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:34:24.339 | 2025-12-08T20:04:24.328Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:34:54.366 | 2025-12-08T20:04:54.364Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:35:24.391 | 2025-12-08T20:05:24.388Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:35:54.416 | 2025-12-08T20:05:54.411Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:36:24.454 | 2025-12-08T20:06:24.452Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:36:54.505 | 2025-12-08T20:06:54.501Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:37:19.903 | 2025-12-08T20:07:19.898Z  INFO 1 --- [notificationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:37:24.551 | 2025-12-08T20:07:24.542Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:37:54.593 | 2025-12-08T20:07:54.587Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:38:23.242 | 2025-12-08T20:08:23.240Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] c.flightApp.kafka.NotificationListener   : Received Notification Event for PNR: PNR7396D7
+2025-12-09 01:38:23.242 | 2025-12-08T20:08:23.241Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] c.flightApp.kafka.NotificationListener   : Triggering SMS to: 6206869451
+2025-12-09 01:38:23.242 | 2025-12-08T20:08:23.242Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : ------------------------------------------------
+2025-12-09 01:38:23.242 | 2025-12-08T20:08:23.242Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : SENDING SMS TO: 6206869451
+2025-12-09 01:38:23.242 | 2025-12-08T20:08:23.242Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : BODY: Booking Cancelled Successfully for PNR: PNR7396D7
+2025-12-09 01:38:23.242 | 2025-12-08T20:08:23.242Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : ------------------------------------------------
+2025-12-09 01:38:23.243 | 2025-12-08T20:08:23.242Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : Added default country code. New number: +916206869451
+2025-12-09 01:38:24.297 | 2025-12-08T20:08:24.296Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] com.flightApp.service.SmsService         : SMS sent via Twilio! SID: SM3d6bfe3eea5751018a8f96fce013d8d1
+2025-12-09 01:38:24.297 | 2025-12-08T20:08:24.297Z  INFO 1 --- [notificationService] [ntainer#0-0-C-1] c.flightApp.kafka.NotificationListener   : Skipping Email to: himanshu825406@gmail.com (Email service not yet enabled)
+2025-12-09 01:38:24.631 | 2025-12-08T20:08:24.631Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:38:54.671 | 2025-12-08T20:08:54.658Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:39:24.700 | 2025-12-08T20:09:24.698Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:39:54.742 | 2025-12-08T20:09:54.741Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:40:24.778 | 2025-12-08T20:10:24.776Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:40:54.806 | 2025-12-08T20:10:54.803Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:41:24.865 | 2025-12-08T20:11:24.863Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:41:54.900 | 2025-12-08T20:11:54.897Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:42:19.901 | 2025-12-08T20:12:19.897Z  INFO 1 --- [notificationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:42:24.938 | 2025-12-08T20:12:24.928Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:42:54.962 | 2025-12-08T20:12:54.958Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:43:25.016 | 2025-12-08T20:13:25.013Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:43:55.051 | 2025-12-08T20:13:55.048Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:44:25.105 | 2025-12-08T20:14:25.089Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:44:55.143 | 2025-12-08T20:14:55.140Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:45:25.180 | 2025-12-08T20:15:25.175Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:45:55.214 | 2025-12-08T20:15:55.211Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:46:25.249 | 2025-12-08T20:16:25.244Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:46:55.270 | 2025-12-08T20:16:55.268Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:47:19.940 | 2025-12-08T20:17:19.930Z  INFO 1 --- [notificationService] [rap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-12-09 01:47:25.295 | 2025-12-08T20:17:25.293Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:47:55.320 | 2025-12-08T20:17:55.317Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:48:25.344 | 2025-12-08T20:18:25.340Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]
+2025-12-09 01:48:55.372 | 2025-12-08T20:18:55.371Z DEBUG 1 --- [notificationService] [reshExecutor-%d] o.s.web.client.DefaultRestClient         : Reading to [com.netflix.discovery.shared.Applications]

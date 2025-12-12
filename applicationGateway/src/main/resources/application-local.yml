@@ -1,0 +1,20 @@
+#spring:
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: false
+#          lower-case-service-id: true
+##      routes:
+##        - id: flight-service
+##          uri: lb://FLIGHTSERVICE
+##          predicates:
+##            - Path=/flight/**
+##
+##        - id: booking-service
+##          uri: lb://BOOKINGSERVICE
+##          predicates:
+##            - Path=/booking/**
+
+server:
+  port: 6060

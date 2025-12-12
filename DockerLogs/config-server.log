@@ -1,0 +1,30 @@
+2025-12-09 01:21:37.312 | Picked up JAVA_TOOL_OPTIONS: -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/ -Deureka.client.register-with-eureka=true -Deureka.client.fetch-registry=true -Deureka.instance.prefer-ip-address=true -Deureka.instance.lease-renewal-interval-in-seconds=5 -Deureka.instance.lease-expiration-duration-in-seconds=10
+2025-12-09 01:21:37.312 | 
+2025-12-09 01:21:39.527 | 
+2025-12-09 01:21:39.527 |   .   ____          _            __ _ _
+2025-12-09 01:21:39.527 |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-12-09 01:21:39.527 | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-12-09 01:21:39.527 |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-12-09 01:21:39.527 |   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-12-09 01:21:39.527 |  =========|_|==============|___/=/_/_/_/
+2025-12-09 01:21:39.527 | 
+2025-12-09 01:21:39.527 |  :: Spring Boot ::                (v4.0.0)
+2025-12-09 01:21:39.527 | 
+2025-12-09 01:21:39.680 | 2025-12-08T19:51:39.678Z  INFO 1 --- [configServer] [           main] com.flightApp.ConfigServerApplication    : Starting ConfigServerApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 1 (/app/app.jar started by root in /app)
+2025-12-09 01:21:39.681 | 2025-12-08T19:51:39.681Z  INFO 1 --- [configServer] [           main] com.flightApp.ConfigServerApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-12-09 01:21:40.730 | 2025-12-08T19:51:40.730Z  INFO 1 --- [configServer] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=0cddbe66-053f-3dc9-884e-976511af59fa
+2025-12-09 01:21:41.035 | 2025-12-08T19:51:41.035Z  INFO 1 --- [configServer] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2025-12-09 01:21:41.049 | 2025-12-08T19:51:41.048Z  INFO 1 --- [configServer] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-09 01:21:41.049 | 2025-12-08T19:51:41.049Z  INFO 1 --- [configServer] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2025-12-09 01:21:41.072 | 2025-12-08T19:51:41.071Z  INFO 1 --- [configServer] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1285 ms
+2025-12-09 01:21:42.035 | 2025-12-08T19:51:42.035Z  INFO 1 --- [configServer] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2025-12-09 01:21:42.056 | 2025-12-08T19:51:42.056Z  INFO 1 --- [configServer] [           main] com.flightApp.ConfigServerApplication    : Started ConfigServerApplication in 3.162 seconds (process running for 4.748)
+2025-12-09 01:21:42.385 | 2025-12-08T19:51:42.385Z  INFO 1 --- [configServer] [nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-09 01:21:42.385 | 2025-12-08T19:51:42.385Z  INFO 1 --- [configServer] [nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-09 01:21:42.386 | 2025-12-08T19:51:42.386Z  INFO 1 --- [configServer] [nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-09 01:22:01.284 | 2025-12-08T19:52:01.269Z  INFO 1 --- [configServer] [nio-8888-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/tmp/config-repo-9621949640910763095/bookingService.properties]' via location 'file:/tmp/config-repo-9621949640910763095/'
+2025-12-09 01:22:02.171 | 2025-12-08T19:52:02.161Z  INFO 1 --- [configServer] [nio-8888-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/tmp/config-repo-9621949640910763095/flightService.properties]' via location 'file:/tmp/config-repo-9621949640910763095/'
+2025-12-09 01:22:03.043 | 2025-12-08T19:52:03.041Z  INFO 1 --- [configServer] [nio-8888-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/tmp/config-repo-9621949640910763095/bookingService-docker.properties]' via location 'file:/tmp/config-repo-9621949640910763095/'
+2025-12-09 01:22:03.044 | 2025-12-08T19:52:03.044Z  INFO 1 --- [configServer] [nio-8888-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/tmp/config-repo-9621949640910763095/bookingService.properties]' via location 'file:/tmp/config-repo-9621949640910763095/'
+2025-12-09 01:22:04.267 | 2025-12-08T19:52:04.263Z  INFO 1 --- [configServer] [nio-8888-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/tmp/config-repo-9621949640910763095/flightService-docker.properties]' via location 'file:/tmp/config-repo-9621949640910763095/'
+2025-12-09 01:22:04.272 | 2025-12-08T19:52:04.267Z  INFO 1 --- [configServer] [nio-8888-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/tmp/config-repo-9621949640910763095/flightService.properties]' via location 'file:/tmp/config-repo-9621949640910763095/'
