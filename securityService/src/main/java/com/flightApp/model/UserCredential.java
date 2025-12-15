@@ -27,6 +27,7 @@ public class UserCredential implements UserDetails{
     private String name;
     @Indexed(unique=true)
     private String email;
+    private String fullname;
     private String password;
     private Role role;
 

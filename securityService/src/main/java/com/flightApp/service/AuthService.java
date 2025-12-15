@@ -34,6 +34,7 @@ public class AuthService {
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(request.getRole() != null ? request.getRole() : Role.ROLE_USER)
+                .fullname(request.getFullname())
                 .build();
                 
         repository.save(user);

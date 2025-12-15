@@ -40,6 +40,8 @@ services:
     container_name: mongo
     ports:
       - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongosh mongo:27017/test --quiet
       interval: 10s
@@ -247,3 +249,5 @@ services:
 networks:
   microservices-network:
     driver: bridge
+volumes:
+  mongo_data:

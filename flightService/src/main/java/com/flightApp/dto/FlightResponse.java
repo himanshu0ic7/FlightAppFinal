@@ -12,6 +12,7 @@ public class FlightResponse {
     private Airports fromPlace;
     private Airports toPlace;
     private LocalDateTime flightDateTime;
+    private LocalDateTime flightEndDateTime;
     private float price;
     private Integer availableSeats;
     private Integer totalSeats;

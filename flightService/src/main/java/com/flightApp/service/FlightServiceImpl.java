@@ -34,7 +34,7 @@ public class FlightServiceImpl implements FlightService {
         flight.setFromPlace(request.getFromPlace());
         flight.setToPlace(request.getToPlace());
         flight.setFlightDateTime(request.getFlightDateTime());
-        
+        flight.setFlightEndDateTime(request.getFlightEndDateTime());
         flight.setPrice(request.getPrice());
         flight.setTotalSeats(request.getTotalSeats());
         flight.setAvailableSeats(request.getTotalSeats());
@@ -78,6 +78,7 @@ public class FlightServiceImpl implements FlightService {
         response.setFlightId(flight.getFlightId());
         response.setTotalSeats(flight.getTotalSeats());
         response.setFlightDateTime(flight.getFlightDateTime());
+        response.setFlightEndDateTime(flight.getFlightEndDateTime());
         return response;
     }
 }

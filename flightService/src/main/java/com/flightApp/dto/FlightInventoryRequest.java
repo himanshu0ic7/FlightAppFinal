@@ -27,6 +27,10 @@ public class FlightInventoryRequest {
     @NotNull(message = "Flight date/time is required")
     private LocalDateTime flightDateTime;
 
+    @Future(message = "Flight date/time must be in the future")
+    @NotNull(message = "Flight date/time is required")
+    private LocalDateTime flightEndDateTime;
+    
     @NotNull(message = "Price is required")
     @Min(value = 1, message = "Price must be greater than 0")
     private float price;

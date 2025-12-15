@@ -11,6 +11,7 @@ public class FlightDTO {
     private Integer availableSeats;
     private Integer totalSeats;
     private LocalDateTime flightDateTime;
+    private LocalDateTime flightEndDateTime;
     private Airports fromPlace;
     private Airports toPlace;
 }

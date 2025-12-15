@@ -32,6 +32,7 @@ public class Booking {
     String pnrNumber;           
     LocalDateTime bookingDateTime;
     LocalDateTime journeyDateTime;
+    LocalDateTime journeyEndDateTime;
     
     @Version
     private Long version;

@@ -8,6 +8,7 @@ import java.util.List;
 public class TicketDetailsResponse {
     private String pnrNumber;
     private LocalDateTime journeyDateTime;
+    private LocalDateTime journeyEndDateTime;
     private FlightDetails flight;
     private List<PassengerDTO> passengers;
     private com.flightApp.model.BookingStatus status; 

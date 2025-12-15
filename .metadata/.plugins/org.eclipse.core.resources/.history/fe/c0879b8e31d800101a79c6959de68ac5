@@ -1,0 +1,5 @@
+package com.flightApp.config;
+
+public class CorsConfig {
+
+}

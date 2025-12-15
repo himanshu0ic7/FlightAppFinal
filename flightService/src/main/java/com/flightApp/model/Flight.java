@@ -38,6 +38,8 @@ public class Flight {
     
     LocalDateTime flightDateTime;
     
+    LocalDateTime flightEndDateTime;
+    
     @Positive(message="Price cannot be negative")
     float price;
     

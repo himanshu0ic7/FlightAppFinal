@@ -9,6 +9,7 @@ import com.flightApp.model.BookingStatus;
 public class BookingHistoryResponse {
     private String pnrNumber;
     private LocalDateTime journeyDateTime;
+    private LocalDateTime journeyEndDateTime;
     private Airports fromPlace;
     private Airports toPlace;
     private BookingStatus status; 

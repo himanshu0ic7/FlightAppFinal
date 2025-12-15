@@ -88,6 +88,7 @@ public class BookingServiceImpl implements BookingService {
         booking.setNoOfSeats(request.getNumberOfSeats());
         booking.setBookingDateTime(LocalDateTime.now());
         booking.setJourneyDateTime(flight.getFlightDateTime());
+        booking.setJourneyEndDateTime(flight.getFlightEndDateTime());
         booking.setBookingStatus(BookingStatus.CONFIRMED);
         booking.setTotalPrice(flight.getPrice() * request.getNumberOfSeats());
 
@@ -157,6 +158,7 @@ public class BookingServiceImpl implements BookingService {
         TicketDetailsResponse response = new TicketDetailsResponse();
         response.setPnrNumber(booking.getPnrNumber());
         response.setJourneyDateTime(booking.getJourneyDateTime());
+        response.setJourneyEndDateTime(booking.getJourneyEndDateTime());
         response.setStatus(booking.getBookingStatus());
 
         TicketDetailsResponse.FlightDetails fd = new TicketDetailsResponse.FlightDetails();
@@ -193,6 +195,7 @@ public class BookingServiceImpl implements BookingService {
             BookingHistoryResponse response = new BookingHistoryResponse();
             response.setPnrNumber(b.getPnrNumber());
             response.setJourneyDateTime(b.getJourneyDateTime());
+            response.setJourneyEndDateTime(b.getJourneyEndDateTime());
             response.setStatus(b.getBookingStatus());
 
             try {

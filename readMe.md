@@ -177,6 +177,9 @@ cd flightMicroserviceDockerizedSecurity
 
 # Build and start all services
 docker-compose up -d --build
+
+# To rebuild and start specific service again
+docker compose up -d --build <service-name>
 ```
 
 ### Verify Deployment
