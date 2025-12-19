@@ -1,6 +1,7 @@
 package com.flightApp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.flightApp.dto.FlightInventoryRequest;
@@ -38,5 +39,16 @@ public class FlightController {
     @GetMapping("/{id}")
     public Mono<FlightResponse> getFlightById(@PathVariable String id) {
         return flightService.getFlightById(id);
+    }
+    
+    @PutMapping("/updateSeats/{flightId}")
+    public Mono<ResponseEntity<String>> updateSeats(
+            @PathVariable String flightId, 
+            @RequestParam int count
+    ) {
+        return flightService.updateSeatInventory(flightId, count)
+            .map(updatedFlight -> ResponseEntity.ok("Seats updated successfully. Remaining: " + updatedFlight.getAvailableSeats()))
+            .defaultIfEmpty(ResponseEntity.notFound().build())
+            .onErrorResume(e -> Mono.just(ResponseEntity.badRequest().body(e.getMessage())));
     }
 }

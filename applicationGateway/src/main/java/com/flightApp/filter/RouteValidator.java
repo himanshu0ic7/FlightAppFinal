@@ -27,7 +27,6 @@ public class RouteValidator {
                     .stream()
                     .noneMatch(uri -> request.getURI().getPath().contains(uri))
                     
-                    // 1. YOUR REGEX FIX: Allow access to /flight/{id} (MongoID)
                     && !request.getURI().getPath().matches("/flight/[a-fA-F0-9]+") 
                     
                     // 2. CORS FIX: Allow OPTIONS requests for everything

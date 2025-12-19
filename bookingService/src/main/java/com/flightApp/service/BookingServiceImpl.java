@@ -112,7 +112,11 @@ public class BookingServiceImpl implements BookingService {
         booking.setPassengers(entityPassengers);
 
         Booking savedBooking = bookingRepository.save(booking);
-
+        try {
+            flightClient.updateAvailableSeats(request.getFlightId(), request.getNumberOfSeats());
+        } catch (Exception e) {
+            System.err.println("Failed to update flight inventory: " + e.getMessage());
+        }
         sendKafkaNotification(
                 savedBooking.getPnrNumber(), 
                 user.getMobileNumber(),

@@ -3,6 +3,8 @@ package com.flightApp.client;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.flightApp.dto.FlightDTO;
 
@@ -11,4 +13,7 @@ public interface FlightClient {
 
     @GetMapping("/flight/{id}")
     FlightDTO getFlightById(@PathVariable("id") String id);
+    
+    @PutMapping("/flight/updateSeats/{flightId}")
+    String updateAvailableSeats(@PathVariable("flightId") String flightId, @RequestParam("count") int count);
 }

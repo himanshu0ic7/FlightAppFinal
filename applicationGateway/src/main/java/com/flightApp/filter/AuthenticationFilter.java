@@ -111,7 +111,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                 
                 String token = null;
 
-                // --- STRATEGY A: Try fetching from HEADER (Bearer Token) ---
+                //Try fetching from HEADER (Bearer Token)
                 if (exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
                     String authHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION).get(0);
                     if (authHeader != null && authHeader.startsWith("Bearer ")) {
@@ -119,8 +119,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                     }
                 }
 
-                // --- STRATEGY B: Try fetching from COOKIE (Browser Flow) ---
-                // If header failed, look for the "JWT_TOKEN" cookie
+                //Try fetching from COOKIE look for the "JWT_TOKEN" cookie
                 if (token == null) {
                     HttpCookie cookie = exchange.getRequest().getCookies().getFirst("JWT_TOKEN");
                     if (cookie != null) {
@@ -128,28 +127,26 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                     }
                 }
 
-                // --- FINAL CHECK: Did we find a token? ---
+                // if we find a token?
                 if (token == null) {
-                    return onError(exchange, HttpStatus.UNAUTHORIZED); // 401 Missing Token
+                    return onError(exchange, HttpStatus.UNAUTHORIZED);
                 }
 
                 try {
-                    // 2. Validate the found token
                     jwtUtil.validateToken(token);
 
-                    // 3. Extract Role for Authorization Checks
-                    String finalToken = token; // Needed for lambda
+                    String finalToken = token;
                     String role = jwtUtil.extractClaim(finalToken, claims -> (String) claims.get("role"));
                     String path = exchange.getRequest().getURI().getPath();
 
-                    // Rule: Only Admins can access inventory
+                    // Only Admins can access inventory
                     if (path.contains("/flight/airline/inventory") && !"ROLE_ADMIN".equals(role)) {
-                        return onError(exchange, HttpStatus.FORBIDDEN); // 403 Forbidden
+                        return onError(exchange, HttpStatus.FORBIDDEN);
                     }
 
                 } catch (Exception e) {
                     System.out.println("Gateway Error: " + e.getMessage());
-                    return onError(exchange, HttpStatus.UNAUTHORIZED); // 401 Invalid Token
+                    return onError(exchange, HttpStatus.UNAUTHORIZED);
                 }
             }
             return chain.filter(exchange);

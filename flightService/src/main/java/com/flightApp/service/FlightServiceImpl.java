@@ -72,6 +72,18 @@ public class FlightServiceImpl implements FlightService {
                 .switchIfEmpty(Mono.error(new ResourceNotFoundException("Flight not found with id: " + id)));
     }
 
+    public Mono<Flight> updateSeatInventory(String flightId, int seatsBooked) {
+        return flightRepository.findById(flightId)
+            .flatMap(flight -> {
+                int updatedSeats = flight.getAvailableSeats() - seatsBooked;
+                if (updatedSeats < 0) {
+                    return Mono.error(new RuntimeException("Not enough seats available"));
+                }
+                flight.setAvailableSeats(updatedSeats);
+                return flightRepository.save(flight);
+            });
+    }
+    
     private FlightResponse mapToDTO(Flight flight) {
         FlightResponse response = new FlightResponse();
         BeanUtils.copyProperties(flight, response);
