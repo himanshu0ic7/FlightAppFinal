@@ -101,7 +101,7 @@ public class AuthController {
         return ResponseEntity.ok(ApiResponse.success("Token is valid"));
     }
     
-    @GetMapping("/user/search") 
+    @GetMapping("/user/") 
     public ResponseEntity<UserDto> getUserByEmail(@RequestParam("email") String email) {
         return service.getUserByEmail(email);
     }

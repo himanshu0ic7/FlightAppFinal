@@ -13,7 +13,7 @@ import com.flightApp.dto.UserDto;
 
 @FeignClient(name = "securityService")
 public interface AuthClient {
-	@GetMapping("/auth/user/search")
+	@GetMapping("/auth/user/")
     UserDto getUserByEmail(@RequestParam("email") String email);
 
     @PostMapping("/auth/register")
