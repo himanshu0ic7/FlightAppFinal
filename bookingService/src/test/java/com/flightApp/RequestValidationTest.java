@@ -29,9 +29,7 @@ public class RequestValidationTest {
         BookingRequest req = new BookingRequest();
         req.setFlightId("F100");
         req.setNumberOfSeats(1);
-        req.setEmailId("valid@test.com");
         req.setName("John Doe");
-        req.setMobileNumber("9876543210");
         com.flightApp.dto.PassengerDTO p = new com.flightApp.dto.PassengerDTO();
         p.setName("Passenger 1");
         p.setAge(30);
@@ -61,9 +59,7 @@ public class RequestValidationTest {
         BookingRequest req = new BookingRequest();
         req.setFlightId("F100");
         req.setNumberOfSeats(1);
-        req.setEmailId("invalid-email"); 
         req.setName("John");
-        req.setMobileNumber("9876543210");
 
         Set<ConstraintViolation<BookingRequest>> violations = validator.validate(req);
         
@@ -78,9 +74,7 @@ public class RequestValidationTest {
         BookingRequest req = new BookingRequest();
         req.setFlightId("F100");
         req.setNumberOfSeats(0);
-        req.setEmailId("test@test.com");
         req.setName("John");
-        req.setMobileNumber("9876543210");
 
         Set<ConstraintViolation<BookingRequest>> violations = validator.validate(req);
         

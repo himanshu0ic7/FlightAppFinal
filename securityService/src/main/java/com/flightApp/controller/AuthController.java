@@ -1,5 +1,7 @@
 package com.flightApp.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,7 +20,9 @@ import com.flightApp.dtos.ApiResponse;
 import com.flightApp.dtos.AuthRequest;
 import com.flightApp.dtos.AuthResponse;
 import com.flightApp.dtos.RegisterRequest;
+import com.flightApp.dtos.UserDto;
 import com.flightApp.model.Role;
+import com.flightApp.model.UserCredential;
 import com.flightApp.service.AuthService;
 
 import jakarta.validation.Valid;
@@ -96,6 +100,24 @@ public class AuthController {
         service.validateToken(token);
         return ResponseEntity.ok(ApiResponse.success("Token is valid"));
     }
+    
+    @GetMapping("/user/") 
+    public ResponseEntity<UserDto> getUserByEmail(@RequestParam("email") String email) {
+        return service.getUserByEmail(email);
+    }
+    
+    @GetMapping("/user/id/{id}")
+    public ResponseEntity<UserDto> getUserById(@PathVariable String id) {
+        return service.getUserById(id);
+    }
+    
+
+    @GetMapping("/user/userName") 
+    public ResponseEntity<UserDto> getUserByUserName(@RequestParam("userName") String userName) {
+        return service.getUserByUserName(userName);
+    }
+    
+    
     private ResponseCookie createJwtCookie(String token) {
         return ResponseCookie.from("JWT_TOKEN", token)
                 .httpOnly(true)   // Secure: JS cannot read it

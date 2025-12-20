@@ -20,18 +20,14 @@ public class PojoTest {
         BookingRequest req = new BookingRequest();
         req.setFlightId("F100");
         req.setNumberOfSeats(2);
-        req.setEmailId("test@test.com");
         req.setName("John");
-        req.setMobileNumber("1234567890");
         
         List<PassengerDTO> passengers = new ArrayList<>();
         req.setPassengers(passengers);
 
         assertEquals("F100", req.getFlightId());
         assertEquals(2, req.getNumberOfSeats());
-        assertEquals("test@test.com", req.getEmailId());
         assertEquals("John", req.getName());
-        assertEquals("1234567890", req.getMobileNumber());
         assertEquals(passengers, req.getPassengers());
         
         assertNotNull(req.toString()); // Covers toString()

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
+import com.flightApp.client.AuthClient;
 import com.flightApp.client.FlightClient;
 import com.flightApp.dto.BookingEvent;
 import com.flightApp.dto.BookingHistoryResponse;
@@ -13,14 +14,15 @@ import com.flightApp.dto.BookingResponse;
 import com.flightApp.dto.FlightDTO;
 import com.flightApp.dto.PassengerDTO;
 import com.flightApp.dto.TicketDetailsResponse;
+import com.flightApp.dto.UserDto;
 import com.flightApp.model.Booking;
 import com.flightApp.model.BookingStatus;
 import com.flightApp.model.Passenger;
-import com.flightApp.model.User;
 import com.flightApp.repo.BookingRepo;
-import com.flightApp.repo.UserRepo;
 import com.flightApp.validation.BookingException;
 import com.flightApp.validation.ResourceNotFoundException;
+
+import feign.FeignException;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -35,10 +37,10 @@ public class BookingServiceImpl implements BookingService {
 
     @Autowired
     private FlightClient flightClient;
-    
-    @Autowired
-    private UserRepo userRepository;
 
+    @Autowired
+    private AuthClient authClient;
+    
     @Autowired
     private KafkaTemplate<String, BookingEvent> kafkaTemplate;
     
@@ -49,27 +51,19 @@ public class BookingServiceImpl implements BookingService {
             throw new BookingException("Mismatch: Number of seats requested does not match passenger list size.");
         }
         
-        User user = userRepository.findByEmailId(request.getEmailId())
-                .orElseGet(() -> {
-                    User newUser = new User();
-                    newUser.setName(request.getName());
-                    newUser.setEmailId(request.getEmailId());
-                    newUser.setMobileNumber(request.getMobileNumber());
-                    return userRepository.save(newUser);
-                });
-        
-        if(user.getMobileNumber() == null || user.getMobileNumber().isEmpty()) {
-            user.setMobileNumber(request.getMobileNumber());
-            userRepository.save(user);
-       }
+        String userId=null;
+        UserDto secUser=null;
+        try {
+            secUser = authClient.getUserByUserName(request.getName());
+            userId = secUser.getId();
+        } catch (FeignException.NotFound e) {
+            throw new BookingException("You must be a registered user to book a ticket. Please log in.");
+        } catch(Exception e) {
+        	System.out.println(e.getMessage());
+        }
 
         FlightDTO flight;
-        flight = flightClient.getFlightById(request.getFlightId());        
-//        try {
-//            
-//        } catch (Exception e) {
-//            throw new ResourceNotFoundException("Flight not found with ID: " + request.getFlightId());
-//        }
+        flight = flightClient.getFlightById(request.getFlightId());
 
         if (flight.getAvailableSeats() < request.getNumberOfSeats()) {
             throw new BookingException("Not enough seats available.");
@@ -83,7 +77,7 @@ public class BookingServiceImpl implements BookingService {
         Booking booking = new Booking();
         booking.setPnrNumber("PNR" + UUID.randomUUID().toString().substring(0, 6).toUpperCase());
         booking.setFlightId(request.getFlightId());
-        booking.setUserId(user.getId()); 
+        booking.setUserId(userId); 
         
         booking.setNoOfSeats(request.getNumberOfSeats());
         booking.setBookingDateTime(LocalDateTime.now());
@@ -119,8 +113,8 @@ public class BookingServiceImpl implements BookingService {
         }
         sendKafkaNotification(
                 savedBooking.getPnrNumber(), 
-                user.getMobileNumber(),
-                user.getEmailId(), 
+                secUser.getMobileNumber(),
+                secUser.getEmail(), 
                 "Booking Confirmed! PNR: " + savedBooking.getPnrNumber()
             );
 
@@ -143,12 +137,19 @@ public class BookingServiceImpl implements BookingService {
         booking.setBookingStatus(BookingStatus.CANCELLED);
         bookingRepository.save(booking);
 
-        User user = userRepository.findById(booking.getUserId()).orElse(null);
+        try {
+            flightClient.updateAvailableSeats(booking.getFlightId(), -booking.getNoOfSeats());
+            
+            System.out.println("Restocked " + booking.getNoOfSeats() + " seats for flight " + booking.getFlightId());
+        } catch (Exception e) {
+            System.err.println("CRITICAL: Failed to restock seats. Error: " + e.getMessage());
+        }
+        UserDto user = authClient.getUserById(booking.getUserId());
 
         sendKafkaNotification(
                 booking.getPnrNumber(), 
                 user != null ? user.getMobileNumber() : "", 
-                user != null ? user.getEmailId() : "", 
+                user != null ? user.getEmail() : "", 
                 "Booking Cancelled Successfully for PNR: " + booking.getPnrNumber()
             );
     }
@@ -186,8 +187,19 @@ public class BookingServiceImpl implements BookingService {
     }
     
     public List<BookingHistoryResponse> getBookingHistory(String email) {
-        User user = userRepository.findByEmailId(email)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + email));
+    	UserDto user = null;
+    	try {
+    		user = authClient.getUserByEmail(email);
+    		System.out.println("getUserByEmail Successfull");
+    	}catch(Exception e){
+    		System.out.println(e.getMessage());
+    	}
+    	
+
+    	if (user == null) {
+    	    throw new ResourceNotFoundException("User not found with email: " + email);
+    	}
+
 
         List<Booking> bookings = bookingRepository.findByUserId(user.getId());
 

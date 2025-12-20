@@ -28,6 +28,17 @@ public class FlightServiceImpl implements FlightService {
         if (request.getFromPlace().equals(request.getToPlace())) {
             return Mono.error(new InvalidAirportCodeException("Source and Destination airports cannot be the same"));
         }
+        if (request.getFlightEndDateTime()
+                .isBefore(request.getFlightDateTime()) ||
+            request.getFlightEndDateTime()
+                .isEqual(request.getFlightDateTime())) {
+
+            return Mono.error(
+                new IllegalArgumentException(
+                    "Flight end date/time must be greater than flight start date/time"
+                )
+            );
+        }
 
         Flight flight = new Flight();
         flight.setAirlineName(request.getAirlineName());

@@ -1,4 +1,4 @@
-package com.flightApp.dtos;
+package com.flightApp.dto;
 
 import com.flightApp.model.Role;
 

@@ -1,9 +1,11 @@
 package com.flightApp.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.flightApp.dtos.UserDto;
 import com.flightApp.dtos.AuthResponse;
 import com.flightApp.dtos.RegisterRequest;
 import com.flightApp.model.Role;
@@ -35,6 +37,7 @@ public class AuthService {
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(request.getRole() != null ? request.getRole() : Role.ROLE_USER)
                 .fullname(request.getFullname())
+                .mobileNumber(request.getMobileNumber())
                 .build();
                 
         repository.save(user);
@@ -57,4 +60,37 @@ public class AuthService {
     public void validateToken(String token) {
         jwtService.validateToken(token);
     }
+
+	public ResponseEntity<UserDto> getUserByEmail(String email) {
+		return repository.findByEmail(email)
+        .map(user -> ResponseEntity.ok(UserDto.builder()
+                .id(user.getId())
+                .name(user.getName())
+                .email(user.getEmail())
+                .mobileNumber(user.getMobileNumber())
+                .build()))
+        .orElse(ResponseEntity.notFound().build());
+	}
+
+	public ResponseEntity<UserDto> getUserById(String id) {
+		return repository.findById(id)
+		        .map(user -> ResponseEntity.ok(UserDto.builder()
+		                .id(user.getId())
+		                .name(user.getName())
+		                .email(user.getEmail())
+		                .mobileNumber(user.getMobileNumber())
+		                .build()))
+		        .orElse(ResponseEntity.notFound().build());
+	}
+
+	public ResponseEntity<UserDto> getUserByUserName(String userName) {
+		return repository.findByName(userName)
+		        .map(user -> ResponseEntity.ok(UserDto.builder()
+		                .id(user.getId())
+		                .name(user.getName())
+		                .email(user.getEmail())
+		                .mobileNumber(user.getMobileNumber())
+		                .build()))
+		        .orElse(ResponseEntity.notFound().build());
+	}
 }

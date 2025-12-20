@@ -29,6 +29,7 @@ public class UserCredential implements UserDetails{
     private String email;
     private String fullname;
     private String password;
+    private String mobileNumber;
     private Role role;
 
     @Override
