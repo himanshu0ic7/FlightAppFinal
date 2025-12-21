@@ -19,6 +19,7 @@ import org.springframework.http.HttpHeaders;
 import com.flightApp.dtos.ApiResponse;
 import com.flightApp.dtos.AuthRequest;
 import com.flightApp.dtos.AuthResponse;
+import com.flightApp.dtos.ChangePasswordRequest;
 import com.flightApp.dtos.RegisterRequest;
 import com.flightApp.dtos.UserDto;
 import com.flightApp.model.Role;
@@ -115,6 +116,17 @@ public class AuthController {
     @GetMapping("/user/userName") 
     public ResponseEntity<UserDto> getUserByUserName(@RequestParam("userName") String userName) {
         return service.getUserByUserName(userName);
+    }
+    
+    @PostMapping("/change-password")
+    public ResponseEntity<ApiResponse<String>> changePassword(@RequestBody @Valid ChangePasswordRequest request) {
+        try {
+            String result = service.changePassword(request);
+            return ResponseEntity.ok(ApiResponse.success(result));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(ApiResponse.error(e.getMessage()));
+        }
     }
     
     

@@ -2,13 +2,31 @@ spring:
   application:
     name: applicationGateway
 
-spring:
   cloud:
     gateway:
       discovery:
         locator:
-          enabled: true
-          lower-case-service-id: true
+          enabled: false
+
+      routes:
+        - id: flight-service
+          uri: lb://FLIGHTSERVICE
+          predicates:
+            - Path=/flight/**
+          filters:
+            - AuthenticationFilter
+
+        - id: booking-service
+          uri: lb://BOOKINGSERVICE
+          predicates:
+            - Path=/booking/**
+          filters:
+            - AuthenticationFilter
+
+        - id: security-service
+          uri: lb://SECURITYSERVICE
+          predicates:
+            - Path=/auth/**
 
 server:
   port: 6060

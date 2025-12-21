@@ -7,10 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.flightApp.dtos.UserDto;
 import com.flightApp.dtos.AuthResponse;
+import com.flightApp.dtos.ChangePasswordRequest;
 import com.flightApp.dtos.RegisterRequest;
 import com.flightApp.model.Role;
 import com.flightApp.model.UserCredential;
 import com.flightApp.repo.UserCredentialRepository;
+
+import jakarta.validation.Valid;
 
 @Service
 public class AuthService {
@@ -92,5 +95,20 @@ public class AuthService {
 		                .mobileNumber(user.getMobileNumber())
 		                .build()))
 		        .orElse(ResponseEntity.notFound().build());
+	}
+
+	public String changePassword(@Valid ChangePasswordRequest request) {
+		UserCredential user = repository.findByName(request.getUsername())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (!passwordEncoder.matches(request.getOldPassword(), user.getPassword())) {
+            throw new RuntimeException("Invalid old password");
+        }
+
+        user.setPassword(passwordEncoder.encode(request.getNewPassword()));
+
+        repository.save(user);
+
+        return "Password changed successfully";
 	}
 }
