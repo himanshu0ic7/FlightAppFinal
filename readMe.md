@@ -59,7 +59,7 @@ All microservices automatically register with the Eureka Server upon startup, al
 
 The application maintains a strict separation of concerns. The **Flight Service** manages inventory and schedules, while the **Booking Service** creates a logical link via `flightId` and manages passenger PNRs.
 
-![Entity Relationship Diagram](./ER_DIAGRAM.png)
+![Entity Relationship Diagram](./ER_Diagram.png)
 
 * **Concurrency Control:** The Flight entity uses `@Version` for **Optimistic Locking** to prevent double-booking the last seat.
 * **Data Integrity:** Unique Compound Indexes (`Airline` + `Time`) prevent duplicate flight entries.
