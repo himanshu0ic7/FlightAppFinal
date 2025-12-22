@@ -42,7 +42,7 @@ public class FlightServiceTest {
         request.setPrice(5000);
         request.setTotalSeats(100);
         request.setFlightDateTime(LocalDateTime.now().plusDays(1));
-
+        request.setFlightEndDateTime(LocalDateTime.now().plusDays(1).plusHours(2));
         Flight savedFlight = new Flight();
         savedFlight.setFlightId("123");
         savedFlight.setAirlineName("Indigo");

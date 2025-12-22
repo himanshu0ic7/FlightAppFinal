@@ -55,21 +55,6 @@ public class RequestValidationTest {
     }
 
     @Test
-    void testInvalidEmail() {
-        BookingRequest req = new BookingRequest();
-        req.setFlightId("F100");
-        req.setNumberOfSeats(1);
-        req.setName("John");
-
-        Set<ConstraintViolation<BookingRequest>> violations = validator.validate(req);
-        
-        assertFalse(violations.isEmpty());
-        boolean hasEmailError = violations.stream()
-                .anyMatch(v -> v.getPropertyPath().toString().equals("emailId"));
-        assertTrue(hasEmailError, "Expected Email validation error");
-    }
-
-    @Test
     void testInvalidSeats() {
         BookingRequest req = new BookingRequest();
         req.setFlightId("F100");

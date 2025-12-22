@@ -9,6 +9,7 @@ import com.flightApp.dtos.UserDto;
 import com.flightApp.dtos.AuthResponse;
 import com.flightApp.dtos.ChangePasswordRequest;
 import com.flightApp.dtos.RegisterRequest;
+import com.flightApp.dtos.UpdateProfileRequest;
 import com.flightApp.model.Role;
 import com.flightApp.model.UserCredential;
 import com.flightApp.repo.UserCredentialRepository;
@@ -69,6 +70,7 @@ public class AuthService {
         .map(user -> ResponseEntity.ok(UserDto.builder()
                 .id(user.getId())
                 .name(user.getName())
+                .fullname(user.getFullname())
                 .email(user.getEmail())
                 .mobileNumber(user.getMobileNumber())
                 .build()))
@@ -80,6 +82,7 @@ public class AuthService {
 		        .map(user -> ResponseEntity.ok(UserDto.builder()
 		                .id(user.getId())
 		                .name(user.getName())
+		                .fullname(user.getFullname())
 		                .email(user.getEmail())
 		                .mobileNumber(user.getMobileNumber())
 		                .build()))
@@ -91,6 +94,7 @@ public class AuthService {
 		        .map(user -> ResponseEntity.ok(UserDto.builder()
 		                .id(user.getId())
 		                .name(user.getName())
+		                .fullname(user.getFullname())
 		                .email(user.getEmail())
 		                .mobileNumber(user.getMobileNumber())
 		                .build()))
@@ -110,5 +114,24 @@ public class AuthService {
         repository.save(user);
 
         return "Password changed successfully";
+	}
+
+	public UserDto updateProfile(@Valid UpdateProfileRequest request) {
+		UserCredential user = repository.findByName(request.getUsername())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        user.setFullname(request.getFullname());
+        user.setEmail(request.getEmail());
+        user.setMobileNumber(request.getMobileNumber());
+        
+        UserCredential updatedUser = repository.save(user);
+
+        return new UserDto(
+            updatedUser.getId(),
+            updatedUser.getFullname(),
+            updatedUser.getName(),
+            updatedUser.getEmail(),
+            updatedUser.getMobileNumber()
+        );
 	}
 }

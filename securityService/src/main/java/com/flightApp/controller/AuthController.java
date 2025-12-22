@@ -21,6 +21,7 @@ import com.flightApp.dtos.AuthRequest;
 import com.flightApp.dtos.AuthResponse;
 import com.flightApp.dtos.ChangePasswordRequest;
 import com.flightApp.dtos.RegisterRequest;
+import com.flightApp.dtos.UpdateProfileRequest;
 import com.flightApp.dtos.UserDto;
 import com.flightApp.model.Role;
 import com.flightApp.model.UserCredential;
@@ -129,6 +130,16 @@ public class AuthController {
         }
     }
     
+    @PutMapping("/profile/update")
+    public ResponseEntity<ApiResponse<UserDto>> updateProfile(@RequestBody @Valid UpdateProfileRequest request) {
+        try {
+            UserDto updatedUser = service.updateProfile(request);
+            return ResponseEntity.ok(ApiResponse.success("Profile updated successfully", updatedUser));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(ApiResponse.error("Update failed: " + e.getMessage()));
+        }
+    }
     
     private ResponseCookie createJwtCookie(String token) {
         return ResponseCookie.from("JWT_TOKEN", token)
