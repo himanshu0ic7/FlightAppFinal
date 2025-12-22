@@ -37,23 +37,13 @@ The system is built on the **API Gateway pattern**, ensuring a single entry poin
 
 The entire system is containerized for seamless deployment across any environment.
 
-### Multi-Stage Docker Builds
+### Docker Configuration
 
-Each microservice uses optimized **multi-stage Dockerfiles**:
-
+Each microservice uses a lightweight Dockerfile optimized for production deployment:
 ```dockerfile
-# Stage 1: Build
-FROM maven:3.8-openjdk-17 AS builder
+FROM amazoncorretto:17
 WORKDIR /app
-COPY pom.xml .
-COPY src ./src
-RUN mvn clean package -DskipTests
-
-# Stage 2: Runtime
-FROM amazoncorretto:17-alpine
-WORKDIR /app
-COPY --from=builder /app/target/*.jar app.jar
-EXPOSE 8080
+COPY target/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
 ```
 
@@ -158,7 +148,7 @@ We maintain enterprise-grade quality standards:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -166,14 +156,17 @@ We maintain enterprise-grade quality standards:
 - **Java 17+** (optional, for local development)
 - **Git** (to clone the repository)
 
-### One-Command Deployment
+### Deployment Options
 
-Thanks to multi-stage Docker builds, you don't need Maven installed locally!
+Choose between two deployment methods based on your needs:
 
+#### Option 1: Docker Deployment (Recommended for Production)
+
+Complete containerized deployment with one command:
 ```bash
 # Clone the repository
-git clone https://github.com/himanshu0ic7/flightMicroserviceDockerizedSecurity.git
-cd flightMicroserviceDockerizedSecurity
+git clone https://github.com/himanshu0ic7/FlightAppDeployed.git
+cd FlightAppDeployed
 
 # Build and start all services
 docker-compose up -d --build
@@ -181,6 +174,33 @@ docker-compose up -d --build
 # To rebuild and start specific service again
 docker compose up -d --build <service-name>
 ```
+
+#### Option 2: Local Development Setup
+
+For active development with hot-reload capabilities:
+```bash
+# Clone the repository
+git clone https://github.com/himanshu0ic7/FlightAppDeployed.git
+cd FlightAppDeployed
+
+# Make the startup script executable
+chmod +x start-local.sh
+
+# Start all services
+./start-local.sh
+```
+
+**What the script does:**
+1. Starts Kafka & Zookeeper containers via Docker Compose
+2. Launches Config Server (waits 8s for initialization)
+3. Starts Eureka Server (waits 10s for registration)
+4. Sequentially starts all microservices with appropriate wait times
+5. Each service runs with Maven Spring Boot plugin for hot-reload
+
+**Prerequisites for local setup:**
+- Ensure `.env` file exists in the project root with required environment variables
+- MongoDB should be running locally or update connection strings in `application.yml`
+- Ports 8761, 8888, 6060, 9898, 7070, 8080, 9090 must be available
 
 ### Verify Deployment
 
@@ -197,12 +217,14 @@ All services should appear as "UP" in the Eureka dashboard.
 
 ## All API Endpoints
 
-### Identity Service
+### Security Service
 
 | Route | Method | Access | Description |
 | :--- | :--- | :--- | :--- |
 | /api/auth/register | POST | Public | Register a new user account. |
 | /api/auth/login | POST | Public | Login with credentials to get JWT Access Token. |
+| /api/auth/change-password |	PUT |	User |	Change password. | 
+| /api/auth/update-profile	| PUT |	User |	Update profile details.|
 
 ### Flight Service
 
