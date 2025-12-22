@@ -165,8 +165,8 @@ Choose between two deployment methods based on your needs:
 Complete containerized deployment with one command:
 ```bash
 # Clone the repository
-git clone https://github.com/himanshu0ic7/FlightAppDeployed.git
-cd FlightAppDeployed
+git clone https://github.com/himanshu0ic7/FlightAppFinal.git
+cd FlightAppFinal
 
 # Build and start all services
 docker-compose up -d --build
@@ -180,8 +180,8 @@ docker compose up -d --build <service-name>
 For active development with hot-reload capabilities:
 ```bash
 # Clone the repository
-git clone https://github.com/himanshu0ic7/FlightAppDeployed.git
-cd FlightAppDeployed
+git clone https://github.com/himanshu0ic7/FlightAppFinal.git
+cd FlightAppFinal
 
 # Make the startup script executable
 chmod +x start-local.sh
