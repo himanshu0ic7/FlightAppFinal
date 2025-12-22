@@ -1,6 +1,9 @@
 package com.flightApp.service;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,8 @@ import jakarta.validation.Valid;
 @Service
 public class AuthService {
 
+	@Value("${app.security.password-expiration-days}")
+    private long passwordExpirationDays;
     @Autowired
     private UserCredentialRepository repository;
     @Autowired
@@ -42,6 +47,7 @@ public class AuthService {
                 .role(request.getRole() != null ? request.getRole() : Role.ROLE_USER)
                 .fullname(request.getFullname())
                 .mobileNumber(request.getMobileNumber())
+                .lastPasswordResetDate(LocalDate.now())
                 .build();
                 
         repository.save(user);
@@ -53,11 +59,22 @@ public class AuthService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
                 
         String token = jwtService.generateToken(username, user.getRole().name());
-        
+        boolean isExpired = false;
+        if (user.getLastPasswordResetDate() != null) {
+            long daysSinceLastReset = java.time.temporal.ChronoUnit.DAYS.between(
+                    user.getLastPasswordResetDate(), 
+                    LocalDate.now()
+            );
+            
+            if (daysSinceLastReset > passwordExpirationDays) {
+                isExpired = true;
+            }
+        }
         return AuthResponse.builder()
                 .accessToken(token)
                 .username(user.getUsername())
                 .role(user.getRole().name())
+                .passwordExpired(isExpired)
                 .build();
     }
     
@@ -110,7 +127,7 @@ public class AuthService {
         }
 
         user.setPassword(passwordEncoder.encode(request.getNewPassword()));
-
+        user.setLastPasswordResetDate(LocalDate.now());
         repository.save(user);
 
         return "Password changed successfully";

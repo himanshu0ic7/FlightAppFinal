@@ -1,5 +1,6 @@
 package com.flightApp.model;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class UserCredential implements UserDetails{
     private String password;
     private String mobileNumber;
     private Role role;
+    private LocalDate lastPasswordResetDate;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
