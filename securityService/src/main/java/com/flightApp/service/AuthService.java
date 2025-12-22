@@ -1,20 +1,29 @@
 package com.flightApp.service;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.flightApp.dtos.UserDto;
 import com.flightApp.dtos.AuthResponse;
+import com.flightApp.dtos.ChangePasswordRequest;
 import com.flightApp.dtos.RegisterRequest;
+import com.flightApp.dtos.UpdateProfileRequest;
 import com.flightApp.model.Role;
 import com.flightApp.model.UserCredential;
 import com.flightApp.repo.UserCredentialRepository;
 
+import jakarta.validation.Valid;
+
 @Service
 public class AuthService {
 
+	@Value("${app.security.password-expiration-days}")
+    private long passwordExpirationDays;
     @Autowired
     private UserCredentialRepository repository;
     @Autowired
@@ -38,6 +47,7 @@ public class AuthService {
                 .role(request.getRole() != null ? request.getRole() : Role.ROLE_USER)
                 .fullname(request.getFullname())
                 .mobileNumber(request.getMobileNumber())
+                .lastPasswordResetDate(LocalDate.now())
                 .build();
                 
         repository.save(user);
@@ -49,11 +59,22 @@ public class AuthService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
                 
         String token = jwtService.generateToken(username, user.getRole().name());
-        
+        boolean isExpired = false;
+        if (user.getLastPasswordResetDate() != null) {
+            long daysSinceLastReset = java.time.temporal.ChronoUnit.DAYS.between(
+                    user.getLastPasswordResetDate(), 
+                    LocalDate.now()
+            );
+            
+            if (daysSinceLastReset > passwordExpirationDays) {
+                isExpired = true;
+            }
+        }
         return AuthResponse.builder()
                 .accessToken(token)
                 .username(user.getUsername())
                 .role(user.getRole().name())
+                .passwordExpired(isExpired)
                 .build();
     }
     
@@ -66,6 +87,7 @@ public class AuthService {
         .map(user -> ResponseEntity.ok(UserDto.builder()
                 .id(user.getId())
                 .name(user.getName())
+                .fullname(user.getFullname())
                 .email(user.getEmail())
                 .mobileNumber(user.getMobileNumber())
                 .build()))
@@ -77,6 +99,7 @@ public class AuthService {
 		        .map(user -> ResponseEntity.ok(UserDto.builder()
 		                .id(user.getId())
 		                .name(user.getName())
+		                .fullname(user.getFullname())
 		                .email(user.getEmail())
 		                .mobileNumber(user.getMobileNumber())
 		                .build()))
@@ -88,9 +111,44 @@ public class AuthService {
 		        .map(user -> ResponseEntity.ok(UserDto.builder()
 		                .id(user.getId())
 		                .name(user.getName())
+		                .fullname(user.getFullname())
 		                .email(user.getEmail())
 		                .mobileNumber(user.getMobileNumber())
 		                .build()))
 		        .orElse(ResponseEntity.notFound().build());
+	}
+
+	public String changePassword(@Valid ChangePasswordRequest request) {
+		UserCredential user = repository.findByName(request.getUsername())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (!passwordEncoder.matches(request.getOldPassword(), user.getPassword())) {
+            throw new RuntimeException("Invalid old password");
+        }
+
+        user.setPassword(passwordEncoder.encode(request.getNewPassword()));
+        user.setLastPasswordResetDate(LocalDate.now());
+        repository.save(user);
+
+        return "Password changed successfully";
+	}
+
+	public UserDto updateProfile(@Valid UpdateProfileRequest request) {
+		UserCredential user = repository.findByName(request.getUsername())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        user.setFullname(request.getFullname());
+        user.setEmail(request.getEmail());
+        user.setMobileNumber(request.getMobileNumber());
+        
+        UserCredential updatedUser = repository.save(user);
+
+        return new UserDto(
+            updatedUser.getId(),
+            updatedUser.getFullname(),
+            updatedUser.getName(),
+            updatedUser.getEmail(),
+            updatedUser.getMobileNumber()
+        );
 	}
 }
