@@ -169,12 +169,11 @@ services:
       DEBUG: true
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       TWILIO_ACCOUNT_SID: ACd47be7437e8d9e5e21cb24aa672dccfa
-      TWILIO_AUTH_TOKEN: d7659b142f8d078014196c58cbe5153b
+      TWILIO_AUTH_TOKEN: 8f6ec06fcf9f3a523ba1eeb5622aeb0d
       TWILIO_PHONE_NUMBER: +17754028829
       SPRING_PROFILES_ACTIVE: docker
       spring.kafka.consumer.value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       spring.kafka.consumer.properties.spring.json.trusted.packages: "*"
-      spring.kafka.consumer.properties.spring.json.value.default.type: com.flightApp.dto.BookingEvent
 
       JAVA_TOOL_OPTIONS: >
         -Dspring.profiles.active=docker
@@ -243,6 +242,7 @@ services:
         -Dspring.profiles.active=docker
         -Deureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
         -Deureka.instance.prefer-ip-address=true
+        -Dspring.kafka.bootstrap-servers=kafka:29092
     restart: on-failure
     networks:
       - microservices-network

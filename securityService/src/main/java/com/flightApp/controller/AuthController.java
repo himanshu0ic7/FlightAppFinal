@@ -21,6 +21,7 @@ import com.flightApp.dtos.AuthRequest;
 import com.flightApp.dtos.AuthResponse;
 import com.flightApp.dtos.ChangePasswordRequest;
 import com.flightApp.dtos.RegisterRequest;
+import com.flightApp.dtos.ResetPasswordRequest;
 import com.flightApp.dtos.UpdateProfileRequest;
 import com.flightApp.dtos.UserDto;
 import com.flightApp.model.Role;
@@ -127,6 +128,26 @@ public class AuthController {
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body(ApiResponse.error(e.getMessage()));
+        }
+    }
+    
+    @PostMapping("/forgot-password")
+    public ResponseEntity<ApiResponse<String>> forgotPassword(@RequestParam("username") String username) {
+        try {
+            service.generateAndSendOtp(username);
+            return ResponseEntity.ok(ApiResponse.success("OTP sent to your registered mobile number."));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.error(e.getMessage()));
+        }
+    }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<ApiResponse<String>> resetPassword(@RequestBody @Valid ResetPasswordRequest request) {
+        try {
+            service.validateOtpAndResetPassword(request);
+            return ResponseEntity.ok(ApiResponse.success("Password has been reset successfully."));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.error(e.getMessage()));
         }
     }
     

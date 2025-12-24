@@ -1,17 +1,22 @@
 package com.flightApp.service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.flightApp.dtos.UserDto;
 import com.flightApp.dtos.AuthResponse;
 import com.flightApp.dtos.ChangePasswordRequest;
+import com.flightApp.dtos.NotificationEvent;
 import com.flightApp.dtos.RegisterRequest;
+import com.flightApp.dtos.ResetPasswordRequest;
 import com.flightApp.dtos.UpdateProfileRequest;
 import com.flightApp.model.Role;
 import com.flightApp.model.UserCredential;
@@ -30,6 +35,9 @@ public class AuthService {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private JwtService jwtService;
+    
+    @Autowired
+    private KafkaTemplate<String, NotificationEvent> kafkaTemplate;
 
     public String saveUser(RegisterRequest request) {
         if (repository.existsByName(request.getName())) {
@@ -117,6 +125,45 @@ public class AuthService {
 		                .build()))
 		        .orElse(ResponseEntity.notFound().build());
 	}
+	
+	public void generateAndSendOtp(String username) {
+        UserCredential user = repository.findByName(username)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        String otp = String.valueOf(new Random().nextInt(900000) + 100000);
+
+        user.setResetOtp(otp);
+        user.setOtpExpiry(LocalDateTime.now().plusMinutes(5));
+        repository.save(user);
+
+        if(user.getMobileNumber() != null) {
+            NotificationEvent event = NotificationEvent.builder()
+                .mobileNumber(user.getMobileNumber())
+                .message("Your FlightApp Reset OTP is: " + otp + ". Valid for 5 minutes.")
+                .type("OTP")
+                .build();
+            
+            kafkaTemplate.send("user_notifications", event); 
+        }
+    }
+
+    public void validateOtpAndResetPassword(ResetPasswordRequest request) {
+        UserCredential user = repository.findByName(request.getUsername())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (user.getResetOtp() == null || !user.getResetOtp().equals(request.getOtp())) {
+            throw new RuntimeException("Invalid OTP");
+        }
+
+        if (user.getOtpExpiry().isBefore(LocalDateTime.now())) {
+            throw new RuntimeException("OTP has expired");
+        }
+
+        user.setPassword(passwordEncoder.encode(request.getNewPassword())); // Encrypt new pwd
+        user.setResetOtp(null);
+        user.setOtpExpiry(null);
+        repository.save(user);
+    }
 
 	public String changePassword(@Valid ChangePasswordRequest request) {
 		UserCredential user = repository.findByName(request.getUsername())
