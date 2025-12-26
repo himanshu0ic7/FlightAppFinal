@@ -1,4 +1,4 @@
-package com.flightApp.dto;
+package com.flightApp.dtos;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;

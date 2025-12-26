@@ -1,4 +1,4 @@
-package com.flightApp.dto;
+package com.flightApp.dtos;
 
 
 import lombok.AllArgsConstructor;

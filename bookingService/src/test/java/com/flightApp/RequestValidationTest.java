@@ -1,13 +1,14 @@
 package com.flightApp;
 
 
-import com.flightApp.dto.BookingRequest;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.flightApp.dtos.BookingRequest;
 
 import java.util.Set;
 
@@ -30,12 +31,12 @@ public class RequestValidationTest {
         req.setFlightId("F100");
         req.setNumberOfSeats(1);
         req.setName("John Doe");
-        com.flightApp.dto.PassengerDTO p = new com.flightApp.dto.PassengerDTO();
+        com.flightApp.dtos.PassengerDTO p = new com.flightApp.dtos.PassengerDTO();
         p.setName("Passenger 1");
         p.setAge(30);
         p.setPassengerId("PID12345");
         p.setGender(com.flightApp.model.Gender.MALE);
-        java.util.List<com.flightApp.dto.PassengerDTO> list = new java.util.ArrayList<>();
+        java.util.List<com.flightApp.dtos.PassengerDTO> list = new java.util.ArrayList<>();
         list.add(p);
         req.setPassengers(list);
 

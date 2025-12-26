@@ -1,9 +1,9 @@
 package com.flightApp;
 
-import com.flightApp.dto.BookingRequest;
-import com.flightApp.dto.BookingResponse;
-import com.flightApp.dto.FlightDTO;
-import com.flightApp.dto.PassengerDTO;
+import com.flightApp.dtos.BookingRequest;
+import com.flightApp.dtos.BookingResponse;
+import com.flightApp.dtos.FlightDTO;
+import com.flightApp.dtos.PassengerDTO;
 import com.flightApp.model.BookingStatus;
 import com.flightApp.model.Gender;
 

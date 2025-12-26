@@ -2,11 +2,10 @@ package com.flightApp.service;
 
 import java.util.List;
 
-
-import com.flightApp.dto.BookingHistoryResponse;
-import com.flightApp.dto.BookingRequest;
-import com.flightApp.dto.BookingResponse;
-import com.flightApp.dto.TicketDetailsResponse;
+import com.flightApp.dtos.BookingHistoryResponse;
+import com.flightApp.dtos.BookingRequest;
+import com.flightApp.dtos.BookingResponse;
+import com.flightApp.dtos.TicketDetailsResponse;
 
 public interface BookingService {
 

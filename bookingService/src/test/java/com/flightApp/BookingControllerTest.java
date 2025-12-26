@@ -2,7 +2,7 @@ package com.flightApp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flightApp.controller.BookingController;
-import com.flightApp.dto.BookingResponse;
+import com.flightApp.dtos.BookingResponse;
 
 import feign.FeignException;
 import org.junit.jupiter.api.Test;

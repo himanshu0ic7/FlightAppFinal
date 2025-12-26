@@ -12,11 +12,11 @@ import org.springframework.test.util.ReflectionTestUtils;
 
 import com.flightApp.client.AuthClient;
 import com.flightApp.client.FlightClient;
-import com.flightApp.dto.BookingRequest;
-import com.flightApp.dto.BookingResponse;
-import com.flightApp.dto.FlightDTO;
-import com.flightApp.dto.PassengerDTO;
-import com.flightApp.dto.UserDto;
+import com.flightApp.dtos.BookingRequest;
+import com.flightApp.dtos.BookingResponse;
+import com.flightApp.dtos.FlightDTO;
+import com.flightApp.dtos.PassengerDTO;
+import com.flightApp.dtos.UserDto;
 import com.flightApp.model.Booking;
 import com.flightApp.model.BookingStatus;
 import com.flightApp.model.Gender;

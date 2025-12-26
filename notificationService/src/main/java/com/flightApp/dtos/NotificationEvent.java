@@ -13,5 +13,6 @@ public class NotificationEvent {
 	private String mobileNumber;
     private String message;
     private String type;
+    private String email;
 	
 }

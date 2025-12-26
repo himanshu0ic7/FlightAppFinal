@@ -138,6 +138,7 @@ public class AuthService {
 
         if(user.getMobileNumber() != null) {
             NotificationEvent event = NotificationEvent.builder()
+            	.email(user.getEmail())
                 .mobileNumber(user.getMobileNumber())
                 .message("Your FlightApp Reset OTP is: " + otp + ". Valid for 5 minutes.")
                 .type("OTP")
@@ -159,7 +160,7 @@ public class AuthService {
             throw new RuntimeException("OTP has expired");
         }
 
-        user.setPassword(passwordEncoder.encode(request.getNewPassword())); // Encrypt new pwd
+        user.setPassword(passwordEncoder.encode(request.getNewPassword()));
         user.setResetOtp(null);
         user.setOtpExpiry(null);
         repository.save(user);

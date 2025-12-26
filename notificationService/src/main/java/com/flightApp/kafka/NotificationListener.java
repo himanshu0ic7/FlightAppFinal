@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.flightApp.dtos.BookingEvent;
 import com.flightApp.dtos.NotificationEvent;
+import com.flightApp.service.EmailService;
 import com.flightApp.service.SmsService;
 
 @Component
@@ -15,6 +16,9 @@ public class NotificationListener {
 
     @Autowired
     private SmsService smsService;
+    
+    @Autowired
+    private EmailService emailService;
 
     @KafkaListener(topics = "flight_confirmation", groupId = "notification-group")
     public void handleFlightConfirmation(BookingEvent event) {
@@ -27,9 +31,19 @@ public class NotificationListener {
             log.warn("No mobile number found for PNR: {}", event.getPnr());
         }
 
+//        if (event.getEmail() != null && !event.getEmail().isEmpty()) {
+//            log.info("Skipping Email to: {} (Email service not yet enabled)", event.getEmail());
+//           
+//        }
         if (event.getEmail() != null && !event.getEmail().isEmpty()) {
-            log.info("Skipping Email to: {} (Email service not yet enabled)", event.getEmail());
-           
+            emailService.sendEmail(
+                event.getEmail(), 
+                "Flight Confirmation - " + event.getPnr(), 
+                event.getMessage()
+            );
+            log.info("Triggering Email to: {} ", event.getEmail());
+        } else {
+            log.warn("No email provided for PNR: {}", event.getPnr());
         }
     }
     
@@ -40,5 +54,13 @@ public class NotificationListener {
         if (event.getMobileNumber() != null && !event.getMobileNumber().isEmpty()) {
             smsService.sendSms(event.getMobileNumber(), event.getMessage());
         }
+        
+        if (event.getEmail() != null && !event.getEmail().isEmpty()) {
+            emailService.sendEmail(
+                event.getEmail(), 
+                "Notification from FlightApp", 
+                event.getMessage()
+            );
+       }
     }
 }

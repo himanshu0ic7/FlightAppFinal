@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.flightApp.dto.RegisterRequest;
-import com.flightApp.dto.UserDto;
+import com.flightApp.dtos.RegisterRequest;
+import com.flightApp.dtos.UserDto;
 
 @FeignClient(name = "securityService")
 public interface AuthClient {

@@ -6,11 +6,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.flightApp.dto.ApiResponse;
-import com.flightApp.dto.BookingHistoryResponse;
-import com.flightApp.dto.BookingRequest;
-import com.flightApp.dto.BookingResponse;
-import com.flightApp.dto.TicketDetailsResponse;
+import com.flightApp.dtos.ApiResponse;
+import com.flightApp.dtos.BookingHistoryResponse;
+import com.flightApp.dtos.BookingRequest;
+import com.flightApp.dtos.BookingResponse;
+import com.flightApp.dtos.TicketDetailsResponse;
 import com.flightApp.service.BookingService;
 
 import java.util.List;

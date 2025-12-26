@@ -1,4 +1,4 @@
-package com.flightApp.dto;
+package com.flightApp.dtos;
 
 import com.flightApp.model.Gender;
 
