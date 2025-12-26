@@ -44,4 +44,9 @@ public class BookingController {
         bookingService.cancelBooking(pnr);
         return ResponseEntity.ok(new ApiResponse("Ticket Cancelled Successfully for PNR: "+pnr));
     }
+    
+    @GetMapping("/seats/{flightId}")
+    public ResponseEntity<List<Integer>> getOccupiedSeats(@PathVariable String flightId) {
+        return ResponseEntity.ok(bookingService.getOccupiedSeats(flightId));
+    }
 }

@@ -44,6 +44,10 @@ public class BookingServiceImpl implements BookingService {
     @Autowired
     private KafkaTemplate<String, BookingEvent> kafkaTemplate;
     
+    public List<Integer> getOccupiedSeats(String flightId) {
+        return new ArrayList<>(fetchOccupiedSeats(flightId));
+    }
+
     @Transactional
     public BookingResponse bookTicket(BookingRequest request) {
         
@@ -59,20 +63,42 @@ public class BookingServiceImpl implements BookingService {
         } catch (FeignException.NotFound e) {
             throw new BookingException("You must be a registered user to book a ticket. Please log in.");
         } catch(Exception e) {
-        	System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
 
-        FlightDTO flight;
-        flight = flightClient.getFlightById(request.getFlightId());
+        FlightDTO flight = flightClient.getFlightById(request.getFlightId());
 
         if (flight.getAvailableSeats() < request.getNumberOfSeats()) {
             throw new BookingException("Not enough seats available.");
         }
 
-        List<Booking> existingBookings = bookingRepository.findByFlightIdAndBookingStatus(
-                request.getFlightId(), BookingStatus.CONFIRMED);
-        
-        List<Integer> assignedSeats = allocateSeats(existingBookings, flight.getTotalSeats(), request.getNumberOfSeats());
+        Set<Integer> dbOccupiedSeats = fetchOccupiedSeats(request.getFlightId());
+
+        List<PassengerDTO> passengers = request.getPassengers();
+        Set<Integer> currentRequestSeats = new HashSet<>();
+        int autoAllocateCount = 0;
+
+        for (PassengerDTO p : passengers) {
+            if (p.getSeatNumber() > 0) {
+                if (dbOccupiedSeats.contains(p.getSeatNumber())) {
+                    throw new BookingException("Seat " + p.getSeatNumber() + " is already booked. Please select another.");
+                }
+                if (currentRequestSeats.contains(p.getSeatNumber())) {
+                    throw new BookingException("Duplicate seat selection in request: " + p.getSeatNumber());
+                }
+                currentRequestSeats.add(p.getSeatNumber());
+            } else {
+                autoAllocateCount++;
+            }
+        }
+
+        List<Integer> autoAllocatedSeats = new ArrayList<>();
+        if (autoAllocateCount > 0) {
+            Set<Integer> allForbiddenSeats = new HashSet<>(dbOccupiedSeats);
+            allForbiddenSeats.addAll(currentRequestSeats);
+            
+            autoAllocatedSeats = allocateSeats(allForbiddenSeats, flight.getTotalSeats(), autoAllocateCount);
+        }
 
         Booking booking = new Booking();
         booking.setPnrNumber("PNR" + UUID.randomUUID().toString().substring(0, 6).toUpperCase());
@@ -88,20 +114,27 @@ public class BookingServiceImpl implements BookingService {
 
         List<Passenger> entityPassengers = new ArrayList<>();
         List<BookingResponse.PassengerDetail> responsePassengers = new ArrayList<>();
+        
+        Iterator<Integer> autoSeatIterator = autoAllocatedSeats.iterator();
 
-        for (int i = 0; i < request.getPassengers().size(); i++) {
-            PassengerDTO dto = request.getPassengers().get(i);
-            int seat = assignedSeats.get(i);
+        for (PassengerDTO dto : passengers) {
+            int finalSeat;
+            
+            if (dto.getSeatNumber() > 0) {
+                finalSeat = dto.getSeatNumber();
+            } else {
+                finalSeat = autoSeatIterator.next();
+            }
 
             Passenger p = new Passenger();
             p.setName(dto.getName());
             p.setGender(dto.getGender());
             p.setAge(dto.getAge());
-            p.setSeatNumber(seat);
+            p.setSeatNumber(finalSeat);
             p.setPassengerId(dto.getPassengerId());
             entityPassengers.add(p);
             
-            responsePassengers.add(new BookingResponse.PassengerDetail(dto.getName(), seat));
+            responsePassengers.add(new BookingResponse.PassengerDetail(dto.getName(), finalSeat));
         }
         booking.setPassengers(entityPassengers);
 
@@ -187,18 +220,18 @@ public class BookingServiceImpl implements BookingService {
     }
     
     public List<BookingHistoryResponse> getBookingHistory(String email) {
-    	UserDto user = null;
-    	try {
-    		user = authClient.getUserByEmail(email);
-    		System.out.println("getUserByEmail Successfull");
-    	}catch(Exception e){
-    		System.out.println(e.getMessage());
-    	}
-    	
+        UserDto user = null;
+        try {
+            user = authClient.getUserByEmail(email);
+            
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
 
-    	if (user == null) {
-    	    throw new ResourceNotFoundException("User not found with email: " + email);
-    	}
+        if (user == null) {
+            throw new ResourceNotFoundException("User not found with email: " + email);
+        }
 
 
         List<Booking> bookings = bookingRepository.findByUserId(user.getId());
@@ -228,7 +261,7 @@ public class BookingServiceImpl implements BookingService {
 
     private void sendKafkaNotification(String pnr, String mobileNumber, String email, String msg) {
         try {
-        	BookingEvent event = BookingEvent.builder()
+            BookingEvent event = BookingEvent.builder()
                     .pnr(pnr)
                     .mobileNumber(mobileNumber)
                     .email(email)
@@ -237,29 +270,33 @@ public class BookingServiceImpl implements BookingService {
             
             kafkaTemplate.send("flight_confirmation", event);
         }catch(Exception e) {
-        	System.err.println("WARNING: Kafka is down or unreachable. Notification failed for PNR: " + pnr);
+            System.err.println("WARNING: Kafka is down or unreachable. Notification failed for PNR: " + pnr);
             System.err.println("Error: " + e.getMessage());
         }
-    	
     }
 
-   
-    private List<Integer> allocateSeats(List<Booking> existingBookings, int totalSeats, int seatsNeeded) {
-        Set<Integer> occupiedSeats = new HashSet<>();
+    private Set<Integer> fetchOccupiedSeats(String flightId) {
+        List<Booking> existingBookings = bookingRepository.findByFlightIdAndBookingStatus(
+                flightId, BookingStatus.CONFIRMED);
 
+        Set<Integer> occupiedSeats = new HashSet<>();
         for (Booking b : existingBookings) {
             if (b.getPassengers() != null) {
                 b.getPassengers().forEach(p -> {
-                    if (p.getSeatNumber() != null) {
+                    if (p.getSeatNumber() != 0) { 
                         occupiedSeats.add(p.getSeatNumber());
                     }
                 });
             }
         }
+        return occupiedSeats;
+    }
 
+
+    private List<Integer> allocateSeats(Set<Integer> forbiddenSeats, int totalSeats, int seatsNeeded) {
         List<Integer> newSeats = new ArrayList<>();
         for (int i = 1; i <= totalSeats; i++) {
-            if (!occupiedSeats.contains(i)) {
+            if (!forbiddenSeats.contains(i)) {
                 newSeats.add(i);
                 if (newSeats.size() == seatsNeeded) {
                     break;

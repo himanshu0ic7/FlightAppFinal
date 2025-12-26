@@ -16,5 +16,7 @@ public interface BookingService {
 	TicketDetailsResponse getTicketDetails(String pnr);
 
 	List<BookingHistoryResponse> getBookingHistory(String email);
+	
+	public List<Integer> getOccupiedSeats(String flightId);
 
 }
